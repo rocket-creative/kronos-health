@@ -9,7 +9,7 @@ import { useMobileMenuAnimation } from "./animations";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/revenue-cycle", label: "Revenue Cycle" },
-  { href: "https://cognifica.ai?utm_source=kronoshealth&utm_medium=nav", label: "Cognifica AI", external: true, wordmark: true },
+  { href: "https://cognificaai.vercel.app?utm_source=kronoshealth&utm_medium=nav", label: "Cognifica AI", external: true, wordmark: true },
   { href: "/synaptix", label: "Synaptix" },
   { href: "/about", label: "About" },
 ];

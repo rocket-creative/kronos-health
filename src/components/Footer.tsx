@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 const quickLinks = [
   { href: "/about", label: "About" },
   { href: "/revenue-cycle", label: "Services" },
-  { href: "https://cognifica.ai?utm_source=kronoshealth&utm_medium=footer", label: "CognificaAI", external: true, wordmark: true },
+  { href: "https://cognificaai.vercel.app?utm_source=kronoshealth&utm_medium=footer", label: "CognificaAI", external: true, wordmark: true },
   { href: "/synaptix", label: "Synaptix" },
 ];
 

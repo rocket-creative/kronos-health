@@ -62,12 +62,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/cognificaai",
-        destination: "https://cognifica.ai?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
+        destination: "https://cognificaai.vercel.app?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
         permanent: true,
       },
       {
         source: "/cognificaai/",
-        destination: "https://cognifica.ai?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
+        destination: "https://cognificaai.vercel.app?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
         permanent: true,
       },
     ];

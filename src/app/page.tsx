@@ -166,7 +166,7 @@ export default function HomePage() {
             {/* CognificaAI */}
             <article data-stagger-card className="group">
               <Link 
-                href="https://cognifica.ai?utm_source=kronoshealth&utm_medium=homepage"
+                href="https://cognificaai.vercel.app?utm_source=kronoshealth&utm_medium=homepage"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block focus:outline-none focus:ring-2 focus:ring-kronos-lavender focus:ring-offset-2 focus:ring-offset-kronos-gray-800"
