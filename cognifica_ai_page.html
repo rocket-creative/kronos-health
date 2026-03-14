@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CognificaAI — Workplace Mental Health Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --sage:    #4A7C6F;
+  --sage-lt: #6B9E90;
+  --sage-dk: #2E5449;
+  --cream:   #F7F3EE;
+  --warm:    #EDE7DC;
+  --sand:    #D4C9B8;
+  --clay:    #B07D5A;
+  --rust:    #8B4E2E;
+  --ink:     #1C2420;
+  --ink2:    #3A4A44;
+  --muted:   #7A8880;
+  --white:   #FDFCFA;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'Mulish', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); background: var(--white); color: var(--ink); line-height: 1.7; overflow-x: hidden; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  background: rgba(253,252,250,.94); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--sand);
+  padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between; height: 66px;
+}
+.nav-logo {
+  font-family: var(--font-serif); font-size: 22px; font-weight: 700;
+  color: var(--sage-dk); letter-spacing: -.3px;
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--clay); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { font-size: 13px; font-weight: 600; color: var(--ink2); text-decoration: none; letter-spacing: .3px; transition: color .2s; }
+.nav-links a:hover { color: var(--sage); }
+.nav-cta { background: var(--sage); color: #fff; padding: 9px 22px; border-radius: 6px; font-size: 13px; font-weight: 700; text-decoration: none; transition: background .2s; }
+.nav-cta:hover { background: var(--sage-dk); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: var(--sage-dk);
+  display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+  padding: 120px 5% 80px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -20%; right: -10%; width: 55%; height: 130%;
+  background: radial-gradient(ellipse at 60% 40%, rgba(74,124,111,.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,201,184,.4), transparent);
+}
+/* organic blob shapes */
+.hero-blob {
+  position: absolute; border-radius: 50%; opacity: .07; pointer-events: none;
+}
+.hero-blob-1 { width: 500px; height: 500px; top: -100px; right: 15%; background: var(--cream); }
+.hero-blob-2 { width: 300px; height: 300px; bottom: 50px; right: 5%; background: var(--sage-lt); opacity: .12; }
+
+.hero-left { position: relative; z-index: 2; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(74,124,111,.25); border: 1px solid rgba(107,158,144,.3);
+  color: #9ECFC3; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.4px;
+  padding: 6px 14px; border-radius: 20px; margin-bottom: 28px;
+}
+.hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #9ECFC3; animation: pulse 2s ease infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 700; line-height: 1.12;
+  color: #F0EDE8; margin-bottom: 24px;
+}
+.hero-title em { color: #9ECFC3; font-style: italic; }
+.hero-sub {
+  font-size: 17px; font-weight: 300; color: rgba(240,237,232,.7);
+  max-width: 500px; line-height: 1.8; margin-bottom: 40px;
+}
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--clay); color: #fff;
+  padding: 14px 30px; border-radius: 8px;
+  font-size: 14px; font-weight: 700; text-decoration: none;
+  transition: all .2s; display: inline-flex; align-items: center; gap: 8px;
+  box-shadow: 0 4px 20px rgba(176,125,90,.4);
+}
+.btn-primary:hover { background: var(--rust); transform: translateY(-2px); }
+.btn-ghost-light {
+  border: 1px solid rgba(240,237,232,.3); color: rgba(240,237,232,.8);
+  padding: 14px 30px; border-radius: 8px;
+  font-size: 14px; font-weight: 600; text-decoration: none;
+  transition: all .2s;
+}
+.btn-ghost-light:hover { border-color: rgba(240,237,232,.6); color: #F0EDE8; }
+
+.hero-right { position: relative; z-index: 2; display: flex; justify-content: center; }
+.hero-card-stack { position: relative; width: 380px; height: 420px; }
+.assessment-card {
+  position: absolute; background: rgba(253,252,250,.07);
+  backdrop-filter: blur(16px); border: 1px solid rgba(240,237,232,.12);
+  border-radius: 18px; padding: 24px; color: #F0EDE8;
+}
+.ac-main { width: 340px; top: 40px; left: 0; }
+.ac-float {
+  width: 200px; bottom: 20px; right: 0;
+  background: rgba(74,124,111,.3);
+  border-color: rgba(74,124,111,.4);
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+.ac-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #9ECFC3; margin-bottom: 14px; }
+.score-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.score-name { font-size: 13px; color: rgba(240,237,232,.8); }
+.score-bar-wrap { width: 140px; height: 5px; background: rgba(240,237,232,.12); border-radius: 3px; }
+.score-bar-fill { height: 100%; border-radius: 3px; }
+.score-val { font-size: 12px; font-weight: 700; font-family: 'Courier New', monospace; }
+.risk-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; margin-top: 10px; }
+.risk-mod { background: rgba(176,125,90,.3); color: #E8C4A0; border: 1px solid rgba(176,125,90,.4); }
+.ac-float-label { font-size: 12px; font-weight: 600; color: #9ECFC3; margin-bottom: 8px; }
+.referral-line { font-size: 11px; color: rgba(240,237,232,.7); margin-bottom: 5px; }
+
+/* ── TRUST BAR ── */
+.trust-bar {
+  background: var(--warm); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand);
+  padding: 22px 5%; display: flex; align-items: center; justify-content: center; gap: 60px; flex-wrap: wrap;
+}
+.trust-item { display: flex; align-items: center; gap: 10px; }
+.trust-num { font-family: var(--font-serif); font-size: 28px; font-weight: 700; color: var(--sage-dk); }
+.trust-label { font-size: 12px; color: var(--muted); font-weight: 500; line-height: 1.4; max-width: 80px; }
+.trust-divider { width: 1px; height: 36px; background: var(--sand); }
+
+/* ── SECTION ── */
+section { padding: 100px 5%; }
+.section-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.4px; color: var(--sage); margin-bottom: 14px; }
+.section-title { font-family: var(--font-serif); font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 20px; }
+.section-title em { color: var(--sage); font-style: italic; }
+.section-body { font-size: 16px; color: var(--ink2); max-width: 620px; line-height: 1.9; }
+
+/* ── PROBLEM ── */
+.problem { background: var(--cream); }
+.problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.stat-trio { display: flex; flex-direction: column; gap: 24px; margin-top: 40px; }
+.stat-block {
+  display: flex; align-items: flex-start; gap: 18px;
+  padding: 20px 24px; background: var(--white);
+  border-radius: 12px; border-left: 4px solid var(--clay);
+  box-shadow: 0 2px 12px rgba(28,36,32,.06);
+}
+.stat-num { font-family: var(--font-serif); font-size: 42px; font-weight: 700; color: var(--clay); line-height: 1; }
+.stat-text { font-size: 14px; color: var(--ink2); line-height: 1.6; padding-top: 4px; }
+.stat-text strong { display: block; font-size: 15px; color: var(--ink); font-weight: 700; margin-bottom: 4px; }
+
+.problem-visual {
+  position: relative; background: var(--white);
+  border-radius: 20px; padding: 36px;
+  box-shadow: 0 8px 40px rgba(28,36,32,.08);
+}
+.pv-title { font-family: var(--font-serif); font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 24px; }
+.condition-list { display: flex; flex-direction: column; gap: 12px; }
+.condition-row { display: flex; align-items: center; gap: 12px; }
+.cond-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.cond-name { font-size: 14px; font-weight: 600; color: var(--ink); flex: 1; }
+.cond-pct-bar { width: 100px; height: 6px; background: var(--warm); border-radius: 3px; overflow: hidden; }
+.cond-pct-fill { height: 100%; border-radius: 3px; transition: width 1s ease; }
+.cond-pct-num { font-size: 12px; font-weight: 700; font-family: 'Courier New', monospace; color: var(--muted); width: 34px; text-align: right; }
+.untreated-note { margin-top: 24px; padding: 14px 16px; background: rgba(176,125,90,.08); border-radius: 8px; border-left: 3px solid var(--clay); font-size: 13px; color: var(--ink2); font-style: italic; }
+
+/* ── HOW IT WORKS ── */
+.how { background: var(--white); }
+.how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 60px; }
+.step-list { display: flex; flex-direction: column; gap: 0; }
+.step {
+  display: flex; gap: 20px; padding: 28px 0;
+  border-bottom: 1px solid var(--warm); cursor: pointer;
+  transition: all .2s;
+}
+.step:last-child { border-bottom: none; }
+.step.active { padding-left: 12px; border-left: 3px solid var(--sage); margin-left: -3px; }
+.step-num { font-family: var(--font-serif); font-size: 32px; font-weight: 700; color: var(--sand); line-height: 1; flex-shrink: 0; width: 42px; transition: color .2s; }
+.step.active .step-num { color: var(--sage); }
+.step-content {}
+.step-title { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.step-desc { font-size: 14px; color: var(--muted); line-height: 1.7; display: none; }
+.step.active .step-desc { display: block; }
+
+.how-visual {
+  position: sticky; top: 100px;
+  background: var(--sage-dk); border-radius: 20px; padding: 36px; color: #F0EDE8;
+  box-shadow: 0 16px 60px rgba(28,36,32,.18);
+}
+.hv-screen { background: rgba(255,255,255,.06); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+.hv-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #9ECFC3; margin-bottom: 16px; }
+.assessment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ag-card { background: rgba(255,255,255,.07); border-radius: 8px; padding: 12px; }
+.ag-name { font-size: 11px; font-weight: 700; color: rgba(240,237,232,.7); margin-bottom: 4px; }
+.ag-score { font-size: 20px; font-weight: 700; font-family: var(--font-serif); }
+.ag-score.ok { color: #9ECFC3; }
+.ag-score.warn { color: #E8C4A0; }
+.ag-score.risk { color: #F4A0A0; }
+.ag-bar { height: 3px; border-radius: 2px; margin-top: 6px; }
+.hv-footer { display: flex; justify-content: space-between; align-items: center; }
+.hv-risk { display: inline-flex; align-items: center; gap: 8px; }
+.risk-circle { width: 10px; height: 10px; border-radius: 50%; }
+.hv-action { background: var(--clay); color: #fff; padding: 10px 20px; border-radius: 6px; font-size: 12px; font-weight: 700; border: none; cursor: pointer; }
+
+/* ── ASSESSMENTS ── */
+.assessments { background: var(--sage-dk); color: #F0EDE8; }
+.assessments .section-eyebrow { color: #9ECFC3; }
+.assessments .section-title { color: #F0EDE8; }
+.assessments .section-title em { color: #9ECFC3; }
+.assessments .section-body { color: rgba(240,237,232,.7); }
+.assess-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 50px; }
+.assess-card {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(240,237,232,.08);
+  border-radius: 14px; padding: 26px; transition: all .25s;
+}
+.assess-card:hover { background: rgba(255,255,255,.1); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.25); }
+.assess-abbr { font-family: var(--font-serif); font-size: 30px; font-weight: 700; color: #9ECFC3; margin-bottom: 8px; }
+.assess-name { font-size: 13px; font-weight: 700; color: #F0EDE8; margin-bottom: 6px; }
+.assess-desc { font-size: 12px; color: rgba(240,237,232,.55); line-height: 1.7; margin-bottom: 14px; }
+.assess-tag { display: inline-block; background: rgba(74,124,111,.3); color: #9ECFC3; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; padding: 3px 10px; border-radius: 10px; }
+
+/* ── RISK ── */
+.risk-section { background: var(--cream); }
+.risk-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: center; margin-top: 60px; }
+.risk-levels { display: flex; flex-direction: column; gap: 14px; }
+.risk-level {
+  display: flex; align-items: center; gap: 16px;
+  background: var(--white); border-radius: 12px; padding: 18px 22px;
+  box-shadow: 0 2px 12px rgba(28,36,32,.05); transition: transform .2s;
+}
+.risk-level:hover { transform: translateX(6px); }
+.rl-bar { width: 6px; height: 52px; border-radius: 3px; flex-shrink: 0; }
+.rl-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+.rl-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.rl-action { margin-left: auto; font-size: 11px; font-weight: 700; padding: 5px 12px; border-radius: 6px; text-align: center; flex-shrink: 0; }
+
+.risk-funnel {
+  background: var(--white); border-radius: 20px; padding: 36px;
+  box-shadow: 0 8px 40px rgba(28,36,32,.08);
+}
+.funnel-title { font-family: var(--font-serif); font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 28px; }
+.funnel-steps { display: flex; flex-direction: column; gap: 0; }
+.funnel-step {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 20px; background: var(--cream); border-radius: 10px;
+  margin-bottom: 6px; font-size: 14px; color: var(--ink2);
+}
+.funnel-step:last-child { margin-bottom: 0; }
+.fs-ico { font-size: 18px; flex-shrink: 0; }
+.fs-text strong { display: block; font-size: 13px; font-weight: 700; color: var(--ink); }
+.funnel-arrow { text-align: center; color: var(--sand); font-size: 18px; line-height: 1; margin-bottom: 6px; }
+
+/* ── EMPLOYER VALUE ── */
+.employer { background: var(--white); }
+.employer-header { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 60px; }
+.value-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.value-card {
+  background: var(--cream); border-radius: 16px; padding: 28px;
+  position: relative; overflow: hidden; transition: transform .2s;
+}
+.value-card:hover { transform: translateY(-4px); }
+.value-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--sage); }
+.vc-ico { font-size: 28px; margin-bottom: 14px; }
+.vc-title { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+.vc-body { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.vc-stat { font-family: var(--font-serif); font-size: 28px; font-weight: 700; color: var(--sage); margin-top: 14px; }
+
+/* ── CTA ── */
+.cta-section {
+  background: linear-gradient(135deg, var(--sage-dk) 0%, #1A3D35 100%);
+  padding: 100px 5%; text-align: center; position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: ''; position: absolute; top: -50%; left: -20%;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(74,124,111,.3) 0%, transparent 70%);
+}
+.cta-title { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: #F0EDE8; margin-bottom: 20px; line-height: 1.2; }
+.cta-sub { font-size: 17px; color: rgba(240,237,232,.65); max-width: 540px; margin: 0 auto 40px; line-height: 1.8; }
+.cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink); color: rgba(240,237,232,.5);
+  padding: 40px 5%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+}
+.footer-brand { font-family: var(--font-serif); font-size: 18px; font-weight: 700; color: rgba(240,237,232,.9); }
+.footer-links { display: flex; gap: 28px; }
+.footer-links a { color: rgba(240,237,232,.4); text-decoration: none; font-size: 13px; transition: color .2s; }
+.footer-links a:hover { color: rgba(240,237,232,.8); }
+
+/* ── ANIMATIONS ── */
+.fade-up { opacity: 0; transform: translateY(30px); animation: fadeUp .7s ease forwards; }
+.fade-up-d1 { animation-delay: .1s; }
+.fade-up-d2 { animation-delay: .2s; }
+.fade-up-d3 { animation-delay: .3s; }
+.fade-up-d4 { animation-delay: .4s; }
+.fade-up-d5 { animation-delay: .5s; }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 900px) {
+  .hero, .problem-grid, .how-grid, .risk-grid, .employer-header { grid-template-columns: 1fr; }
+  .hero { padding: 100px 5% 60px; }
+  .hero-right { display: none; }
+  .assess-grid { grid-template-columns: 1fr 1fr; }
+  .value-cards { grid-template-columns: 1fr; }
+  .trust-divider { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="dot"></div>
+    CognificaAI
+  </div>
+  <ul class="nav-links">
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#assessments">Assessments</a></li>
+    <li><a href="#risk">Risk Model</a></li>
+    <li><a href="#employers">For Employers</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Request Demo</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow fade-up">
+      <div class="hero-eyebrow-dot"></div>
+      Workplace Mental Health Platform
+    </div>
+    <h1 class="hero-title fade-up fade-up-d1">
+      Mental wellness,<br><em>measured and<br>managed</em> at scale.
+    </h1>
+    <p class="hero-sub fade-up fade-up-d2">
+      CognificaAI gives employers a clinically rigorous way to proactively support employee mental health — from automated screening and risk stratification to direct pathways for professional care.
+    </p>
+    <div class="hero-actions fade-up fade-up-d3">
+      <a href="#contact" class="btn-primary">Request a Demo →</a>
+      <a href="#how" class="btn-ghost-light">See How It Works</a>
+    </div>
+  </div>
+
+  <div class="hero-right fade-up fade-up-d4">
+    <div class="hero-card-stack">
+      <div class="assessment-card ac-main">
+        <div class="ac-label">Employee Assessment Dashboard</div>
+        <div class="score-row">
+          <span class="score-name">PHQ-9</span>
+          <div class="score-bar-wrap"><div class="score-bar-fill" style="width:65%;background:#E8C4A0"></div></div>
+          <span class="score-val" style="color:#E8C4A0">13</span>
+        </div>
+        <div class="score-row">
+          <span class="score-name">GAD-7</span>
+          <div class="score-bar-wrap"><div class="score-bar-fill" style="width:50%;background:#9ECFC3"></div></div>
+          <span class="score-val" style="color:#9ECFC3">8</span>
+        </div>
+        <div class="score-row">
+          <span class="score-name">PSQI</span>
+          <div class="score-bar-wrap"><div class="score-bar-fill" style="width:80%;background:#F4A0A0"></div></div>
+          <span class="score-val" style="color:#F4A0A0">14</span>
+        </div>
+        <div class="score-row">
+          <span class="score-name">PCL-5</span>
+          <div class="score-bar-wrap"><div class="score-bar-fill" style="width:45%;background:#9ECFC3"></div></div>
+          <span class="score-val" style="color:#9ECFC3">18</span>
+        </div>
+        <div class="risk-badge risk-mod">⚠ Moderate Risk — Action Recommended</div>
+      </div>
+
+      <div class="assessment-card ac-float">
+        <div class="ac-float-label">Referral Generated</div>
+        <div class="referral-line">✓ Licensed Therapist matched</div>
+        <div class="referral-line">✓ Crisis line available 24/7</div>
+        <div class="referral-line">✓ EAP notification sent</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <div class="trust-num">1 in 5</div>
+    <div class="trust-label">U.S. adults affected by mental illness annually</div>
+  </div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">
+    <div class="trust-num">$1T</div>
+    <div class="trust-label">Lost productivity globally per year</div>
+  </div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">
+    <div class="trust-num">46%</div>
+    <div class="trust-label">Of those with mental illness receive any treatment</div>
+  </div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">
+    <div class="trust-num">4×</div>
+    <div class="trust-label">ROI for employers who invest in mental health programs</div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem" id="problem">
+  <div class="problem-grid">
+    <div>
+      <div class="section-eyebrow">The Challenge</div>
+      <h2 class="section-title">Mental health is your <em>most under-addressed</em> workforce risk.</h2>
+      <p class="section-body">Most employers know mental illness is prevalent in their workforce. Few have a systematic way to identify it early, risk-stratify employees, and connect them to care before a crisis occurs.</p>
+      <div class="stat-trio">
+        <div class="stat-block">
+          <div class="stat-num">77%</div>
+          <div class="stat-text"><strong>Burnout is widespread</strong>Of employees report experiencing workplace burnout at least once — often silently and without support.</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num">$4,700</div>
+          <div class="stat-text"><strong>Per-employee annual cost</strong>The average cost of untreated depression to employers through absenteeism, presenteeism, and turnover.</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num">62%</div>
+          <div class="stat-text"><strong>Prefer digital-first screening</strong>Employees are more willing to disclose mental health concerns through a digital tool than directly to HR or a manager.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="problem-visual">
+      <div class="pv-title">Conditions often left undetected</div>
+      <div class="condition-list">
+        <div class="condition-row">
+          <div class="cond-icon" style="background:#FEF3EC">😰</div>
+          <span class="cond-name">Depression</span>
+          <div class="cond-pct-bar"><div class="cond-pct-fill" style="width:70%;background:#E8C4A0"></div></div>
+          <span class="cond-pct-num" style="color:#B07D5A">70%</span>
+        </div>
+        <div class="condition-row">
+          <div class="cond-icon" style="background:#EEF8F5">😟</div>
+          <span class="cond-name">Anxiety Disorders</span>
+          <div class="cond-pct-bar"><div class="cond-pct-fill" style="width:60%;background:#9ECFC3"></div></div>
+          <span class="cond-pct-num" style="color:#4A7C6F">60%</span>
+        </div>
+        <div class="condition-row">
+          <div class="cond-icon" style="background:#F5EEF8">🧠</div>
+          <span class="cond-name">PTSD / Trauma</span>
+          <div class="cond-pct-bar"><div class="cond-pct-fill" style="width:80%;background:#C4B0D8"></div></div>
+          <span class="cond-pct-num" style="color:#7B5EA7">80%</span>
+        </div>
+        <div class="condition-row">
+          <div class="cond-icon" style="background:#FDF2F2">💤</div>
+          <span class="cond-name">Sleep Disorders</span>
+          <div class="cond-pct-bar"><div class="cond-pct-fill" style="width:55%;background:#F4A0A0"></div></div>
+          <span class="cond-pct-num" style="color:#A83232">55%</span>
+        </div>
+        <div class="condition-row">
+          <div class="cond-icon" style="background:#F5F0E8">🍷</div>
+          <span class="cond-name">Substance Use</span>
+          <div class="cond-pct-bar"><div class="cond-pct-fill" style="width:65%;background:#D4B896"></div></div>
+          <span class="cond-pct-num" style="color:#8B6A44">65%</span>
+        </div>
+      </div>
+      <div class="untreated-note">Percentage of cases in the general workforce that go unidentified and untreated without a systematic screening program.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="section-eyebrow">How It Works</div>
+  <h2 class="section-title">A complete care pathway,<br><em>from screening to support.</em></h2>
+
+  <div class="how-grid">
+    <div class="step-list">
+      <div class="step active" onclick="setStep(this)">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <div class="step-title">Employee Completes Standardized Assessments</div>
+          <div class="step-desc">Employees access CognificaAI through a secure, confidential link via web or mobile. They complete a battery of validated clinical instruments — PHQ-9, GAD-7, PSQI, DAST-10, AUDIT, and PCL-5 — in under 10 minutes. No app download required. No IT integration needed.</div>
+        </div>
+      </div>
+      <div class="step" onclick="setStep(this)">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <div class="step-title">Proprietary Risk Score Calculated Instantly</div>
+          <div class="step-desc">CognificaAI's algorithm synthesizes all six assessment scores into a single composite Risk Score — stratified into Low, Moderate, Elevated, and High categories. Each score is benchmarked against clinical thresholds established in peer-reviewed research.</div>
+        </div>
+      </div>
+      <div class="step" onclick="setStep(this)">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <div class="step-title">Personalized Recommendations Delivered</div>
+          <div class="step-desc">Based on their risk profile, employees receive tailored guidance: psychoeducation for low-risk individuals, evidence-based self-help resources for moderate risk, and direct referrals to licensed mental health professionals for elevated and high-risk cases.</div>
+        </div>
+      </div>
+      <div class="step" onclick="setStep(this)">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <div class="step-title">Crisis Support Available Around the Clock</div>
+          <div class="step-desc">Employees who screen at high risk — or who express suicidal ideation — are immediately connected to crisis resources, including 24/7 crisis line integration and automated notifications to clinical staff where appropriate and consented.</div>
+        </div>
+      </div>
+      <div class="step" onclick="setStep(this)">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <div class="step-title">Employer Dashboard Tracks Aggregate Wellness</div>
+          <div class="step-desc">HR and wellness teams access an anonymized, HIPAA-compliant dashboard showing workforce mental health trends, engagement rates, risk distribution, and program utilization — without ever seeing individual employee data.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="how-visual">
+      <div class="hv-screen">
+        <div class="hv-label">Assessment Results — Composite View</div>
+        <div class="assessment-grid">
+          <div class="ag-card">
+            <div class="ag-name">PHQ-9 (Depression)</div>
+            <div class="ag-score warn">13</div>
+            <div class="ag-bar" style="background: linear-gradient(90deg, #E8C4A0 65%, rgba(255,255,255,.1) 65%)"></div>
+          </div>
+          <div class="ag-card">
+            <div class="ag-name">GAD-7 (Anxiety)</div>
+            <div class="ag-score ok">8</div>
+            <div class="ag-bar" style="background: linear-gradient(90deg, #9ECFC3 57%, rgba(255,255,255,.1) 57%)"></div>
+          </div>
+          <div class="ag-card">
+            <div class="ag-name">PSQI (Sleep)</div>
+            <div class="ag-score risk">14</div>
+            <div class="ag-bar" style="background: linear-gradient(90deg, #F4A0A0 80%, rgba(255,255,255,.1) 80%)"></div>
+          </div>
+          <div class="ag-card">
+            <div class="ag-name">PCL-5 (Trauma)</div>
+            <div class="ag-score ok">18</div>
+            <div class="ag-bar" style="background: linear-gradient(90deg, #9ECFC3 45%, rgba(255,255,255,.1) 45%)"></div>
+          </div>
+        </div>
+      </div>
+      <div class="hv-footer">
+        <div class="hv-risk">
+          <div class="risk-circle" style="background:#E8C4A0"></div>
+          <span style="font-size:13px;font-weight:700;color:#F0EDE8">Risk: <span style="color:#E8C4A0">Moderate</span></span>
+        </div>
+        <button class="hv-action">Generate Referral</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASSESSMENTS -->
+<section class="assessments" id="assessments">
+  <div class="section-eyebrow">Clinical Instruments</div>
+  <h2 class="section-title">Six validated tools.<br><em>One comprehensive picture.</em></h2>
+  <p class="section-body">Every assessment in CognificaAI is a gold-standard, peer-reviewed clinical instrument validated for use in both clinical and population-level screening contexts.</p>
+
+  <div class="assess-grid">
+    <div class="assess-card">
+      <div class="assess-abbr">PHQ-9</div>
+      <div class="assess-name">Patient Health Questionnaire</div>
+      <div class="assess-desc">The most widely used and validated tool for screening, monitoring, and measuring the severity of depression. Nine-item instrument mapped to DSM-5 diagnostic criteria.</div>
+      <span class="assess-tag">Depression</span>
+    </div>
+    <div class="assess-card">
+      <div class="assess-abbr">GAD-7</div>
+      <div class="assess-name">Generalized Anxiety Disorder Scale</div>
+      <div class="assess-desc">A seven-item instrument for identifying probable cases of generalized anxiety disorder and assessing symptom severity. Validated across diverse clinical populations.</div>
+      <span class="assess-tag">Anxiety</span>
+    </div>
+    <div class="assess-card">
+      <div class="assess-abbr">PSQI</div>
+      <div class="assess-name">Pittsburgh Sleep Quality Index</div>
+      <div class="assess-desc">Assesses sleep quality and disturbances over a one-month interval. Widely used in both clinical and occupational health settings to identify sleep-related impairments.</div>
+      <span class="assess-tag">Sleep Quality</span>
+    </div>
+    <div class="assess-card">
+      <div class="assess-abbr">DAST-10</div>
+      <div class="assess-name">Drug Abuse Screening Test</div>
+      <div class="assess-desc">A ten-item brief screening instrument for identifying problems related to drug misuse. Sensitive, specific, and appropriate for use across all occupational settings.</div>
+      <span class="assess-tag">Substance Use</span>
+    </div>
+    <div class="assess-card">
+      <div class="assess-abbr">AUDIT</div>
+      <div class="assess-name">Alcohol Use Disorders Identification Test</div>
+      <div class="assess-desc">Developed by the WHO, the gold-standard tool for screening hazardous and harmful alcohol consumption. Identifies risk before dependence develops.</div>
+      <span class="assess-tag">Alcohol Use</span>
+    </div>
+    <div class="assess-card">
+      <div class="assess-abbr">PCL-5</div>
+      <div class="assess-name">PTSD Checklist — DSM-5</div>
+      <div class="assess-desc">A 20-item self-report measure assessing the presence and severity of PTSD symptoms. Mapped directly to DSM-5 diagnostic criteria for post-traumatic stress disorder.</div>
+      <span class="assess-tag">Trauma / PTSD</span>
+    </div>
+  </div>
+</section>
+
+<!-- RISK MODEL -->
+<section class="risk-section" id="risk">
+  <div class="section-eyebrow">Risk Stratification</div>
+  <h2 class="section-title">From data to action —<br><em>automatically.</em></h2>
+  <p class="section-body">CognificaAI's proprietary risk algorithm synthesizes all assessment scores into a single, actionable risk tier. Each tier triggers a specific care pathway, ensuring no employee falls through the cracks.</p>
+
+  <div class="risk-grid">
+    <div class="risk-levels">
+      <div class="risk-level">
+        <div class="rl-bar" style="background:#4A9E6E"></div>
+        <div>
+          <div class="rl-title" style="color:#2E6B4A">Low Risk</div>
+          <div class="rl-desc">All scores within normal range. Employee receives psychoeducation resources and wellness tips to maintain mental health proactively.</div>
+        </div>
+        <div class="rl-action" style="background:#EEF8F3;color:#2E6B4A">Wellness Content</div>
+      </div>
+      <div class="risk-level">
+        <div class="rl-bar" style="background:#E8C4A0"></div>
+        <div>
+          <div class="rl-title" style="color:#8B5E35">Moderate Risk</div>
+          <div class="rl-desc">One or more scores at subclinical elevation. Employee receives targeted self-help resources and is encouraged to speak with their provider or EAP.</div>
+        </div>
+        <div class="rl-action" style="background:#FEF3EC;color:#8B5E35">EAP Guidance</div>
+      </div>
+      <div class="risk-level">
+        <div class="rl-bar" style="background:#E8A04A"></div>
+        <div>
+          <div class="rl-title" style="color:#7A5210">Elevated Risk</div>
+          <div class="rl-desc">Clinical thresholds exceeded on one or more instruments. Automated referral generated to a licensed mental health professional with direct booking.</div>
+        </div>
+        <div class="rl-action" style="background:#FBF3E4;color:#7A5210">Pro Referral</div>
+      </div>
+      <div class="risk-level">
+        <div class="rl-bar" style="background:#C85050"></div>
+        <div>
+          <div class="rl-title" style="color:#8B2E2E">High Risk / Crisis</div>
+          <div class="rl-desc">Severe scores or crisis indicators detected. Immediate connection to 24/7 crisis support, clinical escalation protocol activated, and urgent care coordination initiated.</div>
+        </div>
+        <div class="rl-action" style="background:#FAE8E8;color:#8B2E2E">Crisis Support</div>
+      </div>
+    </div>
+
+    <div class="risk-funnel">
+      <div class="funnel-title">How an employee moves through the system</div>
+      <div class="funnel-steps">
+        <div class="funnel-step">
+          <div class="fs-ico">📱</div>
+          <div class="fs-text">
+            <strong>Employee receives secure assessment link</strong>
+            Sent via email or SMS — no login or app required
+          </div>
+        </div>
+        <div class="funnel-arrow">↓</div>
+        <div class="funnel-step">
+          <div class="fs-ico">📋</div>
+          <div class="fs-text">
+            <strong>Completes 6-instrument battery</strong>
+            PHQ-9 · GAD-7 · PSQI · DAST-10 · AUDIT · PCL-5
+          </div>
+        </div>
+        <div class="funnel-arrow">↓</div>
+        <div class="funnel-step">
+          <div class="fs-ico">🧮</div>
+          <div class="fs-text">
+            <strong>Composite Risk Score generated</strong>
+            Algorithm weighs all six scores against clinical thresholds
+          </div>
+        </div>
+        <div class="funnel-arrow">↓</div>
+        <div class="funnel-step">
+          <div class="fs-ico">🎯</div>
+          <div class="fs-text">
+            <strong>Personalized care pathway activated</strong>
+            Resources, referrals, or crisis support based on risk tier
+          </div>
+        </div>
+        <div class="funnel-arrow">↓</div>
+        <div class="funnel-step">
+          <div class="fs-ico">📊</div>
+          <div class="fs-text">
+            <strong>Employer dashboard updated (anonymized)</strong>
+            Aggregate trend data only — individual privacy protected
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMPLOYER VALUE -->
+<section class="employer" id="employers">
+  <div class="employer-header">
+    <div>
+      <div class="section-eyebrow">For Employers</div>
+      <h2 class="section-title">A measurable return on<br><em>employee wellbeing.</em></h2>
+    </div>
+    <p class="section-body">CognificaAI was built for HR leaders, benefits managers, and occupational health directors who need more than an EAP hotline — they need a system that identifies risk early and drives action.</p>
+  </div>
+
+  <div class="value-cards">
+    <div class="value-card">
+      <div class="vc-ico">🔍</div>
+      <div class="vc-title">Early Detection</div>
+      <div class="vc-body">Proactively surface mental health risk before it becomes a performance issue, leave of absence, or workplace crisis. Identify what you can't see in annual reviews.</div>
+      <div class="vc-stat">35% ↑</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px">Increase in condition identification vs. no screening program</div>
+    </div>
+    <div class="value-card">
+      <div class="vc-ico">🔒</div>
+      <div class="vc-title">HIPAA Compliant & Confidential</div>
+      <div class="vc-body">Individual employee data is never shared with HR. Employers see only anonymized, aggregate dashboards. Built on HIPAA-compliant infrastructure from the ground up.</div>
+      <div class="vc-stat">100%</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px">Privacy-protected individual results</div>
+    </div>
+    <div class="value-card">
+      <div class="vc-ico">⚡</div>
+      <div class="vc-title">Zero IT Lift</div>
+      <div class="vc-body">Deploy across your entire workforce in days, not months. CognificaAI requires no EHR integration, no SSO setup, and no app installation. A link is all it takes.</div>
+      <div class="vc-stat">&lt; 1 week</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px">Average time from contract to launch</div>
+    </div>
+    <div class="value-card">
+      <div class="vc-ico">🏥</div>
+      <div class="vc-title">Direct Care Pathways</div>
+      <div class="vc-body">Unlike passive wellness apps, CognificaAI generates real referrals to licensed clinicians. High-risk employees are connected to professionals who can actually help.</div>
+    </div>
+    <div class="value-card">
+      <div class="vc-ico">📈</div>
+      <div class="vc-title">Measurable ROI</div>
+      <div class="vc-body">Track program engagement, risk reduction trends, and care utilization over time. Every CognificaAI deployment includes quarterly outcomes reporting for your leadership team.</div>
+    </div>
+    <div class="value-card">
+      <div class="vc-ico">🆘</div>
+      <div class="vc-title">24/7 Crisis Safety Net</div>
+      <div class="vc-body">When an employee is in crisis, CognificaAI doesn't just flag it — it acts. Immediate crisis resource connection and optional clinical escalation ensure no one is left without support.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <h2 class="cta-title">Ready to make mental health<br>a measurable priority?</h2>
+  <p class="cta-sub">Join forward-thinking employers using CognificaAI to proactively support their workforce — before crisis strikes.</p>
+  <div class="cta-actions">
+    <a href="#" class="btn-primary" style="font-size:15px;padding:16px 34px">Request a Demo →</a>
+    <a href="#" class="btn-ghost-light" style="font-size:15px;padding:16px 34px">Download Overview</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">CognificaAI</div>
+  <div style="font-size:12px">© 2026 · All rights reserved · HIPAA Compliant</div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Use</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+<script>
+function setStep(el) {
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>

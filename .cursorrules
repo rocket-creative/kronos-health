@@ -1,0 +1,84 @@
+# PROJECT RULES
+# This file MUST be read before any code changes
+
+## FIRST ACTIONS (Every Session)
+```bash
+git status                    # Verify on correct branch
+git log --oneline -1          # Get last commit number → next is N+1
+cat .ai-errors.log 2>/dev/null # Learn from past mistakes
+```
+
+## SKILL FILES (Read Before Relevant Work)
+Location: .cursor/rules/
+
+| Task | Required Reading |
+|------|------------------|
+| Any UI/component | design.md |
+| New page | seo.md + accessibility.md |
+| Forms, APIs, auth | security.md |
+| Healthcare/PHI | hipaa.md (MANDATORY, no exceptions) |
+| Copy/content | content.md |
+| Performance issues | performance.md |
+| Reviewing AI code | ai-review.md |
+
+## NON-NEGOTIABLE RULES
+
+### Typography
+ONLY these font weights exist:
+- 300 (font-light): Body, captions
+- 400 (font-normal): Labels, nav
+- 700 (font-bold): Headings, buttons
+
+FORBIDDEN: font-medium, font-semibold, font-extrabold, font-black
+
+### Copy
+- NO HYPHENS anywhere. Rewrite to avoid.
+  - "wellbeing" not "well-being"
+  - "cutting edge" not "cutting-edge"
+  - "(555) 123 4567" not "555-123-4567"
+- NO AI PHRASES: "dive into", "I'd be happy to", "leverage", "utilize", "in order to", "it's important to note"
+
+### Responsive (Mobile First)
+```
+sm: 393px   (base)
+md: 810px   (tablet)
+lg: 1024px  (laptop)
+xl: 1440px  (desktop)
+2xl: 1920px (large)
+```
+CORRECT: text-sm md:text-base lg:text-lg
+WRONG: text-2xl md:text-sm (never scale DOWN)
+
+## GIT WORKFLOW
+Branch: PROJECT_DEV (work), PROJECT_MAIN (production)
+Commit format: NNN_type_description
+- 001_chore_initial-setup
+- 002_feat_homepage
+- 003_fix_nav-mobile
+
+Types: chore, feat, fix, update, refactor, docs, test, style, perf
+
+## PRE-COMMIT CHECKLIST
+Before ANY commit, verify:
+- [ ] `npm run build` passes
+- [ ] `npm run dev` works
+- [ ] Font weights only 300/400/700
+- [ ] No hyphens in copy
+- [ ] Alt text on all images
+- [ ] No console.log left in code
+
+## CONTEXT MANAGEMENT
+At ~20 messages or feeling repetitive:
+1. STOP
+2. Summarize completed work
+3. List remaining tasks
+4. Commit current progress
+5. Recommend fresh session
+
+## FAILURE PROTOCOL
+If a rule cannot be followed:
+1. STOP immediately
+2. EXPLAIN the conflict
+3. PROPOSE compliant alternative
+4. WAIT for approval
+Never proceed without resolution.

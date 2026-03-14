@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synaptix — Concussion Care Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:    #0A1628;
+  --navy2:   #0F1F3D;
+  --navy3:   #162847;
+  --blue:    #1565C0;
+  --blue-lt: #1E80E8;
+  --ice:     #E8F1FB;
+  --teal:    #006B6B;
+  --teal-lt: #00A3A3;
+  --slate:   #334B66;
+  --steel:   #8BA3BF;
+  --line:    #1E3356;
+  --white:   #F8FAFD;
+  --text:    #E4EBF5;
+  --muted:   #6B88A8;
+  --amber:   #E8A020;
+  --green:   #00C48C;
+
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-sans:  'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono:  'IBM Plex Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); background: var(--navy); color: var(--text); line-height: 1.7; overflow-x: hidden; }
+
+/* grid lines texture */
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    linear-gradient(rgba(21,101,192,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21,101,192,.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  background: rgba(10,22,40,.92); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between; height: 64px;
+}
+.nav-logo {
+  font-family: var(--font-serif); font-size: 22px; color: var(--white);
+  display: flex; align-items: center; gap: 10px; letter-spacing: -.2px;
+}
+.nav-logo .synx-mark {
+  width: 28px; height: 28px; border: 2px solid var(--teal-lt);
+  border-radius: 7px; display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: var(--teal-lt);
+}
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { font-size: 13px; font-weight: 500; color: var(--steel); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: var(--teal); color: #fff; padding: 9px 22px; border-radius: 5px;
+  font-size: 13px; font-weight: 700; text-decoration: none; transition: background .2s;
+  font-family: var(--font-mono); letter-spacing: .3px;
+}
+.nav-cta:hover { background: var(--teal-lt); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh; position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+  padding: 120px 5% 80px; gap: 60px;
+}
+/* animated scan line */
+.hero::after {
+  content: ''; position: absolute; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--teal-lt) 50%, transparent 100%);
+  opacity: .3; animation: scan 4s linear infinite;
+  top: 0;
+}
+@keyframes scan { from { top: 64px; } to { top: 100%; } }
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--line); color: var(--teal-lt);
+  font-size: 11px; font-weight: 500; font-family: var(--font-mono);
+  text-transform: uppercase; letter-spacing: 1.8px;
+  padding: 6px 14px; border-radius: 3px; margin-bottom: 28px;
+}
+.blink { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-lt); animation: blink 1.2s ease infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.1} }
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(38px, 4.5vw, 60px);
+  line-height: 1.1; color: var(--white); margin-bottom: 24px;
+}
+.hero-title em { color: var(--teal-lt); font-style: italic; }
+.hero-sub {
+  font-size: 16px; font-weight: 300; color: var(--steel); max-width: 480px;
+  line-height: 1.85; margin-bottom: 40px;
+}
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-teal {
+  background: var(--teal); color: #fff; padding: 13px 28px; border-radius: 5px;
+  font-size: 13px; font-weight: 700; text-decoration: none;
+  font-family: var(--font-mono); letter-spacing: .3px;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all .2s; box-shadow: 0 4px 20px rgba(0,107,107,.4);
+}
+.btn-teal:hover { background: var(--teal-lt); transform: translateY(-2px); }
+.btn-outline {
+  border: 1px solid var(--line); color: var(--steel); padding: 13px 28px; border-radius: 5px;
+  font-size: 13px; font-weight: 500; text-decoration: none;
+  transition: all .2s;
+}
+.btn-outline:hover { border-color: var(--steel); color: var(--text); }
+
+/* hero dashboard */
+.hero-dash {
+  background: var(--navy2); border: 1px solid var(--line); border-radius: 12px;
+  overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,.5);
+}
+.dash-bar {
+  background: var(--navy3); border-bottom: 1px solid var(--line);
+  padding: 10px 16px; display: flex; align-items: center; gap: 8px;
+}
+.dash-dot { width: 8px; height: 8px; border-radius: 50%; }
+.dash-title { font-family: var(--font-mono); font-size: 11px; color: var(--steel); margin-left: 8px; letter-spacing: .8px; }
+.dash-body { padding: 20px; }
+.dash-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.dash-card { background: var(--navy3); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+.dc-label { font-family: var(--font-mono); font-size: 9px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 6px; }
+.dc-val { font-family: var(--font-serif); font-size: 28px; color: var(--white); line-height: 1; }
+.dc-val.ok { color: var(--green); }
+.dc-val.warn { color: var(--amber); }
+.dc-val.flag { color: #E85050; }
+.dc-sub { font-size: 11px; color: var(--muted); margin-top: 4px; }
+.dash-timeline { background: var(--navy3); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+.dt-label { font-family: var(--font-mono); font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 10px; }
+.dt-bars { display: flex; align-items: flex-end; gap: 4px; height: 50px; }
+.dt-bar { flex: 1; border-radius: 2px 2px 0 0; min-height: 4px; }
+.visit-labels { display: flex; justify-content: space-between; margin-top: 6px; }
+.visit-label { font-size: 9px; font-family: var(--font-mono); color: var(--muted); }
+.visit-label.active { color: var(--teal-lt); }
+
+/* ── METRICS BAR ── */
+.metrics-bar {
+  position: relative; z-index: 1;
+  background: var(--navy2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: 28px 5%;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+}
+.metric-item {
+  padding: 0 40px; border-right: 1px solid var(--line); text-align: center;
+}
+.metric-item:last-child { border-right: none; }
+.metric-num { font-family: var(--font-serif); font-size: 42px; color: var(--teal-lt); line-height: 1; }
+.metric-label { font-size: 12px; color: var(--muted); margin-top: 4px; font-weight: 500; }
+
+/* ── SECTION ── */
+section { padding: 100px 5%; position: relative; z-index: 1; }
+.section-tag { font-family: var(--font-mono); font-size: 11px; color: var(--teal-lt); text-transform: uppercase; letter-spacing: 1.6px; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.section-tag::before { content: '//'; color: var(--line); }
+.section-title { font-family: var(--font-serif); font-size: clamp(28px, 3.5vw, 44px); color: var(--white); line-height: 1.15; margin-bottom: 18px; }
+.section-title em { color: var(--teal-lt); font-style: italic; }
+.section-body { font-size: 15px; color: var(--steel); max-width: 600px; line-height: 1.9; font-weight: 300; }
+
+/* ── VISIT TYPES ── */
+.visits-section { background: var(--navy2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.visits-header { max-width: 700px; margin-bottom: 60px; }
+.visit-tabs { display: flex; gap: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin-bottom: 40px; width: fit-content; }
+.visit-tab {
+  padding: 10px 24px; font-size: 13px; font-weight: 600; font-family: var(--font-mono);
+  color: var(--muted); cursor: pointer; background: none; border: none;
+  border-right: 1px solid var(--line); transition: all .2s; font-family: var(--font-sans);
+}
+.visit-tab:last-child { border-right: none; }
+.visit-tab.active { background: var(--teal); color: #fff; }
+.visit-panel { display: none; }
+.visit-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.vp-left {}
+.vp-title { font-family: var(--font-serif); font-size: 26px; color: var(--white); margin-bottom: 10px; }
+.vp-subtitle { font-size: 13px; font-family: var(--font-mono); color: var(--teal-lt); margin-bottom: 24px; letter-spacing: .4px; }
+.vp-desc { font-size: 15px; color: var(--steel); line-height: 1.85; font-weight: 300; margin-bottom: 28px; }
+.component-list { display: flex; flex-direction: column; gap: 10px; }
+.component-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px; background: rgba(255,255,255,.04); border: 1px solid var(--line);
+  border-radius: 8px; font-size: 13px; color: var(--text);
+}
+.ci-tag { font-family: var(--font-mono); font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 3px; flex-shrink: 0; }
+.ci-required { background: rgba(0,107,107,.3); color: var(--teal-lt); border: 1px solid rgba(0,163,163,.3); }
+.ci-optional { background: rgba(232,160,32,.15); color: var(--amber); border: 1px solid rgba(232,160,32,.25); }
+.ci-testing { background: rgba(30,128,232,.15); color: #7AB8F5; border: 1px solid rgba(30,128,232,.25); }
+.report-box {
+  background: var(--navy3); border: 1px solid var(--line); border-radius: 10px; padding: 22px;
+}
+.rb-title { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--teal-lt); margin-bottom: 16px; }
+.rb-formula {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 16px; background: rgba(0,0,0,.3); border-radius: 8px; margin-bottom: 16px;
+}
+.rf-block { background: rgba(21,101,192,.25); border: 1px solid rgba(21,101,192,.4); color: #7AB8F5; padding: 6px 12px; border-radius: 5px; font-size: 12px; font-weight: 700; font-family: var(--font-mono); }
+.rf-block.teal { background: rgba(0,107,107,.25); border-color: rgba(0,163,163,.4); color: var(--teal-lt); }
+.rf-plus { color: var(--muted); font-size: 16px; font-weight: 300; }
+.rb-note { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+/* ── ALGORITHM ── */
+.algorithm { border-top: 1px solid var(--line); }
+.algo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 60px; }
+.algo-steps { display: flex; flex-direction: column; gap: 0; }
+.algo-step { display: flex; gap: 20px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+.algo-step:last-child { border-bottom: none; }
+.as-num { font-family: var(--font-mono); font-size: 11px; font-weight: 500; color: var(--teal-lt); letter-spacing: 1px; padding-top: 2px; flex-shrink: 0; }
+.as-title { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 5px; }
+.as-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+.algo-terminal {
+  background: var(--navy2); border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+  font-family: var(--font-mono); font-size: 12px;
+  box-shadow: 0 16px 60px rgba(0,0,0,.5);
+}
+.terminal-bar { background: var(--navy3); border-bottom: 1px solid var(--line); padding: 10px 16px; display: flex; align-items: center; gap: 8px; }
+.t-dot { width: 10px; height: 10px; border-radius: 50%; }
+.terminal-body { padding: 20px; line-height: 2; }
+.t-comment { color: #3D6B90; }
+.t-key { color: #7AB8F5; }
+.t-val { color: var(--teal-lt); }
+.t-val-warn { color: var(--amber); }
+.t-val-risk { color: #E85050; }
+.t-val-ok { color: var(--green); }
+.t-str { color: #C3A6FF; }
+.t-fn { color: var(--amber); }
+.t-indent { padding-left: 20px; }
+.t-indent2 { padding-left: 40px; }
+.t-result { background: rgba(0,107,107,.15); border-left: 3px solid var(--teal-lt); padding: 8px 12px; border-radius: 0 6px 6px 0; margin-top: 10px; color: var(--teal-lt); }
+
+/* ── TESTING BATTERY ── */
+.battery { background: var(--navy2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.battery-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 50px; }
+.test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.test-card {
+  background: rgba(255,255,255,.03); border: 1px solid var(--line);
+  border-radius: 10px; padding: 20px; transition: all .25s; cursor: default;
+  position: relative; overflow: hidden;
+}
+.test-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--teal); transform: scaleX(0); transition: transform .3s; }
+.test-card:hover::before { transform: scaleX(1); }
+.test-card:hover { background: rgba(0,107,107,.08); border-color: rgba(0,107,107,.4); transform: translateY(-3px); }
+.tc-abbr { font-family: var(--font-serif); font-size: 22px; color: var(--teal-lt); margin-bottom: 6px; }
+.tc-name { font-size: 12px; font-weight: 600; color: var(--white); margin-bottom: 5px; }
+.tc-desc { font-size: 11px; color: var(--muted); line-height: 1.7; }
+.tc-freq { margin-top: 12px; font-family: var(--font-mono); font-size: 10px; color: var(--teal-lt); background: rgba(0,107,107,.15); padding: 3px 8px; border-radius: 3px; display: inline-block; }
+
+/* ── THERAPY ── */
+.therapy { border-top: 1px solid var(--line); }
+.therapy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 50px; }
+.therapy-card {
+  background: var(--navy2); border: 1px solid var(--line); border-radius: 12px; padding: 28px;
+  position: relative; overflow: hidden; transition: transform .2s;
+}
+.therapy-card:hover { transform: translateY(-4px); }
+.therapy-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+}
+.therapy-card.crt::after { background: linear-gradient(90deg, var(--teal), var(--teal-lt)); }
+.therapy-card.digital::after { background: linear-gradient(90deg, var(--blue), var(--blue-lt)); }
+.therapy-card.npe::after { background: linear-gradient(90deg, var(--amber), #F0C040); }
+.tc2-ico { font-size: 32px; margin-bottom: 16px; }
+.tc2-title { font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+.tc2-sub { font-family: var(--font-mono); font-size: 11px; color: var(--teal-lt); margin-bottom: 16px; letter-spacing: .4px; }
+.tc2-body { font-size: 13px; color: var(--muted); line-height: 1.8; }
+.tc2-specs { margin-top: 18px; display: flex; flex-direction: column; gap: 6px; }
+.spec-row { display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
+.spec-key { color: var(--muted); }
+.spec-val { color: var(--text); font-weight: 600; font-family: var(--font-mono); }
+
+/* ── POC TRIGGERS ── */
+.poc { background: var(--navy2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.poc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 60px; }
+.trigger-list { display: flex; flex-direction: column; gap: 10px; }
+.trigger {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 18px; border-radius: 8px; border: 1px solid;
+  font-size: 13px;
+}
+.trigger.danger { background: rgba(232,80,80,.08); border-color: rgba(232,80,80,.2); }
+.trigger.warn { background: rgba(232,160,32,.08); border-color: rgba(232,160,32,.2); }
+.trigger.info { background: rgba(0,107,107,.08); border-color: rgba(0,163,163,.2); }
+.trigger.ok { background: rgba(0,196,140,.08); border-color: rgba(0,196,140,.2); }
+.trig-ico { font-size: 16px; flex-shrink: 0; }
+.trig-title { font-weight: 700; color: var(--white); margin-bottom: 3px; font-size: 13px; }
+.trig-sub { color: var(--muted); font-size: 12px; }
+
+.coding-table { width: 100%; border-collapse: collapse; }
+.coding-table th {
+  background: var(--navy3); padding: 10px 14px; text-align: left;
+  font-size: 10px; font-family: var(--font-mono); text-transform: uppercase;
+  letter-spacing: 1px; color: var(--teal-lt); border-bottom: 1px solid var(--line);
+}
+.coding-table td { padding: 11px 14px; border-bottom: 1px solid rgba(30,51,86,.5); font-size: 13px; color: var(--steel); vertical-align: middle; }
+.coding-table tr:hover td { background: rgba(255,255,255,.02); }
+.code-tag { font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: var(--teal-lt); background: rgba(0,107,107,.2); padding: 2px 8px; border-radius: 3px; }
+
+/* ── CTA ── */
+.cta-section {
+  border-top: 1px solid var(--line); padding: 100px 5%;
+  position: relative; z-index: 1; overflow: hidden;
+}
+.cta-section::before {
+  content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 700px; height: 700px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,107,107,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-inner { text-align: center; position: relative; }
+.cta-title { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 48px); color: var(--white); margin-bottom: 20px; line-height: 1.15; }
+.cta-title em { color: var(--teal-lt); font-style: italic; }
+.cta-sub { font-size: 16px; color: var(--steel); max-width: 520px; margin: 0 auto 40px; line-height: 1.85; font-weight: 300; }
+.cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy2); border-top: 1px solid var(--line);
+  padding: 36px 5%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+  position: relative; z-index: 1;
+}
+.footer-brand { font-family: var(--font-serif); font-size: 18px; color: var(--text); }
+.footer-mono { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 12px; transition: color .2s; }
+.footer-links a:hover { color: var(--steel); }
+
+/* ── ANIMATIONS ── */
+.fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn .6s ease forwards; }
+.fd1 { animation-delay: .1s; } .fd2 { animation-delay: .2s; } .fd3 { animation-delay: .3s; } .fd4 { animation-delay: .4s; }
+@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 900px) {
+  .hero, .algo-grid, .poc-grid, .battery-intro, .visit-panel.active { grid-template-columns: 1fr; }
+  .hero-dash { display: none; }
+  .metrics-bar { grid-template-columns: 1fr 1fr; }
+  .metric-item { border-right: none; border-bottom: 1px solid var(--line); padding: 16px; }
+  .test-grid { grid-template-columns: 1fr 1fr; }
+  .therapy-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="synx-mark">Sx</div>
+    Synaptix
+  </div>
+  <ul class="nav-links">
+    <li><a href="#visits">Visit Types</a></li>
+    <li><a href="#algorithm">Algorithm</a></li>
+    <li><a href="#battery">Testing</a></li>
+    <li><a href="#therapy">Therapy</a></li>
+    <li><a href="#coding">Coding</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Request Demo</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow fade-in">
+      <div class="blink"></div>
+      Concussion Care Platform
+    </div>
+    <h1 class="hero-title fade-in fd1">
+      Precision-guided<br>concussion care —<br><em>from injury to recovery.</em>
+    </h1>
+    <p class="hero-sub fade-in fd2">
+      Synaptix is a clinically rigorous software platform that standardizes the entire concussion management workflow — from history and exam through neuropsychological testing, cognitive therapy, and outcomes tracking.
+    </p>
+    <div class="hero-actions fade-in fd3">
+      <a href="#contact" class="btn-teal">Schedule Demo →</a>
+      <a href="#visits" class="btn-outline">See the Protocol</a>
+    </div>
+  </div>
+
+  <div class="hero-dash fade-in fd4">
+    <div class="dash-bar">
+      <div class="dash-dot" style="background:#E85050"></div>
+      <div class="dash-dot" style="background:#E8A020"></div>
+      <div class="dash-dot" style="background:#00C48C"></div>
+      <div class="dash-title">SYNAPTIX_PATIENT_OVERVIEW.SX</div>
+    </div>
+    <div class="dash-body">
+      <div class="dash-row">
+        <div class="dash-card">
+          <div class="dc-label">PCSS Score</div>
+          <div class="dc-val warn">34</div>
+          <div class="dc-sub">↑ Threshold &gt;27</div>
+        </div>
+        <div class="dash-card">
+          <div class="dc-label">HIT-6 Score</div>
+          <div class="dc-val warn">58</div>
+          <div class="dc-sub">↑ Threshold &gt;50</div>
+        </div>
+        <div class="dash-card">
+          <div class="dc-label">PHQ-9</div>
+          <div class="dc-val flag">13</div>
+          <div class="dc-sub">Moderate depression</div>
+        </div>
+        <div class="dash-card">
+          <div class="dc-label">CRT Sessions</div>
+          <div class="dc-val ok">4/24</div>
+          <div class="dc-sub">2× per week active</div>
+        </div>
+      </div>
+      <div class="dash-timeline">
+        <div class="dt-label">NPE Score Trend — 3 Months</div>
+        <div class="dt-bars">
+          <div class="dt-bar" style="height:34%;background:rgba(232,80,80,.7)"></div>
+          <div class="dt-bar" style="height:34%;background:rgba(232,80,80,.7)"></div>
+          <div class="dt-bar" style="height:48%;background:rgba(232,160,32,.7)"></div>
+          <div class="dt-bar" style="height:55%;background:rgba(232,160,32,.7)"></div>
+          <div class="dt-bar" style="height:62%;background:rgba(0,163,163,.7)"></div>
+          <div class="dt-bar" style="height:70%;background:rgba(0,163,163,.8)"></div>
+          <div class="dt-bar" style="height:78%;background:var(--teal-lt)"></div>
+          <div class="dt-bar" style="height:82%;background:var(--teal-lt)"></div>
+        </div>
+        <div class="visit-labels">
+          <span class="visit-label">IE</span>
+          <span class="visit-label">FB</span>
+          <span class="visit-label">Wk4</span>
+          <span class="visit-label">Wk6</span>
+          <span class="visit-label">Wk8</span>
+          <span class="visit-label">Wk10</span>
+          <span class="visit-label active">RE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS BAR -->
+<div class="metrics-bar">
+  <div class="metric-item">
+    <div class="metric-num">3</div>
+    <div class="metric-label">Structured visit types with automated workflows</div>
+  </div>
+  <div class="metric-item">
+    <div class="metric-num">6</div>
+    <div class="metric-label">Validated neuropsychological instruments</div>
+  </div>
+  <div class="metric-item">
+    <div class="metric-num">24</div>
+    <div class="metric-label">Cognitive remediation sessions per treatment cycle</div>
+  </div>
+  <div class="metric-item">
+    <div class="metric-num">12 wk</div>
+    <div class="metric-label">Structured re-evaluation cycle with outcomes tracking</div>
+  </div>
+</div>
+
+<!-- VISIT TYPES -->
+<section class="visits-section" id="visits">
+  <div class="visits-header">
+    <div class="section-tag">Visit Protocol</div>
+    <h2 class="section-title">Three visit types.<br><em>One standardized system.</em></h2>
+    <p class="section-body">Synaptix structures concussion management into three defined visit types — each with its own form requirements, testing components, and automatically assembled clinical report.</p>
+  </div>
+
+  <div class="visit-tabs">
+    <button class="visit-tab active" onclick="setVisit(this,'ie')">Initial Evaluation</button>
+    <button class="visit-tab" onclick="setVisit(this,'fb')">Feedback Visit</button>
+    <button class="visit-tab" onclick="setVisit(this,'re')">Re-Evaluation</button>
+  </div>
+
+  <!-- IE -->
+  <div class="visit-panel active" id="panel-ie">
+    <div class="vp-left">
+      <div class="vp-title">Initial Evaluation (IE)</div>
+      <div class="vp-subtitle">// First visit · Occurs one time</div>
+      <p class="vp-desc">The initial evaluation establishes the complete clinical baseline. The patient completes a comprehensive concussion history while the physician performs a neurological and vestibular exam, entering all findings into Synaptix's structured forms. Neuropsychological testing is administered at this visit.</p>
+      <div class="component-list">
+        <div class="component-item"><span class="ci-tag ci-required">Required</span>History (HX) — Completed by patient</div>
+        <div class="component-item"><span class="ci-tag ci-required">Required</span>Exam (EX) — Physician completes; defaults pre-populated</div>
+        <div class="component-item"><span class="ci-tag ci-testing">Testing</span>NPE-CX — Neuropsychological assessment battery</div>
+        <div class="component-item"><span class="ci-tag ci-required">Required</span>Diagnosis (DX) — ICD-10 selection with secondary codes</div>
+        <div class="component-item"><span class="ci-tag ci-required">Required</span>Plan of Care (POC) — Trigger-based functional recommendations</div>
+      </div>
+    </div>
+    <div class="report-box">
+      <div class="rb-title">IE Report Assembly</div>
+      <div class="rb-formula">
+        <span class="rf-block">HX</span>
+        <span class="rf-plus">+</span>
+        <span class="rf-block">EX</span>
+        <span class="rf-plus">+</span>
+        <span class="rf-block">DX</span>
+        <span class="rf-plus">+</span>
+        <span class="rf-block teal">POC</span>
+      </div>
+      <div class="rb-note">Report is automatically assembled from completed form components. NPE results administered at IE are carried forward to the Feedback Visit report.</div>
+    </div>
+  </div>
+
+  <!-- FB -->
+  <div class="visit-panel" id="panel-fb">
+    <div class="vp-left">
+      <div class="vp-title">Feedback Visit (FB)</div>
+      <div class="vp-subtitle">// Second visit · Occurs one time · ~2 weeks post-IE</div>
+      <p class="vp-desc">The feedback visit is where the physician reviews all initial evaluation results with the patient and establishes the treatment plan. The exam from the IE is carried forward. NPE results — administered at the IE — are formally reviewed and interpreted at this visit.</p>
+      <div class="component-list">
+        <div class="component-item"><span class="ci-tag ci-required">Required</span>History (HX) — Carried from IE visit</div>
+        <div class="component-item"><span class="ci-tag ci-required">Required</span>Exam (EX) — Carried from IE; re-examined if indicated</div>
+        <div class="component-item"><span class="ci-tag ci-testing">Testing</span>NPE Results — Interpreted at FB; administered at IE</div>
+        <div class="component-item"><span class="ci-tag ci-optional">Optional</span>Digital Evaluations (DE) — Included if available</div>
+        <div class="component-item"><span class="ci-tag ci-required">Required</span>Diagnosis (DX) + Plan of Care (POC)</div>
+      </div>
+    </div>
+    <div class="report-box">
+      <div class="rb-title">FB Report Assembly</div>
+      <div class="rb-formula">
+        <span class="rf-block">HX</span>
+        <span class="rf-plus">+</span>
+        <span class="rf-block">EX<sub style="font-size:9px;margin-left:2px">IE</sub></span>
+        <span class="rf-plus">+</span>
+        <span class="rf-block teal">NPE</span>
+        <span class="rf-plus">+</span>
+        <span class="rf-block" style="opacity:.6">DE?</span>
+        <span class="rf-plus">+</span>
+        <span class="rf-block">DX</span>
+        <span class="rf-plus">+</span>
+        <span class="rf-block teal">POC</span>
+      </div>
+      <div class="rb-note">EX is the original IE exam, carried forward. DE inclusion is optional — added only if digital evaluations were completed between IE and FB. NPE is interpreted and formally documented here.</div>
+    </div>
+  </div>
+
+  <!-- RE -->
+  <div class="visit-panel" id="panel-re">
+    <div class="vp-left">
+      <div class="vp-title">Re-Evaluation (RE)</div>
+      <div class="vp-subtitle">// Recurring · Every 12 weeks · May occur multiple times</div>
+      <p class="vp-desc">The re-evaluation is the program's longitudinal checkpoint. It includes an updated patient history, all NPE assessments since the last Feedback Visit, a full CRT session summary with trends, and cumulative digital evaluation data — providing a comprehensive picture of recovery progress.</p>
+      <div class="component-list">
+        <div class="component-item"><span class="ci-tag ci-required">Required</span>History (HX) — Original</div>
+        <div class="component-item"><span class="ci-tag ci-required">Required</span>History Update (HU) — Patient completes at RE visit</div>
+        <div class="component-item"><span class="ci-tag ci-optional">Optional</span>Exam (EX) — Re-administered at physician discretion</div>
+        <div class="component-item"><span class="ci-tag ci-testing">Testing</span>All NPEs since FB date — Scores + trends</div>
+        <div class="component-item"><span class="ci-tag ci-testing">Testing</span>DE Summary — Sessions, scores, trends</div>
+        <div class="component-item"><span class="ci-tag ci-testing">Testing</span>CRT Summary — Sessions completed, score trends</div>
+        <div class="component-item"><span class="ci-tag ci-required">Required</span>Diagnosis (DX) + Updated Plan of Care (POC)</div>
+      </div>
+    </div>
+    <div class="report-box">
+      <div class="rb-title">RE Report Assembly</div>
+      <div class="rb-formula" style="flex-wrap:wrap">
+        <span class="rf-block">HX</span>
+        <span class="rf-plus">+</span>
+        <span class="rf-block teal">HU</span>
+        <span class="rf-plus">+</span>
+        <span class="rf-block" style="opacity:.6">EX?</span>
+        <span class="rf-plus">+</span>
+        <span class="rf-block teal">NPE×n</span>
+        <span class="rf-plus">+</span>
+        <span class="rf-block teal">DE</span>
+        <span class="rf-plus">+</span>
+        <span class="rf-block teal">CRT</span>
+        <span class="rf-plus">+</span>
+        <span class="rf-block">DX</span>
+        <span class="rf-plus">+</span>
+        <span class="rf-block teal">POC</span>
+      </div>
+      <div class="rb-note">All NPE sessions after the FB date are included. CRT and DE summaries include session counts, composite scores, and trend analysis over the 12-week cycle.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ALGORITHM -->
+<section class="algorithm" id="algorithm">
+  <div class="section-tag">Proprietary Algorithm</div>
+  <h2 class="section-title">Clinical logic,<br><em>encoded and automated.</em></h2>
+
+  <div class="algo-grid">
+    <div class="algo-steps">
+      <div class="algo-step">
+        <div class="as-num">01 //</div>
+        <div>
+          <div class="as-title">Structured History Collection</div>
+          <div class="as-desc">Synaptix guides patients through a 21-section concussion history capturing injury mechanism, loss of consciousness, immediate symptoms, prior concussions, medical history, and full symptom scoring across 11 domains on a 0–10 scale.</div>
+        </div>
+      </div>
+      <div class="algo-step">
+        <div class="as-num">02 //</div>
+        <div>
+          <div class="as-title">Exam with Intelligent Defaults</div>
+          <div class="as-desc">The physical examination — covering neurological baseline, vestibular function (VOR, VMS, NPC), smooth pursuits, saccades, and BESS balance testing — pre-populates with normal defaults. Physicians document only deviations, reducing documentation time by over 60%.</div>
+        </div>
+      </div>
+      <div class="algo-step">
+        <div class="as-num">03 //</div>
+        <div>
+          <div class="as-title">Neuropsychological Battery Processing</div>
+          <div class="as-desc">PCSS, HIT-6, PHQ-9, GAD-7, PCL-5, and PSQI scores are synthesized against validated clinical thresholds. The algorithm identifies score combinations that trigger specific clinical interventions, automatically generating a customized Plan of Care.</div>
+        </div>
+      </div>
+      <div class="algo-step">
+        <div class="as-num">04 //</div>
+        <div>
+          <div class="as-title">Trigger-Based Plan of Care Generation</div>
+          <div class="as-desc">Each symptom score combination triggers a pre-defined functional recommendation — work restrictions, driving limitations, screen time guidelines, vestibular PT referrals, cognitive remediation therapy, and return-to-clinic scheduling — assembled automatically into the Plan of Care.</div>
+        </div>
+      </div>
+      <div class="algo-step">
+        <div class="as-num">05 //</div>
+        <div>
+          <div class="as-title">Longitudinal Outcomes Tracking</div>
+          <div class="as-desc">All NPE, CRT, and Digital Evaluation data is stored longitudinally per patient. The RE report automatically aggregates all data since the Feedback Visit, generating trend analyses, score trajectories, and session summaries without manual data entry.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="algo-terminal">
+      <div class="terminal-bar">
+        <div class="t-dot" style="background:#E85050"></div>
+        <div class="t-dot" style="background:#E8A020"></div>
+        <div class="t-dot" style="background:#00C48C"></div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-left:8px;letter-spacing:.8px">SYNAPTIX_POC_ENGINE.SX</div>
+      </div>
+      <div class="terminal-body">
+        <div class="t-comment">// Plan of Care trigger evaluation</div>
+        <div><span class="t-key">const</span> scores = <span class="t-fn">getPatientScores</span>();</div>
+        <br>
+        <div class="t-comment">// Symptom threshold checks</div>
+        <div><span class="t-key">if</span> (scores.<span class="t-val-warn">headache</span> &gt; <span class="t-val">4</span>) {</div>
+        <div class="t-indent"><span class="t-fn">addRestriction</span>(<span class="t-str">"Limit work: part-time, 2 wks"</span>);</div>
+        <div class="t-indent"><span class="t-fn">addRestriction</span>(<span class="t-str">"No driving, 2 wks"</span>);</div>
+        <div class="t-indent"><span class="t-fn">addRestriction</span>(<span class="t-str">"Screen time &lt; 30 min/day"</span>);</div>
+        <div>}</div>
+        <br>
+        <div><span class="t-key">if</span> (scores.<span class="t-val-risk">dizziness</span> &gt; <span class="t-val">3</span>) {</div>
+        <div class="t-indent"><span class="t-fn">addReferral</span>(<span class="t-str">"Vestibular PT: 2×/wk × 2 wks"</span>);</div>
+        <div>}</div>
+        <br>
+        <div><span class="t-key">if</span> (scores.<span class="t-val-warn">PCSS</span> &gt; <span class="t-val">27</span> || scores.<span class="t-val-warn">HIT6</span> &gt; <span class="t-val">59</span>) {</div>
+        <div class="t-indent"><span class="t-fn">enrollCRT</span>({ freq: <span class="t-str">"2×/wk"</span>, weeks: <span class="t-val">12</span> });</div>
+        <div>}</div>
+        <br>
+        <div><span class="t-key">if</span> (scores.<span class="t-val-risk">PHQ9</span> &gt; <span class="t-val">10</span> || scores.<span class="t-val-risk">GAD7</span> &gt; <span class="t-val">10</span>) {</div>
+        <div class="t-indent"><span class="t-fn">referral</span>(<span class="t-str">"CognificaChat: 2×/wk × 12 wks"</span>);</div>
+        <div>}</div>
+        <div class="t-result">✓ POC generated · 5 interventions · RTC: 12 weeks</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTING BATTERY -->
+<section class="battery" id="battery">
+  <div class="battery-intro">
+    <div>
+      <div class="section-tag">Neuropsychological Battery</div>
+      <h2 class="section-title">Six instruments.<br><em>Complete cognitive picture.</em></h2>
+    </div>
+    <p class="section-body" style="padding-top:30px">The NPE-CX battery combines the gold-standard instruments for concussion-related cognitive and psychological assessment — administered digitally, scored automatically, and compared against normative clinical thresholds.</p>
+  </div>
+
+  <div class="test-grid">
+    <div class="test-card">
+      <div class="tc-abbr">PCSS</div>
+      <div class="tc-name">Post-Concussion Symptom Scale</div>
+      <div class="tc-desc">22-symptom self-report scale validating concussion symptom burden. Threshold &gt;27 triggers CRT enrollment. Tracked at every NPE session for longitudinal trend analysis.</div>
+      <span class="tc-freq">Monthly / Every visit</span>
+    </div>
+    <div class="test-card">
+      <div class="tc-abbr">HIT-6</div>
+      <div class="tc-name">Headache Impact Test</div>
+      <div class="tc-desc">Measures the impact of headaches on daily functioning. Score &gt;59 indicates severe headache impact and triggers cognitive remediation referral alongside PCSS.</div>
+      <span class="tc-freq">Monthly</span>
+    </div>
+    <div class="test-card">
+      <div class="tc-abbr">PHQ-9</div>
+      <div class="tc-name">Patient Health Questionnaire</div>
+      <div class="tc-desc">Depression severity screening. Score &gt;10 triggers CognificaChat referral (2×/week × 12 weeks). Monitored across visits for treatment response evaluation.</div>
+      <span class="tc-freq">Monthly</span>
+    </div>
+    <div class="test-card">
+      <div class="tc-abbr">GAD-7</div>
+      <div class="tc-name">Generalized Anxiety Disorder Scale</div>
+      <div class="tc-desc">Anxiety severity measure. Score &gt;10 co-triggers mental health referral with PHQ-9. Distinguishes anxiety-related cognitive complaints from direct concussion effects.</div>
+      <span class="tc-freq">Monthly</span>
+    </div>
+    <div class="test-card">
+      <div class="tc-abbr">PCL-5</div>
+      <div class="tc-name">PTSD Checklist — DSM-5</div>
+      <div class="tc-desc">Trauma symptom assessment critical for patients with assault or MVA-related concussions. Score &gt;21 triggers CognificaChat referral protocol for trauma-focused care.</div>
+      <span class="tc-freq">Monthly</span>
+    </div>
+    <div class="test-card">
+      <div class="tc-abbr">PSQI</div>
+      <div class="tc-name">Pittsburgh Sleep Quality Index</div>
+      <div class="tc-desc">Sleep quality assessment essential in concussion management, where sleep disturbance both signals and perpetuates neurological impairment and impedes recovery.</div>
+      <span class="tc-freq">Monthly</span>
+    </div>
+  </div>
+</section>
+
+<!-- THERAPY & MONITORING -->
+<section class="therapy" id="therapy">
+  <div class="section-tag">Recovery Programs</div>
+  <h2 class="section-title">Three active programs<br><em>drive recovery between visits.</em></h2>
+  <p class="section-body">Synaptix doesn't stop at assessment. Three integrated recovery programs — triggered automatically by clinical findings — keep patients engaged and recovering in the weeks between clinic visits.</p>
+
+  <div class="therapy-grid">
+    <div class="therapy-card crt">
+      <div class="tc2-ico">🎯</div>
+      <div class="tc2-title">Computerized Cognitive Remediation Therapy</div>
+      <div class="tc2-sub">// Triggered by PCSS &gt;27 or HIT-6 &gt;59</div>
+      <p class="tc2-body">Brain-training exercises based on the Montreal Cognitive Assessment framework, designed to strengthen the specific cognitive domains most affected by concussion — working memory, processing speed, attention, and executive function.</p>
+      <div class="tc2-specs">
+        <div class="spec-row"><span class="spec-key">Frequency</span><span class="spec-val">2× / week</span></div>
+        <div class="spec-row"><span class="spec-key">Duration</span><span class="spec-val">12 weeks (24 sessions)</span></div>
+        <div class="spec-row"><span class="spec-key">Billing</span><span class="spec-val">96158 · 96159</span></div>
+        <div class="spec-row"><span class="spec-key">RE Report</span><span class="spec-val">Sessions + score trends</span></div>
+      </div>
+    </div>
+
+    <div class="therapy-card digital">
+      <div class="tc2-ico">📱</div>
+      <div class="tc2-title">Digital Evaluations — Weekly Check-ins</div>
+      <div class="tc2-sub">// Enrolled at IE · Continues through RE cycle</div>
+      <p class="tc2-body">Patients receive a secure weekly check-in link via SMS or email, completing brief symptom assessments between visits. Weekly data streams into the Synaptix dashboard, allowing the clinical team to monitor deterioration or improvement without requiring an office visit.</p>
+      <div class="tc2-specs">
+        <div class="spec-row"><span class="spec-key">Frequency</span><span class="spec-val">Weekly</span></div>
+        <div class="spec-row"><span class="spec-key">Instruments</span><span class="spec-val">PCSS · PHQ-9 · GAD-7</span></div>
+        <div class="spec-row"><span class="spec-key">Billing</span><span class="spec-val">96127 · 99421</span></div>
+        <div class="spec-row"><span class="spec-key">RE Report</span><span class="spec-val">Sessions + trends summary</span></div>
+      </div>
+    </div>
+
+    <div class="therapy-card npe">
+      <div class="tc2-ico">🧠</div>
+      <div class="tc2-title">Monthly Neuropsychological Assessments</div>
+      <div class="tc2-sub">// NPE-CX · Monthly until RE visit</div>
+      <p class="tc2-body">The full NPE-CX battery — PCSS, HIT-6, PHQ-9, GAD-7, PCL-5, and PSQI — is re-administered monthly throughout the treatment cycle. Each session generates a score snapshot, and all monthly NPEs are aggregated in the Re-Evaluation report with trend analysis.</p>
+      <div class="tc2-specs">
+        <div class="spec-row"><span class="spec-key">Frequency</span><span class="spec-val">Monthly</span></div>
+        <div class="spec-row"><span class="spec-key">Battery</span><span class="spec-val">6 instruments</span></div>
+        <div class="spec-row"><span class="spec-key">Billing</span><span class="spec-val">96136 · 96132</span></div>
+        <div class="spec-row"><span class="spec-key">RE Report</span><span class="spec-val">All sessions post-FB</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CODING -->
+<section class="poc" id="coding">
+  <div class="section-tag">Clinical Coding</div>
+  <h2 class="section-title">Built-in billing support<br><em>for every encounter.</em></h2>
+
+  <div class="poc-grid">
+    <div>
+      <p class="section-body" style="max-width:100%;margin-bottom:30px">Synaptix's visit workflows align directly to Medicare and commercial payer CPT coding guidelines. Each visit type surfaces the appropriate codes, reducing billing errors and ensuring maximal reimbursement for every encounter.</p>
+      <div class="trigger-list">
+        <div class="trigger danger">
+          <div class="trig-ico">🚨</div>
+          <div>
+            <div class="trig-title">Headache &gt;4 · Dizziness &gt;3 · Brain Fog &gt;3</div>
+            <div class="trig-sub">Work / driving restrictions, screen time limits, Vestibular PT referral auto-generated</div>
+          </div>
+        </div>
+        <div class="trigger warn">
+          <div class="trig-ico">⚠️</div>
+          <div>
+            <div class="trig-title">PCSS &gt;27 or HIT-6 &gt;59</div>
+            <div class="trig-sub">CRT enrollment triggered — 2×/week × 12 weeks (96158 · 96159)</div>
+          </div>
+        </div>
+        <div class="trigger warn">
+          <div class="trig-ico">⚠️</div>
+          <div>
+            <div class="trig-title">PHQ-9 &gt;10 or GAD-7 &gt;10 or PCL-5 &gt;21</div>
+            <div class="trig-sub">CognificaChat referral — 2×/week × 12 weeks</div>
+          </div>
+        </div>
+        <div class="trigger info">
+          <div class="trig-ico">🔵</div>
+          <div>
+            <div class="trig-title">Any vestibular / visual symptom &gt;0</div>
+            <div class="trig-sub">Vestibular Therapy referral — 2×/week × 8 weeks</div>
+          </div>
+        </div>
+        <div class="trigger ok">
+          <div class="trig-ico">✅</div>
+          <div>
+            <div class="trig-title">Headache &lt;3 · Dizziness &lt;2 · Brain Fog &lt;1</div>
+            <div class="trig-sub">Patient cleared for work, driving, and exercise</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <table class="coding-table">
+        <thead>
+          <tr><th>Visit</th><th>Service</th><th>CPT Code</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>IE / RE</td><td>E&M Evaluation</td><td><span class="code-tag">99214–99215</span></td></tr>
+          <tr><td>IE / RE</td><td>NPE Administration — First hour</td><td><span class="code-tag">96136</span></td></tr>
+          <tr><td>IE / RE</td><td>NPE Administration — Add'l hours</td><td><span class="code-tag">96137</span></td></tr>
+          <tr><td>FB</td><td>NPE Interpretation — First hour</td><td><span class="code-tag">96132</span></td></tr>
+          <tr><td>FB</td><td>NPE Interpretation — Add'l hours</td><td><span class="code-tag">96133</span></td></tr>
+          <tr><td>FB / RE</td><td>Alt: Neurobehavioral exam — 1st hr</td><td><span class="code-tag">96116</span></td></tr>
+          <tr><td>Weekly</td><td>Digital Evaluation — Check-in</td><td><span class="code-tag">96127 × 3</span></td></tr>
+          <tr><td>Weekly</td><td>Online digital E&M</td><td><span class="code-tag">99421</span></td></tr>
+          <tr><td>Ongoing</td><td>CRT — First 30 minutes</td><td><span class="code-tag">96158</span></td></tr>
+          <tr><td>Ongoing</td><td>CRT — Add'l 30 minutes</td><td><span class="code-tag">96159</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <h2 class="cta-title">Standardize your concussion program.<br><em>Start in days, not months.</em></h2>
+    <p class="cta-sub">Synaptix deploys into existing orthopedic, neurology, and sports medicine practices without EHR integration or extensive IT setup. See a live demo with a real patient workflow.</p>
+    <div class="cta-actions">
+      <a href="#" class="btn-teal" style="font-size:14px;padding:15px 32px">Schedule a Demo →</a>
+      <a href="#" class="btn-outline" style="font-size:14px;padding:15px 32px">Download Clinical Overview</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Synaptix</div>
+  <div class="footer-mono">© 2026 · HIPAA Compliant · v2.4.1</div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Use</a>
+    <a href="#">Clinical Support</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+<script>
+function setVisit(btn, id) {
+  document.querySelectorAll('.visit-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.visit-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('panel-' + id).classList.add('active');
+}
+</script>
+</body>
+</html>
