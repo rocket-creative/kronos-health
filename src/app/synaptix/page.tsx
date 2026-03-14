@@ -18,7 +18,6 @@ import {
   Activity,
   ArrowRight,
   CheckCircle,
-  AlertTriangle,
   Clock,
   Calendar,
 } from "lucide-react";
@@ -64,14 +63,6 @@ const revenueStats = [
   { value: "3", label: "Billable Visit Types" },
 ];
 
-const testingBattery = [
-  { abbr: "PCSS", name: "Post-Concussion Symptom Scale", desc: "22 symptom self-report scale. Threshold >27 triggers CRT enrollment. Tracked at every NPE session.", freq: "Monthly / Every visit" },
-  { abbr: "HIT-6", name: "Headache Impact Test", desc: "Measures headache impact on daily functioning. Score >59 indicates severe impact and triggers cognitive remediation.", freq: "Monthly" },
-  { abbr: "PHQ-9", name: "Patient Health Questionnaire", desc: "Depression severity screening. Score >10 triggers CognificaChat referral (2×/week × 12 weeks).", freq: "Monthly" },
-  { abbr: "GAD-7", name: "Generalized Anxiety Disorder Scale", desc: "Anxiety severity measure. Score >10 co-triggers mental health referral with PHQ-9.", freq: "Monthly" },
-  { abbr: "PCL-5", name: "PTSD Checklist DSM-5", desc: "Trauma symptom assessment for assault or MVA related concussions. Score >21 triggers referral protocol.", freq: "Monthly" },
-  { abbr: "PSQI", name: "Pittsburgh Sleep Quality Index", desc: "Sleep quality assessment essential in concussion management where sleep disturbance impedes recovery.", freq: "Monthly" },
-];
 
 const visitTypes = [
   {
@@ -131,38 +122,6 @@ const visitTypes = [
   },
 ];
 
-const planOfCareTriggers = [
-  {
-    trigger: "Headache > 4",
-    severity: "danger",
-    actions: ["Limit work to part-time or no work for 2 weeks", "Limit driving to short distances or no driving for 2 weeks", "No heavy lifting/exercise for 2 weeks", "Screen time < 30 min/day"],
-  },
-  {
-    trigger: "Dizziness > 4",
-    severity: "danger",
-    actions: ["No work for 2 weeks", "No driving for 2 weeks", "No heavy lifting/exercise for 2 weeks", "Start Vestibular PT 2×/week"],
-  },
-  {
-    trigger: "Brain Fog > 4",
-    severity: "warning",
-    actions: ["No work for 2 weeks", "No driving for 2 weeks", "Screen time < 60 min/day"],
-  },
-  {
-    trigger: "PCSS > 27 or HIT-6 > 59",
-    severity: "warning",
-    actions: ["Enroll in Computerized Cognitive Remediation", "2×/week × 12 weeks (96158 + 96159)"],
-  },
-  {
-    trigger: "PHQ-9 > 10 or GAD-7 > 10 or PCL-5 > 21",
-    severity: "info",
-    actions: ["Referral to Mental Health Specialist", "Consider CognificaChat 2×/week × 12 weeks"],
-  },
-  {
-    trigger: "Headache < 3, Dizziness < 2, Brain Fog < 1",
-    severity: "success",
-    actions: ["Patient cleared for work, driving, and exercise"],
-  },
-];
 
 const ongoingBilling = [
   { service: "Weekly Digital Check-ins (5-10 min)", code: "99421" },
@@ -358,107 +317,6 @@ export default function SynaptixPage() {
         </div>
       </section>
 
-      {/* Plan of Care Triggers */}
-      <section 
-        className="py-12 sm:py-16 lg:py-24 bg-kronos-bg"
-        aria-labelledby="triggers-heading"
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="mb-10 sm:mb-12 lg:mb-16">
-            <p className="text-xs tracking-widest uppercase text-white/40 mb-4">
-              Algorithm Driven
-            </p>
-            <h2 
-              id="triggers-heading"
-              className="font-heading text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white mb-4"
-            >
-              Plan of Care Triggers
-            </h2>
-            <p className="font-body text-xs sm:text-sm text-white/50 font-light max-w-2xl">
-              Each symptom score combination triggers pre-defined functional recommendations — work restrictions, driving limitations, screen time guidelines, vestibular PT referrals, cognitive remediation therapy — assembled automatically into the Plan of Care.
-            </p>
-          </header>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-            {planOfCareTriggers.map((item) => (
-              <article 
-                key={item.trigger} 
-                className={`p-4 sm:p-6 border-l-4 transition-colors ${
-                  item.severity === 'danger' ? 'bg-kronos-card border-white/40 hover:bg-kronos-card/80' :
-                  item.severity === 'warning' ? 'bg-kronos-card border-white/30 hover:bg-kronos-card/80' :
-                  item.severity === 'info' ? 'bg-kronos-card border-white/20 hover:bg-kronos-card/80' :
-                  'bg-synaptix-cyan/10 border-synaptix-cyan hover:bg-synaptix-cyan/20'
-                }`}
-              >
-                <div className="flex items-center gap-2 mb-3">
-                  {item.severity === 'success' ? (
-                    <CheckCircle className="w-4 h-4 text-synaptix-cyan" aria-hidden="true" />
-                  ) : (
-                    <AlertTriangle className={`w-4 h-4 ${
-                      item.severity === 'danger' ? 'text-white/60' :
-                      item.severity === 'warning' ? 'text-white/50' :
-                      'text-white/40'
-                    }`} aria-hidden="true" />
-                  )}
-                  <h3 className="font-heading text-xs sm:text-sm text-white">{item.trigger}</h3>
-                </div>
-                <ul className="space-y-1" role="list">
-                  {item.actions.map((action) => (
-                    <li key={action} className="text-[10px] sm:text-xs text-white/60 font-light">
-                      • {action}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testing Battery */}
-      <section 
-        className="py-12 sm:py-16 lg:py-24 bg-kronos-card"
-        aria-labelledby="battery-heading"
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="mb-10 sm:mb-12 lg:mb-16">
-            <p className="text-xs tracking-widest uppercase text-white/40 mb-4">
-              Neuropsychological Battery (NPE-CX)
-            </p>
-            <h2 
-              id="battery-heading"
-              className="font-heading text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white mb-4"
-            >
-              Six Validated Instruments
-            </h2>
-            <p className="font-body text-xs sm:text-sm text-white/50 font-light max-w-2xl">
-              The NPE-CX battery combines validated instruments for concussion related cognitive and psychological assessment — administered digitally, scored automatically, and compared against normative clinical thresholds.
-            </p>
-          </header>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
-            {testingBattery.map((test) => (
-              <article 
-                key={test.abbr} 
-                className="bg-kronos-bg border border-white/5 p-4 sm:p-6 hover:border-synaptix-cyan/20 transition-colors focus-within:ring-2 focus-within:ring-synaptix-cyan"
-              >
-                <h3 className="font-heading text-xl sm:text-2xl lg:text-3xl text-synaptix-cyan mb-2">
-                  {test.abbr}
-                </h3>
-                <p className="font-body font-bold text-white text-xs sm:text-sm mb-2">
-                  {test.name}
-                </p>
-                <p className="font-body text-[10px] sm:text-xs text-white/50 font-light mb-4">
-                  {test.desc}
-                </p>
-                <span className="font-mono text-[9px] sm:text-[10px] text-synaptix-cyan bg-synaptix-blue/30 px-2 py-1">
-                  {test.freq}
-                </span>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Ongoing Billing */}
       <section 
