@@ -5,21 +5,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        sage: '#4A7C6F',
-        'sage-lt': '#6B9E90',
-        'sage-dk': '#2E5449',
-        cream: '#F7F3EE',
-        warm: '#EDE7DC',
-        sand: '#D4C9B8',
-        clay: '#B07D5A',
-        rust: '#8B4E2E',
-        ink: '#1C2420',
-        'ink-2': '#3A4A44',
-        muted: '#7A8880',
+        'cognifica-indigo': '#333B94',
+        'cognifica-cta': '#5E89FB',
+        'cognifica-submit': '#4ECFA0',
+        'cognifica-accent': '#6C4DB0',
       },
       fontFamily: {
-        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
-        sans: ['var(--font-mulish)', 'system-ui', 'sans-serif'],
+        body: ['var(--font-work-sans)', 'sans-serif'],
+        heading: ['var(--font-ibm-plex-condensed)', 'sans-serif'],
+        nav: ['var(--font-open-sans)', 'sans-serif'],
       },
       screens: {
         sm: '393px',

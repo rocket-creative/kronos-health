@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --font-playfair: 'Playfair Display';
-  --font-mulish: 'Mulish';
+  --font-work-sans: 'Work Sans';
+  --font-ibm-plex-condensed: 'IBM Plex Sans Condensed';
+  --font-open-sans: 'Open Sans';
 }
 
 * {
@@ -18,9 +19,9 @@ html {
 }
 
 body {
-  font-family: var(--font-mulish), system-ui, sans-serif;
-  background: #fdfcfa;
-  color: #1c2420;
+  font-family: var(--font-work-sans), sans-serif;
+  background: #f5f5f4;
+  color: #111111;
   line-height: 1.7;
   overflow-x: hidden;
 }
