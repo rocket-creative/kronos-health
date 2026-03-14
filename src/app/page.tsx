@@ -55,7 +55,7 @@ export default function HomePage() {
 
               {/* Description */}
               <p data-hero-description className="font-body text-sm sm:text-base text-white/70 font-light leading-relaxed mb-8 sm:mb-10">
-                We bring clarity to healthcare, from billing optimization to brain wellness solutions. Founded by Dr. John M. Abrahams, board-certified neurosurgeon with 20+ years of clinical experience.
+                We bring clarity to healthcare, from revenue cycle management to brain wellness solutions. Founded by Dr. John M. Abrahams, board-certified neurosurgeon with 20+ years of clinical experience.
               </p>
 
               {/* Square CTA button */}
@@ -152,7 +152,7 @@ export default function HomePage() {
                       Revenue Cycle
                     </h3>
                     <p className="font-body text-xs sm:text-sm text-white/60 font-light">
-                      Payment dispute resolution under the No Surprises Act. Expert arbitration and IDR management for out-of-network billing.
+                      Payment dispute resolution under the No Surprises Act. Expert arbitration and IDR management for healthcare providers.
                     </p>
                   </div>
                   <ArrowRight 

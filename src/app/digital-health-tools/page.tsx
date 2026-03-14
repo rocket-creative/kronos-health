@@ -18,13 +18,13 @@ import {
 export const metadata: Metadata = {
   title: "Digital Health Tools — Tappy, AISA, DEM",
   description:
-    "Turnkey digital health tools for providers. Tappy SMS cognitive health assistant, AISA spine recovery guide, and Digital Evaluation Module for automated CPT billing.",
+    "Turnkey digital health tools for providers. Tappy SMS cognitive health assistant, AISA spine recovery guide, and Digital Evaluation Module for patient monitoring.",
   alternates: {
     canonical: "https://kronoshealth.co/digital-health-tools",
   },
   openGraph: {
     title: "Digital Health Tools — Tappy, AISA, DEM | Kronos Health",
-    description: "Turnkey digital health tools for providers. Tappy, AISA, and DEM for automated patient monitoring and billing.",
+    description: "Turnkey digital health tools for providers. Tappy, AISA, and DEM for automated patient monitoring.",
     url: "https://kronoshealth.co/digital-health-tools",
     siteName: "Kronos Health",
     type: "website",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Digital Health Tools — Tappy, AISA, DEM",
-    description: "Turnkey digital health tools for providers with automated CPT billing.",
+    description: "Turnkey digital health tools for providers with automated patient monitoring.",
   },
 };
 
@@ -62,7 +62,7 @@ const solutions = [
     name: "Tappy",
     subtitle: "Cognitive Health",
     description: "SMS-based tool that collects essential cognitive health data through patient mobile phones.",
-    features: ["EMR integration", "Automated CPT billing", "Minimal effort engagement"],
+    features: ["EMR integration", "Automated documentation", "Minimal effort engagement"],
     icon: MessageSquare,
   },
   {
@@ -74,9 +74,9 @@ const solutions = [
   },
   {
     name: "DEM",
-    subtitle: "Automated Billing",
-    description: "Software that applies CPT codes for digital health to ensure proper reimbursement.",
-    features: ["SMS based technology", "Automated documentation", "Proper reimbursement"],
+    subtitle: "Digital Evaluation",
+    description: "Software that streamlines digital health documentation and patient tracking.",
+    features: ["SMS based technology", "Automated documentation", "Streamlined workflows"],
     icon: FileText,
   },
 ];
@@ -87,7 +87,7 @@ export default function DigitalHealthPage() {
       {/* Schema Markup */}
       <ServiceSchema
         name="Digital Health Tools"
-        description="Turnkey digital health tools including Tappy SMS cognitive health assistant, AISA spine recovery guide, and Digital Evaluation Module for automated CPT billing."
+        description="Turnkey digital health tools including Tappy SMS cognitive health assistant, AISA spine recovery guide, and Digital Evaluation Module for patient monitoring."
         url="https://kronoshealth.co/digital-health-tools"
         serviceType="Healthcare Software"
       />

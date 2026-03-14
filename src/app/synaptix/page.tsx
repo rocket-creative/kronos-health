@@ -25,13 +25,13 @@ import {
 export const metadata: Metadata = {
   title: "Synaptix — Concussion Assessment & Recovery Platform",
   description:
-    "Structured, billable, recurring concussion management software for orthopedic, neurosurgery, and sports medicine practices. 12-week program with $260K annual revenue potential. NPE-CX battery, cognitive remediation, digital monitoring.",
+    "Structured concussion management software for orthopedic, neurosurgery, and sports medicine practices. 12-week program with NPE-CX battery, cognitive remediation, and digital monitoring.",
   alternates: {
     canonical: "https://kronoshealth.co/synaptix",
   },
   openGraph: {
     title: "Synaptix — Concussion Assessment & Recovery Platform | Kronos Health",
-    description: "Structured, billable, recurring concussion management software. 12-week program with $260K annual revenue potential.",
+    description: "Structured concussion management software. 12-week program with NPE-CX battery, cognitive remediation, and digital monitoring.",
     url: "https://kronoshealth.co/synaptix",
     siteName: "Kronos Health",
     type: "website",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Synaptix — Concussion Assessment & Recovery Platform",
-    description: "Structured, billable concussion management software with $260K annual revenue potential.",
+    description: "Structured concussion management software with NPE-CX battery, cognitive remediation, and digital monitoring.",
   },
 };
 
@@ -56,11 +56,11 @@ const breadcrumbItems = [
   { name: "Synaptix", url: "https://kronoshealth.co/synaptix" },
 ];
 
-const revenueStats = [
-  { value: "$260K", label: "Annual Revenue Potential" },
-  { value: "$1.5K–$5K", label: "Per Patient Per Year" },
+const programStats = [
   { value: "12 Week", label: "Treatment Cycle" },
-  { value: "3", label: "Billable Visit Types" },
+  { value: "3", label: "Visit Types" },
+  { value: "6", label: "NPE Instruments" },
+  { value: "2×/week", label: "CRT Sessions" },
 ];
 
 
@@ -77,11 +77,6 @@ const visitTypes = [
       { name: "Diagnosis (DX)", type: "required", note: "ICD-10 selection with secondary codes" },
       { name: "Plan of Care (POC)", type: "required", note: "Trigger-based functional recommendations" },
     ],
-    codes: [
-      { service: "E&M Evaluation", code: "99214–99215" },
-      { service: "NPE Testing First Hour", code: "96136" },
-      { service: "NPE Testing Add'l Hour", code: "96137" },
-    ],
   },
   {
     id: "fb",
@@ -94,11 +89,6 @@ const visitTypes = [
       { name: "NPE Results", type: "testing", note: "Interpreted at FB; administered at IE" },
       { name: "Digital Evaluations", type: "optional", note: "Included if available" },
       { name: "Diagnosis + POC", type: "required", note: "Updated treatment plan" },
-    ],
-    codes: [
-      { service: "NPE Interpretation First 30 min", code: "96132" },
-      { service: "NPE Interpretation Add'l 30 min", code: "96133" },
-      { service: "Alt: Neurobehavioral Exam 1st hr", code: "96116" },
     ],
   },
   {
@@ -114,23 +104,15 @@ const visitTypes = [
       { name: "DE + CRT Summary", type: "testing", note: "Sessions, scores, trends" },
       { name: "Diagnosis + POC", type: "required", note: "Updated plan of care" },
     ],
-    codes: [
-      { service: "E&M Evaluation", code: "99214–99215" },
-      { service: "NPE Test/Interpret First Hour", code: "96136 + 96132" },
-      { service: "NPE Add'l Hours", code: "96137 + 96133" },
-    ],
   },
 ];
 
 
-const ongoingBilling = [
-  { service: "Weekly Digital Check-ins (5-10 min)", code: "99421" },
-  { service: "Weekly Digital Check-ins (11-20 min)", code: "99422" },
-  { service: "Weekly Digital Check-ins (>20 min)", code: "99423" },
-  { service: "CRT First 30 minutes", code: "96158" },
-  { service: "CRT Add'l 15 minutes", code: "96159" },
-  { service: "Monthly NPE Testing", code: "96136" },
-  { service: "Monthly NPE Interpretation", code: "96132" },
+const ongoingServices = [
+  { service: "Weekly Digital Check-ins", description: "Symptom tracking via SMS/email" },
+  { service: "Cognitive Remediation Therapy", description: "Brain training exercises 2×/week" },
+  { service: "Monthly NPE Testing", description: "Full battery re-administration" },
+  { service: "Progress Monitoring", description: "Dashboard with trends and alerts" },
 ];
 
 const practiceTypes = [
@@ -213,7 +195,7 @@ export default function SynaptixPage() {
               </p>
 
               <p className="font-body text-xs text-synaptix-cyan font-light leading-relaxed mb-6 sm:mb-8">
-                Built for sports medicine, orthopedics, neurology, and concussion programs. Structured, billable, recurring.
+                Built for sports medicine, orthopedics, neurology, and concussion programs. Structured, standardized, recurring.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3">
@@ -236,16 +218,16 @@ export default function SynaptixPage() {
         </div>
       </section>
 
-      {/* Revenue Stats */}
+      {/* Program Stats */}
       <section 
         className="py-10 sm:py-12 lg:py-16 bg-synaptix-blue/20 border-y border-synaptix-cyan/20" 
-        id="revenue"
-        aria-labelledby="revenue-heading"
+        id="program"
+        aria-labelledby="program-heading"
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 id="revenue-heading" className="sr-only">Revenue Potential</h2>
+          <h2 id="program-heading" className="sr-only">Program Overview</h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-            {revenueStats.map((stat) => (
+            {programStats.map((stat) => (
               <div key={stat.value} className="text-center hover:bg-white/5 p-4 -m-4 transition-colors">
                 <div className="font-heading text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-synaptix-cyan mb-1">
                   {stat.value}
@@ -255,7 +237,7 @@ export default function SynaptixPage() {
             ))}
           </div>
           <p className="text-center text-[10px] sm:text-xs text-white/40 mt-4 sm:mt-6">
-            With one new patient added each week
+            Comprehensive concussion management protocol
           </p>
         </div>
       </section>
@@ -318,10 +300,10 @@ export default function SynaptixPage() {
       </section>
 
 
-      {/* Ongoing Billing */}
+      {/* Ongoing Services */}
       <section 
         className="py-12 sm:py-16 lg:py-24 bg-kronos-gray-800"
-        aria-labelledby="billing-heading"
+        aria-labelledby="services-heading"
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
@@ -330,20 +312,20 @@ export default function SynaptixPage() {
                 Between Visits
               </p>
               <h2 
-                id="billing-heading"
+                id="services-heading"
                 className="font-heading text-xl sm:text-2xl lg:text-3xl text-white mb-4"
               >
-                Ongoing Billable Services
+                Ongoing Recovery Services
               </h2>
               <p className="font-body text-xs sm:text-sm text-white/60 font-light mb-6 sm:mb-8">
-                Three integrated recovery programs keep patients engaged and recovering between clinic visits — all fully billable.
+                Three integrated recovery programs keep patients engaged and recovering between clinic visits.
               </p>
 
               <ul className="space-y-2 sm:space-y-3" role="list">
-                {ongoingBilling.map((item) => (
-                  <li key={item.code} className="flex items-center justify-between bg-kronos-gray-700 p-2 sm:p-3 hover:bg-kronos-gray-600 transition-colors">
+                {ongoingServices.map((item) => (
+                  <li key={item.service} className="flex items-center justify-between bg-kronos-gray-700 p-2 sm:p-3 hover:bg-kronos-gray-600 transition-colors">
                     <span className="text-xs sm:text-sm text-white">{item.service}</span>
-                    <code className="font-mono text-[10px] sm:text-xs text-synaptix-cyan bg-synaptix-blue/30 px-2 py-1">{item.code}</code>
+                    <span className="text-[10px] sm:text-xs text-synaptix-cyan/70">{item.description}</span>
                   </li>
                 ))}
               </ul>
@@ -499,11 +481,11 @@ export default function SynaptixPage() {
               <dl className="space-y-2 text-[10px] sm:text-xs">
                 <div className="flex justify-between">
                   <dt className="text-white/60">History & Physical</dt>
-                  <dd className="font-mono text-white">99215</dd>
+                  <dd className="text-white">Complete evaluation</dd>
                 </div>
                 <div className="flex justify-between">
-                  <dt className="text-white/60">NPE-CX</dt>
-                  <dd className="font-mono text-white">96136 + 96137</dd>
+                  <dt className="text-white/60">NPE-CX Battery</dt>
+                  <dd className="text-white">6 instruments</dd>
                 </div>
               </dl>
               <p className="text-[10px] sm:text-xs text-white/40 mt-4">
@@ -519,7 +501,7 @@ export default function SynaptixPage() {
               <dl className="space-y-2 text-[10px] sm:text-xs">
                 <div className="flex justify-between">
                   <dt className="text-white/60">NPE Interpretation</dt>
-                  <dd className="font-mono text-white">96132 + 96133</dd>
+                  <dd className="text-white">Results review</dd>
                 </div>
               </dl>
               <p className="text-[10px] sm:text-xs text-white/40 mt-4">
@@ -534,12 +516,12 @@ export default function SynaptixPage() {
               </div>
               <dl className="space-y-2 text-[10px] sm:text-xs">
                 <div className="flex justify-between">
-                  <dt className="text-white/60">History & Physical</dt>
-                  <dd className="font-mono text-white">99215</dd>
+                  <dt className="text-white/60">History Update</dt>
+                  <dd className="text-white">Progress check</dd>
                 </div>
                 <div className="flex justify-between">
-                  <dt className="text-white/60">NPE-CX Test/Interpret</dt>
-                  <dd className="font-mono text-white">96136 + 96137</dd>
+                  <dt className="text-white/60">NPE-CX Retest</dt>
+                  <dd className="text-white">Trend analysis</dd>
                 </div>
               </dl>
               <p className="text-[10px] sm:text-xs text-white/40 mt-4">

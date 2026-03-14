@@ -23,13 +23,13 @@ import {
 export const metadata: Metadata = {
   title: "Revenue Cycle Management & Payment Dispute Resolution",
   description:
-    "Expert revenue cycle management, out-of-network billing, and IDR dispute resolution for healthcare providers under the No Surprises Act. Kronos Health maximizes your reimbursements.",
+    "Expert revenue cycle management and IDR dispute resolution for healthcare providers under the No Surprises Act. Kronos Health maximizes your reimbursements.",
   alternates: {
     canonical: "https://kronoshealth.co/revenue-cycle",
   },
   openGraph: {
     title: "Revenue Cycle Management & Payment Dispute Resolution | Kronos Health",
-    description: "Expert revenue cycle management, out-of-network billing, and IDR dispute resolution for healthcare providers.",
+    description: "Expert revenue cycle management and IDR dispute resolution for healthcare providers.",
     url: "https://kronoshealth.co/revenue-cycle",
     siteName: "Kronos Health",
     type: "website",
@@ -119,7 +119,7 @@ export default function RevenueCyclePage() {
         name="Revenue Cycle Management & IDR Dispute Resolution"
         description="Expert arbitration and out-of-network dispute resolution support under the No Surprises Act. Complete case management from negotiation through final arbitration."
         url="https://kronoshealth.co/revenue-cycle"
-        serviceType="Healthcare Billing Services"
+        serviceType="Healthcare Revenue Services"
       />
       <BreadcrumbSchema items={breadcrumbItems} />
 

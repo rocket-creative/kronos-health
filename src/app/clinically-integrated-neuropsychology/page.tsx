@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Clinically Integrated Neuropsychology",
   description:
-    "Streamlined referral path for mental health evaluation and care. Connect with licensed neuropsychologists through the Kronos Health Network. CPT codes 96127, 96116, 96130-96133.",
+    "Streamlined referral path for mental health evaluation and care. Connect with licensed neuropsychologists through the Kronos Health Network.",
   alternates: {
     canonical: "https://kronoshealth.co/clinically-integrated-neuropsychology",
   },
@@ -46,13 +46,11 @@ const howItWorks = [
   { title: "Provider Collaboration", icon: MessageSquare },
 ];
 
-const cptCodes = [
-  { code: "96127", description: "Brief emotional/behavioral assessment" },
-  { code: "96116", description: "Neurobehavioral status exam" },
-  { code: "96130", description: "Psychological testing evaluation" },
-  { code: "96131", description: "Psychological testing, additional hour" },
-  { code: "96132", description: "Neuropsychological testing evaluation" },
-  { code: "96133", description: "Neuropsychological testing, additional hour" },
+const services = [
+  { name: "Brief Assessment", description: "Emotional and behavioral screening" },
+  { name: "Neurobehavioral Exam", description: "Comprehensive status evaluation" },
+  { name: "Psychological Testing", description: "Standardized evaluation protocols" },
+  { name: "Neuropsychological Testing", description: "Cognitive function assessment" },
 ];
 
 export default function NeuropsychologyPage() {
@@ -61,7 +59,7 @@ export default function NeuropsychologyPage() {
       {/* Schema Markup */}
       <ServiceSchema
         name="Clinically Integrated Neuropsychology"
-        description="Streamlined referral path for mental health evaluation and care with licensed neuropsychologists. Includes in-office screening, referral management, and billing integration."
+        description="Streamlined referral path for mental health evaluation and care with licensed neuropsychologists. Includes in-office screening and referral management."
         url="https://kronoshealth.co/clinically-integrated-neuropsychology"
         serviceType="Neuropsychological Services"
       />
@@ -164,30 +162,30 @@ export default function NeuropsychologyPage() {
         </div>
       </section>
 
-      {/* CPT Codes - Editorial Grid */}
+      {/* Services - Editorial Grid */}
       <section 
         className="py-12 sm:py-16 lg:py-24 bg-kronos-bg"
-        aria-labelledby="cpt-heading"
+        aria-labelledby="services-heading"
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="mb-8 sm:mb-12 lg:mb-20">
             <p className="text-xs tracking-widest uppercase text-white/40 mb-4">
-              Billing Integration
+              Assessment Services
             </p>
             <h2 
-              id="cpt-heading"
+              id="services-heading"
               className="font-heading text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white"
             >
-              CPT Codes
+              What We Offer
             </h2>
           </header>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
-            {cptCodes.map((item) => (
-              <article key={item.code} className="bg-kronos-card p-3 sm:p-4 lg:p-5 flex items-start gap-2 sm:gap-3 lg:gap-4 hover:bg-kronos-card/80 transition-colors">
-                <code className="font-mono text-xs sm:text-sm lg:text-base text-kronos-cyan bg-kronos-cyan/10 px-2 sm:px-3 py-1 flex-shrink-0">
-                  {item.code}
-                </code>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 lg:gap-4">
+            {services.map((item) => (
+              <article key={item.name} className="bg-kronos-card p-3 sm:p-4 lg:p-5 flex items-start gap-2 sm:gap-3 lg:gap-4 hover:bg-kronos-card/80 transition-colors">
+                <span className="font-heading text-xs sm:text-sm lg:text-base text-kronos-cyan flex-shrink-0">
+                  {item.name}
+                </span>
                 <p className="font-body text-[10px] sm:text-xs lg:text-sm text-white/60 font-light">{item.description}</p>
               </article>
             ))}

@@ -31,7 +31,7 @@ export default function Footer() {
               />
             </Link>
             <p className="font-body text-xs sm:text-sm text-white/40 font-light leading-relaxed max-w-xs">
-              Billing. Brain health. Better tools. Powered by medicine, guided by clarity.
+              Healthcare solutions. Brain health. Better tools. Powered by medicine, guided by clarity.
             </p>
           </div>
 

@@ -10,7 +10,7 @@ export function OrganizationSchema({ type = "Organization" }: OrganizationSchema
     url: "https://kronoshealth.co",
     logo: "https://kronoshealth.co/kronos-logo.png",
     description:
-      "B2B healthcare services including revenue cycle management, out-of-network billing, CognificaAI workplace mental health platform, and Synaptix concussion software.",
+      "B2B healthcare services including revenue cycle management, CognificaAI workplace mental health platform, and Synaptix concussion software.",
     telephone: "+1-914-705-6830",
     email: "info@kronoshealth.co",
     address: {
@@ -47,7 +47,7 @@ export function OrganizationSchema({ type = "Organization" }: OrganizationSchema
     foundingDate: "2020",
     knowsAbout: [
       "Revenue Cycle Management",
-      "Healthcare Billing",
+      "Healthcare Services",
       "Mental Health Screening",
       "Concussion Management",
       "Neuropsychological Assessment",
