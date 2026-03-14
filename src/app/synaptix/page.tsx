@@ -20,7 +20,15 @@ import {
   CheckCircle,
   Clock,
   Calendar,
+  Shield,
+  Zap,
+  TrendingUp,
+  ChevronDown,
+  Heart,
+  Moon,
+  AlertCircle,
 } from "lucide-react";
+import { FAQSchema } from "@/components";
 
 export const metadata: Metadata = {
   title: "Synaptix — Concussion Assessment & Recovery Platform",
@@ -130,6 +138,57 @@ const practiceValues = [
   "Built by clinicians for clinicians",
   "30 day trial from existing patients",
   "Monthly license by volume",
+];
+
+const npeBattery = [
+  { abbr: "PCSS", name: "Post-Concussion Symptom Scale", desc: "22 symptom self-report validating concussion symptom burden", icon: Brain },
+  { abbr: "HIT-6", name: "Headache Impact Test", desc: "Measures headache impact on daily functioning", icon: AlertCircle },
+  { abbr: "PHQ-9", name: "Patient Health Questionnaire", desc: "Depression severity screening and monitoring", icon: Heart },
+  { abbr: "GAD-7", name: "Generalized Anxiety Disorder Scale", desc: "Anxiety severity measure for cognitive complaints", icon: Activity },
+  { abbr: "PCL-5", name: "PTSD Checklist (DSM-5)", desc: "Trauma symptom assessment for injury-related cases", icon: Shield },
+  { abbr: "PSQI", name: "Pittsburgh Sleep Quality Index", desc: "Sleep quality assessment critical for recovery", icon: Moon },
+];
+
+const platformBenefits = [
+  { title: "Reduced Documentation Time", desc: "Intelligent defaults pre-populate normal findings, letting physicians document only deviations", icon: Zap },
+  { title: "Automated Plan of Care", desc: "Clinical findings automatically generate customized treatment recommendations", icon: FileText },
+  { title: "Longitudinal Tracking", desc: "All assessment data stored and trended across visits without manual entry", icon: TrendingUp },
+  { title: "Standardized Protocols", desc: "Evidence-based workflows ensure consistent care across all providers", icon: CheckCircle },
+];
+
+const faqItems = [
+  {
+    question: "What practices is Synaptix designed for?",
+    answer: "Synaptix is built for orthopedic surgery, neurosurgery, sports medicine, and dedicated concussion programs. Any practice managing post-concussion patients can benefit from the standardized protocol and longitudinal tracking.",
+  },
+  {
+    question: "How quickly can we deploy Synaptix?",
+    answer: "Most practices are operational within days, not months. Synaptix requires no EHR integration, no complex IT setup, and minimal training. Your team can start with existing patients immediately.",
+  },
+  {
+    question: "Does Synaptix require EHR integration?",
+    answer: "No. Synaptix operates as a standalone platform, eliminating the delays and costs associated with EHR integration. Reports can be exported and added to your existing medical records.",
+  },
+  {
+    question: "What clinical instruments are included?",
+    answer: "The NPE-CX battery includes six validated, peer-reviewed instruments: PCSS, HIT-6, PHQ-9, GAD-7, PCL-5, and PSQI. All are administered digitally and scored automatically.",
+  },
+  {
+    question: "Is training required for staff?",
+    answer: "Minimal training is needed. The platform guides users through each visit type with structured forms and intelligent defaults. Most clinical teams are comfortable within a single session.",
+  },
+  {
+    question: "Is Synaptix HIPAA compliant?",
+    answer: "Yes. Synaptix is built on HIPAA-compliant infrastructure with encrypted data storage, secure access controls, and audit logging. Patient data is never shared without authorization.",
+  },
+  {
+    question: "What support is available?",
+    answer: "All Synaptix licenses include dedicated onboarding, clinical support, and ongoing technical assistance. Our team includes clinicians who understand concussion management workflows.",
+  },
+  {
+    question: "Can we customize the protocol for our practice?",
+    answer: "Yes. While Synaptix provides evidence-based defaults, practices can customize assessment frequencies, report formats, and workflow preferences to match their clinical approach.",
+  },
 ];
 
 export default function SynaptixPage() {
@@ -528,6 +587,175 @@ export default function SynaptixPage() {
                 Continue program cycle until symptoms subside.
               </p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      {/* NPE-CX Battery Section */}
+      <section 
+        className="py-12 sm:py-16 lg:py-24 bg-kronos-gray-800"
+        id="battery"
+        aria-labelledby="battery-heading"
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="mb-10 sm:mb-12 lg:mb-16">
+            <p className="text-xs tracking-widest uppercase text-white/50 mb-4 italic">
+              Neuropsychological Battery
+            </p>
+            <h2 
+              id="battery-heading"
+              className="font-heading text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white mb-4"
+            >
+              <em className="not-italic">Six Validated Instruments.</em>{" "}
+              <em className="text-synaptix-cyan">Complete Cognitive Picture.</em>
+            </h2>
+            <p className="font-body text-xs sm:text-sm text-white/60 font-light max-w-2xl italic">
+              The NPE-CX battery combines gold-standard instruments for concussion-related cognitive and psychological assessment — administered digitally, scored automatically, and compared against validated clinical benchmarks.
+            </p>
+          </header>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+            {npeBattery.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article 
+                  key={item.abbr} 
+                  className="bg-kronos-bg p-4 sm:p-6 border border-white/5 hover:border-synaptix-cyan/30 transition-colors group"
+                >
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-8 h-8 bg-synaptix-blue/20 flex items-center justify-center flex-shrink-0 group-hover:bg-synaptix-blue/30 transition-colors">
+                      <Icon className="w-4 h-4 text-synaptix-cyan/60" strokeWidth={1.5} aria-hidden="true" />
+                    </div>
+                    <div>
+                      <span className="font-heading text-lg sm:text-xl text-synaptix-cyan">{item.abbr}</span>
+                    </div>
+                  </div>
+                  <h3 className="font-body text-xs sm:text-sm text-white font-normal mb-2 italic">{item.name}</h3>
+                  <p className="font-body text-[10px] sm:text-xs text-white/50 font-light italic">{item.desc}</p>
+                </article>
+              );
+            })}
+          </div>
+
+          <p className="text-center text-[10px] sm:text-xs text-white/40 mt-6 sm:mt-8 italic">
+            All instruments are peer-reviewed and validated for both clinical and population-level screening contexts.
+          </p>
+        </div>
+      </section>
+
+      {/* Platform Benefits Section */}
+      <section 
+        className="py-12 sm:py-16 lg:py-24 bg-kronos-bg"
+        aria-labelledby="benefits-heading"
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="mb-10 sm:mb-12 lg:mb-16 text-center">
+            <p className="text-xs tracking-widest uppercase text-white/50 mb-4 italic">
+              Platform Advantages
+            </p>
+            <h2 
+              id="benefits-heading"
+              className="font-heading text-2xl sm:text-3xl lg:text-4xl text-white mb-4"
+            >
+              <em className="not-italic">Designed for</em>{" "}
+              <em className="text-synaptix-cyan">Clinical Efficiency</em>
+            </h2>
+            <p className="font-body text-xs sm:text-sm text-white/60 font-light max-w-2xl mx-auto italic">
+              Synaptix streamlines every aspect of concussion management, from initial assessment through longitudinal outcomes tracking.
+            </p>
+          </header>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            {platformBenefits.map((benefit) => {
+              const Icon = benefit.icon;
+              return (
+                <article 
+                  key={benefit.title} 
+                  className="bg-kronos-card p-5 sm:p-6 lg:p-8 border-l-2 border-synaptix-cyan/50 hover:border-synaptix-cyan transition-colors"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-synaptix-blue/20 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-5 h-5 text-synaptix-cyan/70" strokeWidth={1.5} aria-hidden="true" />
+                    </div>
+                    <div>
+                      <h3 className="font-heading text-sm sm:text-base lg:text-lg text-white mb-2 italic">{benefit.title}</h3>
+                      <p className="font-body text-[10px] sm:text-xs lg:text-sm text-white/60 font-light italic">{benefit.desc}</p>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Signals Section */}
+      <section 
+        className="py-10 sm:py-12 lg:py-16 bg-synaptix-blue/10 border-y border-synaptix-cyan/10"
+        aria-labelledby="trust-heading"
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="trust-heading" className="sr-only">Trust and Compliance</h2>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div className="text-center">
+              <Shield className="w-8 h-8 text-synaptix-cyan/60 mx-auto mb-3" strokeWidth={1} aria-hidden="true" />
+              <p className="font-heading text-xs sm:text-sm text-white italic">HIPAA Compliant</p>
+              <p className="font-body text-[9px] sm:text-[10px] text-white/40 mt-1 italic">Secure infrastructure</p>
+            </div>
+            <div className="text-center">
+              <FileText className="w-8 h-8 text-synaptix-cyan/60 mx-auto mb-3" strokeWidth={1} aria-hidden="true" />
+              <p className="font-heading text-xs sm:text-sm text-white italic">Peer-Reviewed</p>
+              <p className="font-body text-[9px] sm:text-[10px] text-white/40 mt-1 italic">Validated instruments</p>
+            </div>
+            <div className="text-center">
+              <Brain className="w-8 h-8 text-synaptix-cyan/60 mx-auto mb-3" strokeWidth={1} aria-hidden="true" />
+              <p className="font-heading text-xs sm:text-sm text-white italic">Clinician-Built</p>
+              <p className="font-body text-[9px] sm:text-[10px] text-white/40 mt-1 italic">By neurosurgeons</p>
+            </div>
+            <div className="text-center">
+              <TrendingUp className="w-8 h-8 text-synaptix-cyan/60 mx-auto mb-3" strokeWidth={1} aria-hidden="true" />
+              <p className="font-heading text-xs sm:text-sm text-white italic">Evidence-Based</p>
+              <p className="font-body text-[9px] sm:text-[10px] text-white/40 mt-1 italic">Clinical protocols</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <FAQSchema questions={faqItems} />
+      <section 
+        className="py-12 sm:py-16 lg:py-24 bg-kronos-bg"
+        id="faq"
+        aria-labelledby="faq-heading"
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="mb-10 sm:mb-12 text-center">
+            <p className="text-xs tracking-widest uppercase text-white/50 mb-4 italic">
+              Common Questions
+            </p>
+            <h2 
+              id="faq-heading"
+              className="font-heading text-2xl sm:text-3xl lg:text-4xl text-white"
+            >
+              Frequently Asked Questions
+            </h2>
+          </header>
+
+          <div className="space-y-3 sm:space-y-4">
+            {faqItems.map((item, idx) => (
+              <details 
+                key={idx} 
+                className="group bg-kronos-card border border-white/5 hover:border-synaptix-cyan/20 transition-colors"
+              >
+                <summary className="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none">
+                  <h3 className="font-body text-xs sm:text-sm text-white font-normal pr-4 italic">{item.question}</h3>
+                  <ChevronDown className="w-4 h-4 text-synaptix-cyan/60 flex-shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
+                </summary>
+                <div className="px-4 sm:px-5 pb-4 sm:pb-5">
+                  <p className="font-body text-[10px] sm:text-xs text-white/60 font-light leading-relaxed italic">{item.answer}</p>
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>
