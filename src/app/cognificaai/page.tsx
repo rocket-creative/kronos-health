@@ -349,32 +349,6 @@ export default function CognificaAIPage() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {assessments.map((a) => {
-              const Icon = a.icon;
-              return (
-                <div key={a.abbr} className="bg-kronos-bg border border-white/5 p-4 sm:p-6 hover:border-kronos-lavender/20 transition-colors">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-10 h-10 bg-kronos-lavender/10 flex items-center justify-center">
-                      <Icon className="w-4 h-4 text-kronos-lavender/60" strokeWidth={1.5} />
-                    </div>
-                    <span className="text-[10px] uppercase tracking-widest text-kronos-lavender/60">
-                      {a.tag}
-                    </span>
-                  </div>
-                  <div className="font-heading text-2xl text-kronos-lavender mb-2">
-                    {a.abbr}
-                  </div>
-                  <h3 className="font-body font-bold text-white text-sm mb-2">
-                    {a.name}
-                  </h3>
-                  <p className="font-body text-xs text-white/40 font-light">
-                    {a.desc}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
         </div>
       </section>
 

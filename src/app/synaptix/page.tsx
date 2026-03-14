@@ -352,45 +352,6 @@ export default function SynaptixPage() {
                   {visit.description}
                 </p>
 
-                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-                  {/* Components */}
-                  <div>
-                    <p className="text-xs uppercase tracking-widest text-white/40 mb-6">Components</p>
-                    <ul className="space-y-5" role="list">
-                      {visit.components.map((comp) => (
-                        <li key={comp.name} className="border-l-2 border-white/10 pl-4">
-                          <div className="flex items-center gap-3 mb-1">
-                            <span className={`text-[10px] uppercase tracking-wider px-2 py-0.5 ${
-                              comp.type === 'required' ? 'bg-synaptix-cyan/20 text-synaptix-cyan' :
-                              comp.type === 'testing' ? 'bg-synaptix-blue/40 text-synaptix-cyan' :
-                              'bg-white/10 text-white/50'
-                            }`}>
-                              {comp.type}
-                            </span>
-                            <span className="text-white font-bold text-sm">{comp.name}</span>
-                          </div>
-                          <p className="text-white/50 text-xs leading-relaxed">{comp.note}</p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* CPT Codes */}
-                  <div>
-                    <p className="text-xs uppercase tracking-widest text-white/40 mb-6">CPT Codes</p>
-                    <ul className="space-y-0" role="list">
-                      {visit.codes.map((code, i) => (
-                        <li 
-                          key={code.code} 
-                          className={`flex items-center justify-between py-3 ${i !== visit.codes.length - 1 ? 'border-b border-white/5' : ''}`}
-                        >
-                          <span className="text-white/60 text-sm">{code.service}</span>
-                          <code className="font-mono text-sm text-synaptix-cyan">{code.code}</code>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
               </article>
             ))}
           </div>
