@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 const quickLinks = [
   { href: "/about", label: "About" },
   { href: "/revenue-cycle", label: "Services" },
-  { href: "/cognificaai", label: "CognificaAI" },
+  { href: "https://cognifica.ai?utm_source=kronoshealth&utm_medium=footer", label: "CognificaAI", external: true, wordmark: true },
   { href: "/synaptix", label: "Synaptix" },
 ];
 
@@ -46,8 +46,16 @@ export default function Footer() {
                   <Link
                     href={link.href}
                     className="font-body text-[10px] sm:text-xs text-white/50 hover:text-white uppercase tracking-widest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-kronos-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-bg"
+                    {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   >
-                    {link.label}
+                    {link.wordmark ? (
+                      <>
+                        <span>Cognifica</span>
+                        <span className="text-kronos-lavender">AI</span>
+                      </>
+                    ) : (
+                      link.label
+                    )}
                   </Link>
                 </li>
               ))}

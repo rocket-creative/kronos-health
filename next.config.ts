@@ -60,6 +60,16 @@ const nextConfig: NextConfig = {
         destination: "/cognitive-franchise-program/",
         permanent: true,
       },
+      {
+        source: "/cognificaai",
+        destination: "https://cognifica.ai?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
+        permanent: true,
+      },
+      {
+        source: "/cognificaai/",
+        destination: "https://cognifica.ai?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
+        permanent: true,
+      },
     ];
   },
   images: {

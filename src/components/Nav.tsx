@@ -9,7 +9,7 @@ import { useMobileMenuAnimation } from "./animations";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/revenue-cycle", label: "Revenue Cycle" },
-  { href: "/cognificaai", label: "Cognifica AI" },
+  { href: "https://cognifica.ai?utm_source=kronoshealth&utm_medium=nav", label: "Cognifica AI", external: true, wordmark: true },
   { href: "/synaptix", label: "Synaptix" },
   { href: "/about", label: "About" },
 ];
@@ -50,8 +50,16 @@ export default function Nav() {
                 key={link.href}
                 href={link.href}
                 className="font-body text-xs text-white/50 hover:text-white uppercase tracking-widest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-kronos-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-bg"
+                {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
-                {link.label}
+                {link.wordmark ? (
+                  <>
+                    <span>Cognifica</span>
+                    <span className="text-kronos-lavender">AI</span>
+                  </>
+                ) : (
+                  link.label
+                )}
               </Link>
             ))}
           </div>
@@ -101,8 +109,16 @@ export default function Nav() {
                 href={link.href}
                 className="block font-body text-sm text-white/60 hover:text-white uppercase tracking-widest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-kronos-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-bg py-2"
                 onClick={() => setMobileMenuOpen(false)}
+                {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
-                {link.label}
+                {link.wordmark ? (
+                  <>
+                    <span>Cognifica</span>
+                    <span className="text-kronos-lavender">AI</span>
+                  </>
+                ) : (
+                  link.label
+                )}
               </Link>
             ))}
             <div className="pt-4 sm:pt-6 border-t border-white/10">

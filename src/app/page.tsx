@@ -166,7 +166,9 @@ export default function HomePage() {
             {/* CognificaAI */}
             <article data-stagger-card className="group">
               <Link 
-                href="/cognificaai"
+                href="https://cognifica.ai?utm_source=kronoshealth&utm_medium=homepage"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block focus:outline-none focus:ring-2 focus:ring-kronos-lavender focus:ring-offset-2 focus:ring-offset-kronos-gray-800"
                 aria-labelledby="cognificaai-title"
               >
@@ -182,7 +184,7 @@ export default function HomePage() {
                       id="cognificaai-title"
                       className="font-heading text-lg sm:text-xl lg:text-2xl text-white mb-2"
                     >
-                      CognificaAI
+                      Cognifica<span className="text-kronos-lavender">AI</span>
                     </h3>
                     <p className="font-body text-xs sm:text-sm text-white/60 font-light">
                       Intelligent mental health screening and risk stratification for employers. Validated clinical assessments with smart care pathways.
