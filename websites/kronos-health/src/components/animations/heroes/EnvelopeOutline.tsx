@@ -24,7 +24,7 @@ export function EnvelopeOutline({
   color = "0, 255, 209"
 }: EnvelopeOutlineProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
   const timeRef = useRef<{ value: number }>({ value: 0 });
   const particlesRef = useRef<Particle[]>([]);
   const trailParticlesRef = useRef<Particle[]>([]);

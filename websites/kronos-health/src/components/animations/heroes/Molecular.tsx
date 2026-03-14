@@ -26,7 +26,7 @@ export function Molecular({
   color = "0, 255, 209" // kronos-cyan RGB
 }: MolecularProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
   const rotationRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const atomsRef = useRef<Atom[]>([]);
 

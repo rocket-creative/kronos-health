@@ -47,7 +47,7 @@ export function NeuralNetwork({
   const nodesRef = useRef<Node[]>([]);
   const particlesRef = useRef<Particle[]>([]);
   const waveRingsRef = useRef<WaveRing[]>([]);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
   const timeRef = useRef<{ value: number }>({ value: 0 });
 
   useEffect(() => {

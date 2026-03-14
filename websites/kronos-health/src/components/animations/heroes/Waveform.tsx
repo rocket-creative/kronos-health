@@ -15,7 +15,7 @@ export function Waveform({
   color = "167, 139, 250" // kronos-lavender RGB
 }: WaveformProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
   const timeRef = useRef<{ value: number }>({ value: 0 });
 
   useEffect(() => {

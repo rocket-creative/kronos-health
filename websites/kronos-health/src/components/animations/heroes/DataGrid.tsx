@@ -15,7 +15,7 @@ export function DataGrid({
   color = "0, 255, 209" // kronos-cyan RGB
 }: DataGridProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
   const timeRef = useRef<{ value: number }>({ value: 0 });
   const dataPointsRef = useRef<Array<{
     gridX: number;

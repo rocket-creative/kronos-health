@@ -26,7 +26,7 @@ export function ConcentricRings({
   color = "0, 255, 209" // kronos-cyan RGB
 }: ConcentricRingsProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
   const timeRef = useRef<{ value: number }>({ value: 0 });
   const centerRef = useRef<{ x: number; y: number; targetX: number; targetY: number }>({ 
     x: 0, y: 0, targetX: 0, targetY: 0 

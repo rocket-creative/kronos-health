@@ -15,7 +15,7 @@ export function RadialPulse({
   color = "0, 255, 209" // kronos-cyan RGB
 }: RadialPulseProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
   const timeRef = useRef<{ value: number }>({ value: 0 });
   const ringsRef = useRef<Array<{
     radius: number;
