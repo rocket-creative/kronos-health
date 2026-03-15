@@ -201,7 +201,9 @@ export default function HomePage() {
             {/* Synaptix */}
             <article data-stagger-card className="group sm:col-span-2 lg:col-span-1">
               <Link 
-                href="/synaptix"
+                href="https://synaptix-rho.vercel.app?utm_source=kronoshealth&utm_medium=homepage"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block focus:outline-none focus:ring-2 focus:ring-synaptix-cyan focus:ring-offset-2 focus:ring-offset-kronos-gray-800"
                 aria-labelledby="synaptix-title"
               >
@@ -220,7 +222,7 @@ export default function HomePage() {
                       Synaptix
                     </h3>
                     <p className="font-body text-xs sm:text-sm text-white/60 font-light">
-                      Advanced concussion assessment and recovery platform. Structured, billable, recurring with $260K annual revenue potential.
+                      Advanced concussion assessment and recovery platform. Structured, standardized, recurring.
                     </p>
                   </div>
                   <ArrowRight 

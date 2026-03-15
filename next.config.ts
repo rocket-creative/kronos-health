@@ -70,6 +70,16 @@ const nextConfig: NextConfig = {
         destination: "https://cognificaai.vercel.app?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
         permanent: true,
       },
+      {
+        source: "/synaptix",
+        destination: "https://synaptix-rho.vercel.app?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
+        permanent: true,
+      },
+      {
+        source: "/synaptix/",
+        destination: "https://synaptix-rho.vercel.app?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
+        permanent: true,
+      },
     ];
   },
   images: {
