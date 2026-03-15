@@ -7,6 +7,7 @@ import {
   TrustSignal,
   ServiceSchema,
   BreadcrumbSchema,
+  FAQSchema,
   HeroBackground,
 } from "@/components";
 import {
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://kronoshealth.co/revenue-cycle-og.jpg",
+        url: "https://kronoshealth.co/revenue-cycle/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Kronos Health Revenue Cycle Management",
@@ -46,6 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Revenue Cycle Management & Payment Dispute Resolution",
     description: "Expert revenue cycle management and IDR dispute resolution for healthcare providers.",
+    images: ["https://kronoshealth.co/revenue-cycle/opengraph-image"],
   },
 };
 
@@ -104,6 +106,25 @@ const offerings = [
   },
 ];
 
+const faqItems = [
+  {
+    question: "What is the No Surprises Act and how does it affect my practice?",
+    answer: "The No Surprises Act protects patients from surprise medical bills for out of network emergency and certain nonemergency services. For providers, it establishes a federal Independent Dispute Resolution (IDR) process when insurers and providers cannot agree on payment. Kronos Health handles the full process from negotiation through arbitration.",
+  },
+  {
+    question: "How long does the IDR process typically take?",
+    answer: "Timelines vary by case complexity and insurer responsiveness. Initial negotiation typically runs 30 days. If IDR is required, the federal portal process adds additional time. Our team tracks all deadlines and ensures submissions meet regulatory requirements to avoid delays.",
+  },
+  {
+    question: "Do you work with all specialties?",
+    answer: "Yes. Kronos Revenue Cycle supports healthcare providers across specialties, including neurosurgery, orthopedics, emergency medicine, and other areas where out of network billing disputes arise under the No Surprises Act.",
+  },
+  {
+    question: "What documentation do you need to start a case?",
+    answer: "We need the patient encounter details, billing information, and any prior correspondence with the insurer. Our team will guide you through the submission process and handle all subsequent steps.",
+  },
+];
+
 const teamMembers = [
   { name: "Heisha Rivera", title: "Director of Revenue Cycle", image: "/team/heisha-rivera.png" },
   { name: "Camila Nicasio", title: "Revenue Cycle Specialist", image: "/team/camila-nicasio.png" },
@@ -117,7 +138,7 @@ export default function RevenueCyclePage() {
       {/* Schema Markup */}
       <ServiceSchema
         name="Revenue Cycle Management & IDR Dispute Resolution"
-        description="Expert arbitration and out-of-network dispute resolution support under the No Surprises Act. Complete case management from negotiation through final arbitration."
+        description="Expert arbitration and out of network dispute resolution support under the No Surprises Act. Complete case management from negotiation through final arbitration."
         url="https://kronoshealth.co/revenue-cycle"
         serviceType="Healthcare Revenue Services"
       />
@@ -332,7 +353,7 @@ export default function RevenueCyclePage() {
                       We Maximize Reimbursement
                     </h3>
                     <p className="font-body text-[10px] sm:text-xs lg:text-sm text-white/60 font-light">
-                      With deep clinical and regulatory expertise, we prepare strong, evidence backed submissions.
+                      With deep clinical and regulatory expertise, we prepare strong, evidence based submissions.
                     </p>
                   </div>
                 </div>
@@ -386,6 +407,36 @@ export default function RevenueCyclePage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <FAQSchema questions={faqItems} />
+      <section 
+        className="py-12 sm:py-16 lg:py-24 bg-kronos-bg"
+        id="faq"
+        aria-labelledby="faq-heading"
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="faq-heading" className="font-heading text-2xl sm:text-3xl lg:text-4xl text-white mb-8 sm:mb-12">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-3 sm:space-y-4">
+            {faqItems.map((item, idx) => (
+              <details 
+                key={idx} 
+                className="group bg-kronos-card border border-white/5 hover:border-kronos-cyan/20 transition-colors"
+              >
+                <summary className="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none">
+                  <h3 className="font-body text-xs sm:text-sm text-white font-normal pr-4"><span className="bg-yellow-100 dark:bg-yellow-900/40">{item.question}</span></h3>
+                  <span className="text-kronos-cyan flex-shrink-0" aria-hidden="true">+</span>
+                </summary>
+                <div className="px-4 sm:px-5 pb-4 sm:pb-5">
+                  <p className="font-body text-[10px] sm:text-xs text-white/60 font-light leading-relaxed"><span className="bg-yellow-100 dark:bg-yellow-900/40">{item.answer}</span></p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* E-E-A-T Trust Signal */}
       <section className="py-6 sm:py-8 bg-kronos-card border-t border-white/5">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -395,6 +446,26 @@ export default function RevenueCyclePage() {
             reviewedBy="Dr. John M. Abrahams, M.D."
             lastUpdated="2026-03-01"
           />
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="py-8 sm:py-10 bg-kronos-bg border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs tracking-widest uppercase text-white/40 mb-3">Explore More</p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/digital-health-tools" className="text-kronos-cyan hover:underline text-sm">
+              Digital Health Tools
+            </Link>
+            <span className="text-white/20">|</span>
+            <Link href="/clinically-integrated-neuropsychology" className="text-kronos-cyan hover:underline text-sm">
+              Neuropsychology
+            </Link>
+            <span className="text-white/20">|</span>
+            <Link href="/cognitive-franchise-program" className="text-kronos-cyan hover:underline text-sm">
+              Franchise Program
+            </Link>
+          </div>
         </div>
       </section>
 

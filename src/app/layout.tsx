@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, IBM_Plex_Sans, Open_Sans } from "next/font/google";
-import { Nav, Footer, OrganizationSchema, WebSiteSchema, SkipLink, CookieConsent } from "@/components";
+import { Nav, Footer, OrganizationSchema, WebSiteSchema, SkipLink, CookieConsent, StickyCTA } from "@/components";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     template: "%s | Kronos Health",
   },
   description:
-    "Healthcare technology solutions: Revenue cycle management, CognificaAI workplace mental health platform, and Synaptix concussion management software. Founded by Dr. John M. Abrahams, board-certified neurosurgeon.",
+    "Healthcare technology solutions: revenue cycle management, CognificaAI mental health platform, Synaptix concussion software. Founded by Dr. John M. Abrahams. Contact us today.",
   metadataBase: new URL("https://kronoshealth.co"),
   alternates: {
     canonical: "https://kronoshealth.co",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://kronoshealth.co/og-image.jpg",
+        url: "https://kronoshealth.co/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Kronos Health - Healthcare Technology Solutions",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     title: "Kronos Health — Smarter Healthcare. Stronger Revenue.",
     description:
       "Healthcare technology solutions: Revenue cycle management, CognificaAI, and Synaptix concussion software.",
-    images: ["https://kronoshealth.co/twitter-image.jpg"],
+    images: ["https://kronoshealth.co/twitter-image"],
   },
   robots: {
     index: true,
@@ -108,10 +108,11 @@ export default function RootLayout({
       >
         <SkipLink />
         <Nav />
-        <main id="main-content" className="pt-16 lg:pt-20" role="main">
+        <main id="main-content" className="pt-16 lg:pt-20 pb-20 lg:pb-0" role="main">
           {children}
         </main>
         <Footer />
+        <StickyCTA />
         <CookieConsent />
       </body>
     </html>

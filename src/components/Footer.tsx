@@ -4,7 +4,10 @@ import { ArrowRight } from "lucide-react";
 
 const quickLinks = [
   { href: "/about", label: "About" },
-  { href: "/revenue-cycle", label: "Services" },
+  { href: "/revenue-cycle", label: "Revenue Cycle" },
+  { href: "/digital-health-tools", label: "Digital Health Tools" },
+  { href: "/clinically-integrated-neuropsychology", label: "Neuropsychology" },
+  { href: "/cognitive-franchise-program", label: "Franchise Program" },
   { href: "https://cognificaai.vercel.app?utm_source=kronoshealth&utm_medium=footer", label: "CognificaAI", external: true, wordmark: true },
   { href: "https://synaptix-rho.vercel.app?utm_source=kronoshealth&utm_medium=footer", label: "Synaptix", external: true },
 ];

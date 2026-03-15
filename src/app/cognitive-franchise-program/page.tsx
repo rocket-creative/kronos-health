@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import { 
   ContactSection, 
   Breadcrumbs,
+  TrustSignal,
   ServiceSchema,
-  BreadcrumbSchema 
+  BreadcrumbSchema,
+  FAQSchema,
 } from "@/components";
+import Link from "next/link";
 import {
   Brain,
   TrendingUp,
@@ -17,27 +20,55 @@ import {
 export const metadata: Metadata = {
   title: "Cognitive Franchise Program",
   description:
-    "A scalable, low-cost cognitive health program for treating concussions, chronic pain, and cognitive decline. Join the Kronos Health franchise network. 16M+ undiagnosed Americans.",
+    "A scalable cognitive health program for treating concussions, chronic pain, and cognitive decline. Join the Kronos Health franchise network. 16M+ undiagnosed Americans.",
   alternates: {
     canonical: "https://kronoshealth.co/cognitive-franchise-program",
   },
   openGraph: {
     title: "Cognitive Franchise Program | Kronos Health",
-    description: "A scalable, low-cost cognitive health program for treating concussions, chronic pain, and cognitive decline.",
+    description: "A scalable cognitive health program for treating concussions, chronic pain, and cognitive decline.",
     url: "https://kronoshealth.co/cognitive-franchise-program",
     siteName: "Kronos Health",
     type: "website",
+    images: [
+      {
+        url: "https://kronoshealth.co/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Cognitive Franchise Program",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Cognitive Franchise Program",
-    description: "A scalable, low-cost cognitive health program for treating concussions, chronic pain, and cognitive decline.",
+    description: "A scalable cognitive health program for treating concussions, chronic pain, and cognitive decline.",
+    images: ["https://kronoshealth.co/opengraph-image"],
   },
 };
 
 const breadcrumbItems = [
   { name: "Home", url: "https://kronoshealth.co" },
   { name: "Cognitive Franchise Program", url: "https://kronoshealth.co/cognitive-franchise-program" },
+];
+
+const faqItems = [
+  {
+    question: "What is the Cognitive Franchise Program?",
+    answer: "A scalable cognitive health program designed to bring cognitive care to your clinic. It addresses concussions, chronic pain, and cognitive decline through standardized assessments, therapy protocols, and ongoing monitoring.",
+  },
+  {
+    question: "How much does it cost to join?",
+    answer: "Clinics join via a yearly franchise fee that scales up to baseline by year three. Startup costs are minimal, and the program requires only one dedicated provider to launch.",
+  },
+  {
+    question: "What does the initial evaluation include?",
+    answer: "The testing protocol includes medical history, physical exam, cognitive assessment, interactive assessment, multimodal assessment, sleep study, EEG, MRI, and psychotherapy evaluation.",
+  },
+  {
+    question: "What therapy options are available?",
+    answer: "We emphasize nonpharmacological interventions including Cognitive Behavioral Therapy, ongoing reassessment, progress monitoring, and adaptive treatment. Neuropsychological Standard Assessments guide therapy decisions.",
+  },
 ];
 
 const riskFactors = [
@@ -287,11 +318,71 @@ export default function FranchisePage() {
               </ul>
               <div className="mt-4 sm:mt-6 lg:mt-8 bg-kronos-cyan/10 border border-kronos-cyan/20 p-3 sm:p-4 lg:p-6">
                 <p className="font-body text-[10px] sm:text-xs text-white/50 font-light">
-                  The goal is to deliver Neuropsychological Standard Assessments to guide therapy. For chronic pain, we emphasize non pharmacological interventions.
+                  The goal is to deliver Neuropsychological Standard Assessments to guide therapy. For chronic pain, we emphasize nonpharmacological interventions.
                 </p>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="py-8 sm:py-10 bg-kronos-bg border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs tracking-widest uppercase text-white/40 mb-3">Explore More</p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/revenue-cycle" className="text-kronos-cyan hover:underline text-sm">
+              Revenue Cycle
+            </Link>
+            <span className="text-white/20">|</span>
+            <Link href="/digital-health-tools" className="text-kronos-cyan hover:underline text-sm">
+              Digital Health Tools
+            </Link>
+            <span className="text-white/20">|</span>
+            <Link href="/clinically-integrated-neuropsychology" className="text-kronos-cyan hover:underline text-sm">
+              Neuropsychology
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <FAQSchema questions={faqItems} />
+      <section 
+        className="py-12 sm:py-16 lg:py-24 bg-kronos-gray-800"
+        id="faq"
+        aria-labelledby="faq-heading"
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="faq-heading" className="font-heading text-2xl sm:text-3xl lg:text-4xl text-white mb-8 sm:mb-12">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-3 sm:space-y-4">
+            {faqItems.map((item, idx) => (
+              <details 
+                key={idx} 
+                className="group bg-kronos-card border border-white/5 hover:border-kronos-cyan/20 transition-colors"
+              >
+                <summary className="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none">
+                  <h3 className="font-body text-xs sm:text-sm text-white font-normal pr-4"><span className="bg-yellow-100 dark:bg-yellow-900/40">{item.question}</span></h3>
+                  <span className="text-kronos-cyan flex-shrink-0" aria-hidden="true">+</span>
+                </summary>
+                <div className="px-4 sm:px-5 pb-4 sm:pb-5">
+                  <p className="font-body text-[10px] sm:text-xs text-white/60 font-light leading-relaxed"><span className="bg-yellow-100 dark:bg-yellow-900/40">{item.answer}</span></p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-6 sm:py-8 bg-kronos-card border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <TrustSignal 
+            author="Dr. John M. Abrahams, M.D."
+            credentials="Board-Certified Neurosurgeon"
+            lastUpdated="2026-03-01"
+          />
         </div>
       </section>
 

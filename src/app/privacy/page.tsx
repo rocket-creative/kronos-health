@@ -15,11 +15,20 @@ export const metadata: Metadata = {
     url: "https://kronoshealth.co/privacy",
     siteName: "Kronos Health",
     type: "website",
+    images: [
+      {
+        url: "https://kronoshealth.co/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Privacy Policy",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Privacy Policy | Kronos Health",
     description: "How we collect, use, and protect your information.",
+    images: ["https://kronoshealth.co/opengraph-image"],
   },
 };
 
@@ -186,7 +195,7 @@ export default function PrivacyPage() {
                   <br />
                   <br />
                   Phone:{" "}
-                  <a href="tel:9147056830" className="text-kronos-cyan hover:underline">
+                  <a href="tel:+19147056830" className="text-kronos-cyan hover:underline">
                     (914) 705 6830
                   </a>
                   <br />

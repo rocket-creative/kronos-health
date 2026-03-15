@@ -6,12 +6,13 @@ export function OrganizationSchema({ type = "Organization" }: OrganizationSchema
   const schema = {
     "@context": "https://schema.org",
     "@type": type,
+    "@id": "https://kronoshealth.co/#organization",
     name: "Kronos Health",
     url: "https://kronoshealth.co",
     logo: "https://kronoshealth.co/kronos-logo.png",
     description:
       "B2B healthcare services including revenue cycle management, CognificaAI workplace mental health platform, and Synaptix concussion software.",
-    telephone: "+1-914-705-6830",
+    telephone: "+19147056830",
     email: "info@kronoshealth.co",
     address: {
       "@type": "PostalAddress",
@@ -66,12 +67,13 @@ export function WebSiteSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://kronoshealth.co/#website",
     name: "Kronos Health",
     url: "https://kronoshealth.co",
     description: "Healthcare technology and revenue cycle management solutions",
     publisher: {
       "@type": "Organization",
-      name: "Kronos Health",
+      "@id": "https://kronoshealth.co/#organization",
     },
   };
 
@@ -95,15 +97,14 @@ export function ServiceSchema({ name, description, url, serviceType, areaServed 
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${url}#service`,
     name,
     description,
     url,
     serviceType,
     areaServed,
     provider: {
-      "@type": "Organization",
-      name: "Kronos Health",
-      url: "https://kronoshealth.co",
+      "@id": "https://kronoshealth.co/#organization",
     },
   };
 
@@ -190,6 +191,47 @@ export function MedicalBusinessSchema({
       "@type": "MedicalProcedure",
       name,
       description,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function LocalBusinessSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://kronoshealth.co/contact#localbusiness",
+    name: "Kronos Health",
+    url: "https://kronoshealth.co",
+    telephone: "+19147056830",
+    email: "info@kronoshealth.co",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "244 Westchester Avenue, Suite 209",
+      addressLocality: "West Harrison",
+      addressRegion: "NY",
+      postalCode: "10604",
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 41.0334,
+      longitude: -73.7262,
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "17:00",
+    },
+    parentOrganization: {
+      "@id": "https://kronoshealth.co/#organization",
     },
   };
 

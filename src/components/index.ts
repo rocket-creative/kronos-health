@@ -5,10 +5,12 @@ export { default as DemoRequestForm } from "./DemoRequestForm";
 export { default as ServiceCard } from "./ServiceCard";
 export { default as TeamMember } from "./TeamMember";
 export { default as ContactSection } from "./ContactSection";
+export { default as StickyCTA } from "./StickyCTA";
 export { HeroBackground } from "./HeroBackground";
 export { 
   OrganizationSchema, 
   WebSiteSchema,
+  LocalBusinessSchema,
   ProductSchema, 
   BreadcrumbSchema,
   ServiceSchema,

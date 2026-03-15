@@ -3,28 +3,38 @@ import {
   ContactSection, 
   Breadcrumbs,
   BreadcrumbSchema,
+  LocalBusinessSchema,
   HeroBackground,
 } from "@/components";
 import { Phone, MapPin, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Get in Touch",
+  title: "Contact Kronos Health — Revenue Cycle, CognificaAI, Synaptix Inquiries",
   description:
-    "Get in touch with Kronos Health. Contact us for revenue cycle management, CognificaAI demos, Synaptix demos, or general inquiries. Located in West Harrison, NY.",
+    "Contact Kronos Health for revenue cycle management, CognificaAI demos, Synaptix demos, or general inquiries. Located in West Harrison, NY. Reach out today.",
   alternates: {
     canonical: "https://kronoshealth.co/contact",
   },
   openGraph: {
-    title: "Contact Us — Get in Touch | Kronos Health",
-    description: "Contact us for revenue cycle management, CognificaAI demos, Synaptix demos, or general inquiries.",
+    title: "Contact Kronos Health — Revenue Cycle, CognificaAI, Synaptix Inquiries",
+    description: "Contact Kronos Health for revenue cycle management, CognificaAI demos, Synaptix demos, or general inquiries. Located in West Harrison, NY.",
     url: "https://kronoshealth.co/contact",
     siteName: "Kronos Health",
     type: "website",
+    images: [
+      {
+        url: "https://kronoshealth.co/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Contact Kronos Health",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Us — Get in Touch | Kronos Health",
-    description: "Contact us for revenue cycle management, CognificaAI demos, Synaptix demos, or general inquiries.",
+    title: "Contact Kronos Health — Revenue Cycle, CognificaAI, Synaptix Inquiries",
+    description: "Contact Kronos Health for revenue cycle management, CognificaAI demos, Synaptix demos, or general inquiries.",
+    images: ["https://kronoshealth.co/opengraph-image"],
   },
 };
 
@@ -36,6 +46,7 @@ const breadcrumbItems = [
 export default function ContactPage() {
   return (
     <>
+      <LocalBusinessSchema />
       <BreadcrumbSchema items={breadcrumbItems} />
 
       {/* Breadcrumb Navigation */}

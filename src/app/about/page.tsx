@@ -9,23 +9,32 @@ import {
 } from "@/components";
 
 export const metadata: Metadata = {
-  title: "About Us — Meet the Kronos Health Team",
+  title: "About Kronos Health — Meet Our Healthcare Technology Team",
   description:
     "Meet the Kronos Health team. Over 100 years of combined experience in healthcare, revenue cycle management, and digital health solutions. Founded by Dr. John M. Abrahams.",
   alternates: {
     canonical: "https://kronoshealth.co/about",
   },
   openGraph: {
-    title: "About Us — Meet the Kronos Health Team",
-    description: "Over 100 years of combined experience in healthcare, revenue cycle management, and digital health solutions.",
+    title: "About Kronos Health — Meet Our Healthcare Technology Team",
+    description: "Over 100 years of combined experience in healthcare, revenue cycle management, and digital health solutions. Founded by Dr. John M. Abrahams.",
     url: "https://kronoshealth.co/about",
     siteName: "Kronos Health",
     type: "website",
+    images: [
+      {
+        url: "https://kronoshealth.co/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Kronos Health Team",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us — Meet the Kronos Health Team",
-    description: "Over 100 years of combined experience in healthcare, revenue cycle management, and digital health.",
+    title: "About Kronos Health — Meet Our Healthcare Technology Team",
+    description: "Over 100 years of combined experience in healthcare, revenue cycle management, and digital health solutions.",
+    images: ["https://kronoshealth.co/opengraph-image"],
   },
 };
 
@@ -74,7 +83,7 @@ const teamMembers = [
   {
     name: "Jennifer Scanlon",
     title: "Assistant, Operations",
-    bio: "A dedicated professional who thrives on one on one interactions with patients, ensuring they feel welcomed and supported.",
+    bio: "A dedicated professional who thrives on direct interactions with patients, ensuring they feel welcomed and supported.",
     image: "/team/jennifer-scanlon.png",
   },
   {

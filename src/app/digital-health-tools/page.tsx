@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import { 
   ContactSection, 
   Breadcrumbs,
+  TrustSignal,
   ServiceSchema,
-  BreadcrumbSchema 
+  BreadcrumbSchema,
+  FAQSchema,
 } from "@/components";
+import Link from "next/link";
 import {
   MessageSquare,
   Activity,
@@ -28,11 +31,20 @@ export const metadata: Metadata = {
     url: "https://kronoshealth.co/digital-health-tools",
     siteName: "Kronos Health",
     type: "website",
+    images: [
+      {
+        url: "https://kronoshealth.co/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Digital Health Tools",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Digital Health Tools — Tappy, AISA, DEM",
     description: "Turnkey digital health tools for providers with automated patient monitoring.",
+    images: ["https://kronoshealth.co/opengraph-image"],
   },
 };
 
@@ -55,6 +67,25 @@ const turnkeyServices = [
   { title: "Data Review", icon: ClipboardList },
   { title: "Note Generation", icon: FileText },
   { title: "EMR Submission", icon: Send },
+];
+
+const faqItems = [
+  {
+    question: "What is Tappy and how does it work?",
+    answer: "Tappy is an SMS based cognitive health tool that collects essential data through patient mobile phones. It integrates with your EMR, automates documentation, and requires minimal effort from patients to engage.",
+  },
+  {
+    question: "Does AISA work for specialties other than spine?",
+    answer: "Yes. The Artificial Intelligent Spine Assistant is adaptable for any specialty. It guides patients through recovery, improves compliance, and provides trackable outcomes regardless of the procedure type.",
+  },
+  {
+    question: "How does the Digital Evaluation Module fit into our workflow?",
+    answer: "DEM streamlines digital health documentation and patient tracking. It uses SMS based technology for automated documentation and streamlined workflows, reducing administrative burden on your staff.",
+  },
+  {
+    question: "What support do you provide for implementation?",
+    answer: "Kronos Health provides turnkey implementation including enrollment, data review, note generation, and EMR submission support. Our team guides you through setup and ongoing use.",
+  },
 ];
 
 const solutions = [
@@ -220,6 +251,66 @@ export default function DigitalHealthPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="py-8 sm:py-10 bg-kronos-bg border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs tracking-widest uppercase text-white/40 mb-3">Explore More</p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/revenue-cycle" className="text-kronos-cyan hover:underline text-sm">
+              Revenue Cycle
+            </Link>
+            <span className="text-white/20">|</span>
+            <Link href="/clinically-integrated-neuropsychology" className="text-kronos-cyan hover:underline text-sm">
+              Neuropsychology
+            </Link>
+            <span className="text-white/20">|</span>
+            <Link href="/cognitive-franchise-program" className="text-kronos-cyan hover:underline text-sm">
+              Franchise Program
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <FAQSchema questions={faqItems} />
+      <section 
+        className="py-12 sm:py-16 lg:py-24 bg-kronos-gray-800"
+        id="faq"
+        aria-labelledby="faq-heading"
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="faq-heading" className="font-heading text-2xl sm:text-3xl lg:text-4xl text-white mb-8 sm:mb-12">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-3 sm:space-y-4">
+            {faqItems.map((item, idx) => (
+              <details 
+                key={idx} 
+                className="group bg-kronos-card border border-white/5 hover:border-kronos-cyan/20 transition-colors"
+              >
+                <summary className="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none">
+                  <h3 className="font-body text-xs sm:text-sm text-white font-normal pr-4"><span className="bg-yellow-100 dark:bg-yellow-900/40">{item.question}</span></h3>
+                  <span className="text-kronos-cyan flex-shrink-0" aria-hidden="true">+</span>
+                </summary>
+                <div className="px-4 sm:px-5 pb-4 sm:pb-5">
+                  <p className="font-body text-[10px] sm:text-xs text-white/60 font-light leading-relaxed"><span className="bg-yellow-100 dark:bg-yellow-900/40">{item.answer}</span></p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-6 sm:py-8 bg-kronos-card border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <TrustSignal 
+            author="Dr. John M. Abrahams, M.D."
+            credentials="Board-Certified Neurosurgeon, Founder"
+            lastUpdated="2026-03-01"
+          />
         </div>
       </section>
 

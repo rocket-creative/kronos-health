@@ -15,11 +15,20 @@ export const metadata: Metadata = {
     url: "https://kronoshealth.co/terms",
     siteName: "Kronos Health",
     type: "website",
+    images: [
+      {
+        url: "https://kronoshealth.co/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Terms of Service",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Terms of Service | Kronos Health",
     description: "Terms and conditions for using Kronos Health website and services.",
+    images: ["https://kronoshealth.co/opengraph-image"],
   },
 };
 
@@ -211,7 +220,7 @@ export default function TermsPage() {
                   <br />
                   <br />
                   Phone:{" "}
-                  <a href="tel:9147056830" className="text-kronos-cyan hover:underline">
+                  <a href="tel:+19147056830" className="text-kronos-cyan hover:underline">
                     (914) 705 6830
                   </a>
                   <br />
