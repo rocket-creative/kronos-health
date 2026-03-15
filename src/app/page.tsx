@@ -65,7 +65,7 @@ const clinicalBrands = [
     subtitle: "Brain Health & Cognitive Wellness",
     description:
       "The only regional practice combining neurosurgeons, neuropsychologists, physical therapists, and researchers under one roof. Services include FDA-cleared TMS therapy, full neuropsychological evaluations, EEG, cognitive training, and structured concussion programs. Three locations: West Harrison NY, Stamford CT, and Aquebogue NY.",
-    href: "https://cognifica.health?utm_source=kronoshealth&utm_medium=homepage",
+    href: "https://cognifica-health.vercel.app?utm_source=kronoshealth&utm_medium=homepage",
     cta: "Visit Cognifica Health",
   },
 ];
@@ -208,7 +208,7 @@ export default function HomePage() {
                 <div className="flex flex-wrap gap-2 sm:gap-3">
                   {[
                     { label: "ISS Health", href: "https://iss.health" },
-                    { label: "Cognifica Health", href: "https://cognifica.health" },
+                    { label: "Cognifica Health", href: "https://cognifica-health.vercel.app" },
                     { label: "CognificaAI", href: "https://cognificaai.vercel.app" },
                     { label: "Synaptix", href: "https://synaptix-rho.vercel.app" },
                     { label: "Kronos Revenue", href: "https://kronos-rev.vercel.app" },
