@@ -8,8 +8,7 @@ import { useMobileMenuAnimation } from "./animations";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/revenue-cycle", label: "Revenue Cycle" },
-  { href: "https://kronosrevenue.co?utm_source=kronoshealth&utm_medium=nav", label: "Kronos Revenue", external: true },
+  { href: "https://kronos-rev.vercel.app?utm_source=kronoshealth&utm_medium=nav", label: "Kronos Revenue", external: true },
   { href: "https://cognificaai.vercel.app?utm_source=kronoshealth&utm_medium=nav", label: "Cognifica AI", external: true, wordmark: true },
   { href: "https://synaptix-rho.vercel.app?utm_source=kronoshealth&utm_medium=nav", label: "Synaptix", external: true },
   { href: "/about", label: "About" },

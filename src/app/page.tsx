@@ -13,7 +13,7 @@ const b2bServices = [
     title: "Kronos Revenue",
     description:
       "Expert arbitration and out of network dispute resolution under the No Surprises Act. Complete case management from negotiation through final IDR arbitration — we recover what you are owed.",
-    href: "https://kronosrevenue.co?utm_source=kronoshealth&utm_medium=homepage",
+    href: "https://kronos-rev.vercel.app?utm_source=kronoshealth&utm_medium=homepage",
     external: true,
     accentColor: "text-kronos-cyan",
     focusColor: "focus:ring-kronos-cyan",
@@ -211,7 +211,7 @@ export default function HomePage() {
                     { label: "Cognifica Health", href: "https://cognifica.health" },
                     { label: "CognificaAI", href: "https://cognificaai.vercel.app" },
                     { label: "Synaptix", href: "https://synaptix-rho.vercel.app" },
-                    { label: "Kronos Revenue", href: "https://kronosrevenue.co" },
+                    { label: "Kronos Revenue", href: "https://kronos-rev.vercel.app" },
                   ].map((co) => (
                     <a
                       key={co.label}
