@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { 
-  ContactSection, 
-  Breadcrumbs, 
+import Link from "next/link";
+import { ArrowRight, ExternalLink } from "lucide-react";
+import {
+  ContactSection,
+  Breadcrumbs,
   TrustSignal,
   BreadcrumbSchema,
   HeroBackground,
@@ -11,19 +13,20 @@ import {
 export const metadata: Metadata = {
   title: "About Kronos Health — Meet Our Healthcare Technology Team",
   description:
-    "Meet the Kronos Health team. Over 100 years of combined experience in healthcare, revenue cycle management, and digital health solutions. Founded by Dr. John M. Abrahams.",
+    "Meet the Kronos Health team. Over 100 years of combined experience in healthcare, revenue cycle management, and digital health. Founded by Dr. John M. Abrahams.",
   alternates: {
-    canonical: "https://kronoshealth.co/about",
+    canonical: "https://kronos-health.vercel.app/about",
   },
   openGraph: {
     title: "About Kronos Health — Meet Our Healthcare Technology Team",
-    description: "Over 100 years of combined experience in healthcare, revenue cycle management, and digital health solutions. Founded by Dr. John M. Abrahams.",
-    url: "https://kronoshealth.co/about",
+    description:
+      "Over 100 years of combined experience in healthcare, revenue cycle management, and digital health. Founded by Dr. John M. Abrahams.",
+    url: "https://kronos-health.vercel.app/about",
     siteName: "Kronos Health",
     type: "website",
     images: [
       {
-        url: "https://kronoshealth.co/opengraph-image",
+        url: "https://kronos-health.vercel.app/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Kronos Health Team",
@@ -33,14 +36,22 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "About Kronos Health — Meet Our Healthcare Technology Team",
-    description: "Over 100 years of combined experience in healthcare, revenue cycle management, and digital health solutions.",
-    images: ["https://kronoshealth.co/opengraph-image"],
+    description:
+      "Over 100 years of combined experience in healthcare, revenue cycle management, and digital health.",
+    images: ["https://kronos-health.vercel.app/opengraph-image"],
   },
 };
 
 const breadcrumbItems = [
-  { name: "Home", url: "https://kronoshealth.co" },
-  { name: "About", url: "https://kronoshealth.co/about" },
+  { name: "Home", url: "https://kronos-health.vercel.app" },
+  { name: "About", url: "https://kronos-health.vercel.app/about" },
+];
+
+const founderCredentials = [
+  { value: "4,000+", label: "Surgeries\nPerformed" },
+  { value: "16", label: "Awarded\nPatents" },
+  { value: "30+", label: "Peer-Reviewed\nPublications" },
+  { value: "2002", label: "In Practice\nSince" },
 ];
 
 const teamMembers = [
@@ -105,50 +116,190 @@ export default function AboutPage() {
     <>
       <BreadcrumbSchema items={breadcrumbItems} />
 
-      {/* Breadcrumb Navigation */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <Breadcrumbs items={[{ name: "About" }]} />
       </div>
 
-      {/* Full-Width Hero with Molecular Animation */}
-      <section 
+      {/* Hero — matches homepage structure */}
+      <section
         className="relative min-h-[70vh] sm:min-h-[80vh] bg-kronos-bg overflow-hidden"
         aria-labelledby="about-hero-heading"
       >
-        {/* Full-width animated background - DNA Helix */}
-        <HeroBackground type="dna" color="0, 255, 209" />
+        <HeroBackground type="neural" color="0, 255, 209" />
 
-        {/* Glass effect content panel */}
         <div className="relative z-10 min-h-[70vh] sm:min-h-[80vh] flex items-center">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-0">
             <div className="backdrop-blur-md bg-black/40 border border-white/10 p-8 sm:p-10 lg:p-14 max-w-xl">
-              <p className="text-xs tracking-widest uppercase text-white/50 mb-4 sm:mb-6">
-                Who We Are
-              </p>
-              
-              <h1 
-                id="about-hero-heading"
-                className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white leading-none tracking-tight mb-6 sm:mb-8"
-              >
-                About<br />
-                <span className="text-white/40">Kronos</span>
-              </h1>
-
-              <p className="font-body text-sm sm:text-base text-white/70 font-light leading-relaxed mb-4 sm:mb-6">
-                Kronos Health is a forward thinking healthcare solutions provider committed to improving clinical operations, patient outcomes, and provider reimbursement.
-              </p>
-              
-              <p className="font-body text-xs sm:text-sm text-white/50 font-light leading-relaxed">
-                Backed by a team with deep experience across medical billing, neuropsychology, digital health, and clinical operations.
-              </p>
+              <div className="flex flex-col gap-6 sm:gap-8">
+                <Image
+                  src="/kronos-logo.png"
+                  alt="Kronos Health"
+                  width={400}
+                  height={100}
+                  className="w-[200px] sm:w-[260px] lg:w-[320px] h-auto"
+                  priority
+                />
+                <div className="space-y-4 sm:space-y-6">
+                  <h1
+                    id="about-hero-heading"
+                    className="font-heading text-xl sm:text-2xl lg:text-3xl text-white tracking-wider"
+                  >
+                    Healthcare. Revenue. Innovation.
+                  </h1>
+                  <p className="font-body text-base sm:text-lg text-white/60 font-light">
+                    The parent platform behind six healthcare brands.
+                  </p>
+                  <p className="font-body text-sm sm:text-base text-white/70 font-light leading-relaxed">
+                    Founded by Dr. John M. Abrahams — board-certified neurosurgeon,
+                    inventor, and entrepreneur — Kronos Health brings clinical
+                    expertise and technology together across revenue cycle
+                    management, employer mental health, concussion recovery, and
+                    direct patient care.
+                  </p>
+                  <Link
+                    href="#founder"
+                    className="inline-flex items-center gap-4 bg-kronos-cyan text-kronos-bg py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs sm:text-sm font-light hover:gap-6 transition-all w-fit focus:outline-none focus:ring-2 focus:ring-kronos-cyan focus:ring-offset-2 focus:ring-offset-black/40"
+                  >
+                    Meet Our Team
+                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Team Grid - Editorial Style */}
-      <section 
-        className="py-12 sm:py-16 lg:py-24 bg-kronos-bg"
+      {/* Dr. Abrahams — matches homepage founder section */}
+      <section
+        id="founder"
+        className="py-16 sm:py-20 lg:py-32 bg-kronos-bg border-t border-white/5"
+        aria-labelledby="founder-heading"
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-20">
+            <div className="lg:col-span-7">
+              <p className="text-xs tracking-widest uppercase text-white/40 mb-4 sm:mb-6">
+                The Founder
+              </p>
+              <h2
+                id="founder-heading"
+                className="font-heading text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-white leading-none mb-6 sm:mb-8"
+              >
+                Dr. John M.
+                <br />
+                <span className="text-white/40">Abrahams, M.D.</span>
+              </h2>
+
+              <div className="space-y-4 font-body text-sm sm:text-base text-white/60 font-light leading-relaxed">
+                <p>
+                  Dr. John M. Abrahams is a board-certified neurosurgeon who has
+                  been in clinical practice since 2002, performing over 150
+                  procedures per year with a focus on anterior cervical and
+                  posterior lumbar fusions, and minimally invasive spine surgery.
+                </p>
+                <p>
+                  He serves as President of New York Brain and Spine Surgery
+                  (NYBASS) and held the role of President of Brain and Spine
+                  Surgeons of New York from 2015 to 2023. He is Co-Director of
+                  the Spine Section at Northern Westchester Hospital and Founder
+                  of the Brain and Spine Research Institute.
+                </p>
+                <p>
+                  Named one of the{" "}
+                  <span className="text-white/80">
+                    &quot;Top 10 Spine and Orthopedic Surgeon Tech Entrepreneurs
+                    to Know&quot;
+                  </span>{" "}
+                  by Becker&apos;s Spine Review, Dr. Abrahams has channeled his
+                  clinical career into building a network of companies that
+                  improve outcomes, reduce administrative burden, and advance
+                  brain health technology.
+                </p>
+              </div>
+
+              <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/5">
+                <p className="text-xs tracking-widest uppercase text-white/40 mb-3">
+                  Companies Founded
+                </p>
+                <div className="flex flex-wrap gap-2 sm:gap-3">
+                  {[
+                    { label: "ISS Health", href: "https://iss.health" },
+                    {
+                      label: "Cognifica Health",
+                      href: "https://cognifica-health.vercel.app",
+                    },
+                    {
+                      label: "CognificaAI",
+                      href: "https://cognificaai.vercel.app",
+                    },
+                    {
+                      label: "Synaptix",
+                      href: "https://synaptix-rho.vercel.app",
+                    },
+                    {
+                      label: "Kronos Revenue",
+                      href: "https://kronos-rev.vercel.app",
+                    },
+                  ].map((co) => (
+                    <a
+                      key={co.label}
+                      href={co.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 border border-white/10 px-3 py-1.5 text-[10px] sm:text-xs uppercase tracking-widest text-white/50 hover:text-white hover:border-white/30 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-kronos-cyan"
+                    >
+                      {co.label}
+                      <ExternalLink
+                        className="w-2.5 h-2.5"
+                        aria-hidden="true"
+                      />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                {founderCredentials.map((cred) => (
+                  <div
+                    key={cred.value}
+                    className="bg-kronos-card border border-white/5 p-4 sm:p-6 lg:p-8 flex flex-col"
+                  >
+                    <span className="font-heading text-3xl sm:text-4xl lg:text-5xl text-kronos-cyan leading-none mb-3">
+                      {cred.value}
+                    </span>
+                    <div
+                      className="w-8 h-px bg-kronos-cyan/30 mb-3"
+                      aria-hidden="true"
+                    />
+                    <p className="font-body text-[10px] sm:text-xs text-white/40 font-light uppercase tracking-widest whitespace-pre-line leading-relaxed">
+                      {cred.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-3 sm:mt-4 bg-kronos-card border border-white/5 p-4 sm:p-6">
+                <p className="text-[10px] sm:text-xs text-white/40 uppercase tracking-widest mb-2">
+                  Hospital Appointments
+                </p>
+                <ul className="space-y-1.5 font-body text-xs sm:text-sm text-white/60 font-light">
+                  <li>Northern Westchester Hospital, Mt. Kisco NY</li>
+                  <li>Westchester Medical Center, Valhalla NY</li>
+                  <li>White Plains Hospital, White Plains NY</li>
+                  <li>New York Presbyterian Hudson Valley</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Grid — all staff and bios preserved */}
+      <section
+        className="py-12 sm:py-16 lg:py-24 bg-kronos-gray-800"
         aria-labelledby="team-heading"
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -156,7 +307,7 @@ export default function AboutPage() {
             <p className="text-xs tracking-widest uppercase text-white/50 mb-4">
               Leadership
             </p>
-            <h2 
+            <h2
               id="team-heading"
               className="font-heading text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white"
             >
@@ -164,13 +315,11 @@ export default function AboutPage() {
             </h2>
           </header>
 
-          {/* Asymmetric Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-8">
-            {/* First two - large */}
             {teamMembers.slice(0, 2).map((member, i) => (
-              <article 
-                key={member.name} 
-                className={`${i === 0 ? 'lg:col-span-7' : 'lg:col-span-5'} p-4 -m-4 hover:bg-white/5 transition-colors`}
+              <article
+                key={member.name}
+                className={`${i === 0 ? "lg:col-span-7" : "lg:col-span-5"} p-4 -m-4 hover:bg-white/5 transition-colors`}
               >
                 <div className="bg-kronos-card aspect-[4/3] relative overflow-hidden mb-3 sm:mb-4 group">
                   <Image
@@ -193,9 +342,11 @@ export default function AboutPage() {
               </article>
             ))}
 
-            {/* Rest - smaller */}
             {teamMembers.slice(2).map((member) => (
-              <article key={member.name} className="lg:col-span-4 p-4 -m-4 hover:bg-white/5 transition-colors">
+              <article
+                key={member.name}
+                className="lg:col-span-4 p-4 -m-4 hover:bg-white/5 transition-colors"
+              >
                 <div className="bg-kronos-card aspect-square relative overflow-hidden mb-3 sm:mb-4 group">
                   <Image
                     src={member.image}
@@ -220,12 +371,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* E-E-A-T Trust Signal */}
-      <section className="py-6 sm:py-8 bg-kronos-gray-800 border-t border-white/5">
+      <section className="py-6 sm:py-8 bg-kronos-card border-t border-white/5">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <TrustSignal 
+          <TrustSignal
             author="Dr. John M. Abrahams, M.D."
-            credentials="Board-Certified Neurosurgeon, Founder & CEO"
+            credentials="Board-Certified Neurosurgeon, President NYBASS, Past President BSSNY"
             lastUpdated="2026-03-01"
           />
         </div>
