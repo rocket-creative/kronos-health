@@ -6,7 +6,7 @@
   
   --kronos-bg: #0A0A0A;
   --kronos-card: #161616;
-  --kronos-cyan: #5784ab;
+  --kronos-cyan: #82738C;
   --kronos-gray-100: #F5F5F5;
   --kronos-gray-200: #E5E5E5;
   --kronos-gray-300: #D4D4D4;
@@ -17,12 +17,12 @@
   --kronos-gray-800: #262626;
   --kronos-gray-900: #171717;
   --kronos-text-dark: #171717;
-  --kronos-lavender: #a8c4d9;
+  --kronos-lavender: #C4B5CF;
   --synaptix-blue: #0C5E94;
   --synaptix-cyan: #0FBDD5;
-  --kronos-green: #7aa3c4;
-  --kronos-blue-dark: #3d6289;
-  --kronos-blue-light: #dce9f2;
+  --kronos-green: #6B5F76;
+  --kronos-blue-dark: #574B61;
+  --kronos-blue-light: #EDE8F2;
 }
 
 @theme inline {
