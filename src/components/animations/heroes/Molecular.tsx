@@ -23,7 +23,7 @@ interface MolecularProps {
 export function Molecular({ 
   className = "", 
   atomCount = 20,
-  color = "0, 255, 209" // kronos-cyan RGB
+  color = "130, 115, 140" // kronos-cyan RGB
 }: MolecularProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | null>(null);

@@ -21,7 +21,7 @@ interface EnvelopeOutlineProps {
 
 export function EnvelopeOutline({ 
   className = "", 
-  color = "0, 255, 209"
+  color = "130, 115, 140"
 }: EnvelopeOutlineProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | null>(null);

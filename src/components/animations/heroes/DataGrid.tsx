@@ -12,7 +12,7 @@ interface DataGridProps {
 export function DataGrid({ 
   className = "", 
   gridSize = 60,
-  color = "0, 255, 209" // kronos-cyan RGB
+  color = "130, 115, 140" // kronos-cyan RGB
 }: DataGridProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | null>(null);

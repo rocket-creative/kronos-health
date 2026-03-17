@@ -60,7 +60,7 @@ export default function ContactPage() {
         aria-labelledby="contact-hero-heading"
       >
         {/* Full-width animated background */}
-        <HeroBackground type="envelope" color="0, 255, 209" />
+        <HeroBackground type="envelope" color="130, 115, 140" />
 
         {/* Glass effect content panel */}
         <div className="relative z-10 min-h-[70dvh] sm:min-h-[80dvh] flex items-center">

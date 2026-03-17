@@ -125,7 +125,7 @@ export default function AboutPage() {
         className="relative min-h-[70dvh] sm:min-h-[80dvh] bg-kronos-bg overflow-hidden pt-safe-top"
         aria-labelledby="about-hero-heading"
       >
-        <HeroBackground type="neural" color="0, 255, 209" />
+        <HeroBackground type="neural" color="130, 115, 140" />
 
         <div className="relative z-10 min-h-[70dvh] sm:min-h-[80dvh] flex items-center">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-0">

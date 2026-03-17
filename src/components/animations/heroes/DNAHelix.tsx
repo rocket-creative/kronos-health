@@ -21,7 +21,7 @@ interface DNAHelixProps {
 
 export function DNAHelix({ 
   className = "", 
-  color = "0, 255, 209"
+  color = "130, 115, 140"
 }: DNAHelixProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | null>(null);

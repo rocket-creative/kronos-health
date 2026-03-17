@@ -12,7 +12,7 @@ interface WaveformProps {
 export function Waveform({ 
   className = "", 
   waveCount = 5,
-  color = "167, 139, 250" // kronos-lavender RGB
+  color = "196, 181, 207" // kronos-lavender RGB
 }: WaveformProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | null>(null);

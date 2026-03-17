@@ -41,7 +41,7 @@ interface NeuralNetworkProps {
 export function NeuralNetwork({ 
   className = "", 
   nodeCount = 30,
-  color = "0, 255, 209"
+  color = "130, 115, 140"
 }: NeuralNetworkProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const nodesRef = useRef<Node[]>([]);

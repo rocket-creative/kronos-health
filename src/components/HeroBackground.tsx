@@ -57,15 +57,15 @@ interface HeroBackgroundProps {
 
 export function HeroBackground({ type, color, className = "" }: HeroBackgroundProps) {
   const animations: Record<AnimationType, React.ReactNode> = {
-    neural: <NeuralNetwork color={color || "0, 255, 209"} />,
-    waveform: <Waveform color={color || "167, 139, 250"} />,
-    grid: <DataGrid color={color || "0, 255, 209"} />,
-    pulse: <RadialPulse color={color || "0, 255, 209"} />,
-    molecular: <Molecular color={color || "0, 255, 209"} />,
-    rings: <ConcentricRings color={color || "0, 255, 209"} />,
-    brain: <BrainNetwork color={color || "0, 255, 209"} />,
-    dna: <DNAHelix color={color || "0, 255, 209"} />,
-    envelope: <EnvelopeOutline color={color || "0, 255, 209"} />,
+    neural: <NeuralNetwork color={color || "130, 115, 140"} />,
+    waveform: <Waveform color={color || "196, 181, 207"} />,
+    grid: <DataGrid color={color || "130, 115, 140"} />,
+    pulse: <RadialPulse color={color || "130, 115, 140"} />,
+    molecular: <Molecular color={color || "130, 115, 140"} />,
+    rings: <ConcentricRings color={color || "130, 115, 140"} />,
+    brain: <BrainNetwork color={color || "130, 115, 140"} />,
+    dna: <DNAHelix color={color || "130, 115, 140"} />,
+    envelope: <EnvelopeOutline color={color || "130, 115, 140"} />,
   };
 
   return (

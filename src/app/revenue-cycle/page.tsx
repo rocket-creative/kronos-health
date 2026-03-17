@@ -155,7 +155,7 @@ export default function RevenueCyclePage() {
         aria-labelledby="revenue-hero-heading"
       >
         {/* Full-width animated background */}
-        <HeroBackground type="pulse" color="0, 255, 209" />
+        <HeroBackground type="pulse" color="130, 115, 140" />
 
         {/* Glass effect content panel */}
         <div className="relative z-10 min-h-[80dvh] sm:min-h-dvh flex items-center">
