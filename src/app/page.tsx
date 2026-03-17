@@ -11,14 +11,15 @@ const b2bServices = [
   {
     id: "kronos-revenue",
     title: "Kronos Revenue",
+    titleColor: "text-kronos-rev-green",
     description:
       "Expert arbitration and out of network dispute resolution under the No Surprises Act. Complete case management from negotiation through final IDR arbitration — we recover what you are owed.",
     href: "https://kronos-rev.vercel.app?utm_source=kronoshealth&utm_medium=homepage",
     external: true,
     accentColor: "text-kronos-cyan",
-    focusColor: "focus:ring-kronos-cyan",
-    arrowColor: "group-hover:text-kronos-cyan",
-    animation: <RadialPulse color="130, 115, 140" />,
+    focusColor: "focus:ring-kronos-rev-green",
+    arrowColor: "group-hover:text-kronos-rev-green",
+    animation: <RadialPulse color="0, 128, 127" />,
   },
   {
     id: "cognifica-ai",
@@ -90,7 +91,7 @@ export default function HomePage() {
         className="relative min-h-dvh bg-kronos-bg overflow-hidden pt-safe-top"
         aria-labelledby="hero-heading"
       >
-        <HeroBackground type="neural" color="87, 132, 168" />
+        <HeroBackground type="neural" color="130, 115, 140" />
 
         <div className="relative z-10 min-h-dvh flex items-center">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-0">
@@ -278,7 +279,7 @@ export default function HomePage() {
             </p>
             <h2
               id="services-heading"
-              className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white"
+              className="font-heading text-3xl sm:text-4xl lg:text-5xl text-kronos-rev-green"
             >
               Revenue &amp; Technology
             </h2>
@@ -302,7 +303,7 @@ export default function HomePage() {
                   </div>
                   <div className="flex items-start justify-between">
                     <div>
-                      <h3 className="font-heading text-lg sm:text-xl lg:text-2xl text-white mb-2">
+                      <h3 className={`font-heading text-lg sm:text-xl lg:text-2xl mb-2 ${'titleColor' in service && service.titleColor ? service.titleColor : 'text-white'}`}>
                         {service.titleWordmark ? (
                           <>
                             Cognifica<span className="text-[#E6A91A]"> App</span>
