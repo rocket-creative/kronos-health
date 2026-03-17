@@ -26,7 +26,7 @@ const b2bServices = [
     titleWordmark: true,
     description:
       "Anonymous, HIPAA-compliant mental health screening for employers. Six validated clinical assessments, smart risk stratification, and care pathways — deployed in under one week.",
-    href: "https://cognificaapp.vercel.app?utm_source=kronoshealth&utm_medium=homepage",
+    href: "https://cognificaai.vercel.app?utm_source=kronoshealth&utm_medium=homepage",
     external: true,
     accentColor: "text-[#E6A91A]",
     focusColor: "focus:ring-[#E6A91A]",
@@ -209,7 +209,7 @@ export default function HomePage() {
                   {[
                     { label: "ISS Health", href: "https://iss.health" },
                     { label: "Cognifica Health", href: "https://cognifica-health.vercel.app" },
-                    { label: "Cognifica App", href: "https://cognificaapp.vercel.app" },
+                    { label: "Cognifica App", href: "https://cognificaai.vercel.app" },
                     { label: "Synaptix", href: "https://synaptix-rho.vercel.app" },
                     { label: "Kronos Revenue", href: "https://kronos-rev.vercel.app" },
                   ].map((co) => (

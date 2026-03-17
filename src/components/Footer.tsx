@@ -7,7 +7,7 @@ const quickLinks = [
   { href: "/digital-health-tools", label: "Digital Health Tools" },
   { href: "/clinically-integrated-neuropsychology", label: "Neuropsychology" },
   { href: "/cognitive-franchise-program", label: "Franchise Program" },
-  { href: "https://cognificaapp.vercel.app?utm_source=kronoshealth&utm_medium=footer", label: "Cognifica App", external: true, wordmark: true },
+  { href: "https://cognificaai.vercel.app?utm_source=kronoshealth&utm_medium=footer", label: "Cognifica App", external: true, wordmark: true },
   { href: "https://synaptix-rho.vercel.app?utm_source=kronoshealth&utm_medium=footer", label: "Synaptix", external: true },
 ];
 

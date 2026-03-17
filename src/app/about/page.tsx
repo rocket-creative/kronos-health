@@ -231,7 +231,7 @@ export default function AboutPage() {
                     },
                     {
                       label: "Cognifica App",
-                      href: "https://cognificaapp.vercel.app",
+                      href: "https://cognificaai.vercel.app",
                     },
                     {
                       label: "Synaptix",
