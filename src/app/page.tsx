@@ -90,17 +90,17 @@ export default function HomePage() {
         className="relative min-h-dvh bg-kronos-bg overflow-hidden pt-safe-top"
         aria-labelledby="hero-heading"
       >
-        <HeroBackground type="neural" color="0, 255, 209" />
+        <HeroBackground type="neural" color="87, 132, 168" />
 
         <div className="relative z-10 min-h-dvh flex items-center">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-0">
             <div className="backdrop-blur-md bg-black/40 border border-white/10 p-8 sm:p-10 lg:p-14 max-w-xl">
               <div data-hero-title className="mb-8 sm:mb-10">
                 <Image
-                  src="/kronos-logo.png"
+                  src="/kronos-group-logo.svg"
                   alt="Kronos Group"
                   width={400}
-                  height={100}
+                  height={166}
                   className="w-[200px] sm:w-[260px] lg:w-[320px] h-auto"
                   priority
                 />
@@ -305,7 +305,7 @@ export default function HomePage() {
                       <h3 className="font-heading text-lg sm:text-xl lg:text-2xl text-white mb-2">
                         {service.titleWordmark ? (
                           <>
-                            Cognifica<span className="text-kronos-lavender">AI</span>
+                            Cognifica<span className="text-kronos-lavender"> App</span>
                           </>
                         ) : (
                           service.title

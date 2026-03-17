@@ -53,7 +53,7 @@ export default function Footer() {
                     {link.wordmark ? (
                       <>
                         <span>Cognifica</span>
-                        <span className="text-kronos-lavender">AI</span>
+                        <span className="text-kronos-lavender"> App</span>
                       </>
                     ) : (
                       link.label
