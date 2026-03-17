@@ -38,10 +38,10 @@ export const metadata: Metadata = {
     canonical: "https://kronoshealth.co/synaptix",
   },
   openGraph: {
-    title: "Synaptix — Concussion Assessment & Recovery Platform | Kronos Health",
+    title: "Synaptix — Concussion Assessment & Recovery Platform | Kronos Group",
     description: "Structured concussion management software. 12-week program with NPE-CX battery, cognitive remediation, and digital monitoring.",
     url: "https://kronoshealth.co/synaptix",
-    siteName: "Kronos Health",
+    siteName: "Kronos Group",
     type: "website",
     images: [
       {
@@ -216,14 +216,14 @@ export default function SynaptixPage() {
 
       {/* Full-Width Hero with Neural Network Animation */}
       <section 
-        className="relative min-h-[80vh] sm:min-h-screen bg-kronos-bg overflow-hidden"
+        className="relative min-h-[80dvh] sm:min-h-dvh bg-kronos-bg overflow-hidden pt-safe-top"
         aria-labelledby="synaptix-hero-heading"
       >
         {/* Full-width animated background - Concentric rings from Synaptix logo */}
         <HeroBackground type="rings" color="15, 189, 213" />
 
         {/* Glass effect content panel */}
-        <div className="relative z-10 min-h-[80vh] sm:min-h-screen flex items-center">
+        <div className="relative z-10 min-h-[80dvh] sm:min-h-dvh flex items-center">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-0">
             <div className="backdrop-blur-md bg-black/40 border border-white/10 p-8 sm:p-10 lg:p-14 max-w-xl">
               <p className="text-xs tracking-widest uppercase text-white/50 mb-4 sm:mb-6">

@@ -17,17 +17,17 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Clinically Integrated Neuropsychology — Kronos Health Network",
+  title: "Clinically Integrated Neuropsychology — Kronos Group Network",
   description:
-    "Streamlined referral path for mental health evaluation and care. Connect with licensed neuropsychologists through the Kronos Health Network. Contact us today.",
+    "Streamlined referral path for mental health evaluation and care. Connect with licensed neuropsychologists through the Kronos Group Network. Contact us today.",
   alternates: {
     canonical: "https://kronoshealth.co/clinically-integrated-neuropsychology",
   },
   openGraph: {
-    title: "Clinically Integrated Neuropsychology — Kronos Health Network",
+    title: "Clinically Integrated Neuropsychology — Kronos Group Network",
     description: "Streamlined referral path for mental health evaluation and care with licensed neuropsychologists.",
     url: "https://kronoshealth.co/clinically-integrated-neuropsychology",
-    siteName: "Kronos Health",
+    siteName: "Kronos Group",
     type: "website",
     images: [
       {
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Clinically Integrated Neuropsychology — Kronos Health Network",
+    title: "Clinically Integrated Neuropsychology — Kronos Group Network",
     description: "Streamlined referral path for mental health evaluation and care.",
     images: ["https://kronoshealth.co/opengraph-image"],
   },
@@ -261,7 +261,7 @@ export default function NeuropsychologyPage() {
               </div>
               <div className="w-full h-px bg-white/10 mb-4 sm:mb-6" aria-hidden="true" />
               <p className="font-body text-[10px] sm:text-xs text-white/40 font-light">
-                Let Kronos Health help you expand your continuum of care with clinically integrated neuropsychology.
+                Let Kronos Group help you expand your continuum of care with clinically integrated neuropsychology.
               </p>
             </div>
           </div>
@@ -306,11 +306,11 @@ export default function NeuropsychologyPage() {
                 className="group bg-kronos-card border border-white/5 hover:border-kronos-cyan/20 transition-colors"
               >
                 <summary className="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none">
-                  <h3 className="font-body text-xs sm:text-sm text-white font-normal pr-4"><span className="bg-yellow-100 dark:bg-yellow-900/40">{item.question}</span></h3>
+                  <h3 className="font-body text-xs sm:text-sm text-white font-normal pr-4">{item.question}</h3>
                   <span className="text-kronos-cyan flex-shrink-0" aria-hidden="true">+</span>
                 </summary>
                 <div className="px-4 sm:px-5 pb-4 sm:pb-5">
-                  <p className="font-body text-[10px] sm:text-xs text-white/60 font-light leading-relaxed"><span className="bg-yellow-100 dark:bg-yellow-900/40">{item.answer}</span></p>
+                  <p className="font-body text-[10px] sm:text-xs text-white/60 font-light leading-relaxed">{item.answer}</p>
                 </div>
               </details>
             ))}

@@ -5,15 +5,15 @@ import { BreadcrumbSchema } from "@/components";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Terms of Service for Kronos Health website and B2B healthcare technology services. Read our terms and conditions.",
+    "Terms of Service for Kronos Group website and B2B healthcare technology services. Read our terms and conditions.",
   alternates: {
     canonical: "https://kronoshealth.co/terms",
   },
   openGraph: {
-    title: "Terms of Service | Kronos Health",
-    description: "Terms and conditions for using Kronos Health website and services.",
+    title: "Terms of Service | Kronos Group",
+    description: "Terms and conditions for using Kronos Group website and services.",
     url: "https://kronoshealth.co/terms",
-    siteName: "Kronos Health",
+    siteName: "Kronos Group",
     type: "website",
     images: [
       {
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terms of Service | Kronos Health",
-    description: "Terms and conditions for using Kronos Health website and services.",
+    title: "Terms of Service | Kronos Group",
+    description: "Terms and conditions for using Kronos Group website and services.",
     images: ["https://kronoshealth.co/opengraph-image"],
   },
 };
@@ -56,7 +56,7 @@ export default function TermsPage() {
             <div>
               <h2 className="font-heading text-2xl text-white mb-4">Acceptance of Terms</h2>
               <p className="font-body text-sm text-white/60 font-light leading-relaxed">
-                By accessing or using the Kronos Health website (kronoshealth.co) or our services,
+                By accessing or using the Kronos Group website (kronoshealth.co) or our services,
                 you agree to be bound by these Terms of Service. If you do not agree to these terms,
                 please do not use our website or services.
               </p>
@@ -67,11 +67,11 @@ export default function TermsPage() {
             <div>
               <h2 className="font-heading text-2xl text-white mb-4">Description of Services</h2>
               <p className="font-body text-sm text-white/60 font-light leading-relaxed">
-                Kronos Health provides B2B healthcare technology services including:
+                Kronos Group provides B2B healthcare technology services including:
               </p>
               <ul className="list-disc pl-6 text-white/60 text-sm space-y-2 font-light mt-4">
                 <li>Revenue cycle management and payment dispute resolution</li>
-                <li>CognificaAI workplace mental health screening platform</li>
+                <li>Cognifica App workplace mental health screening platform</li>
                 <li>Synaptix concussion management software</li>
                 <li>Healthcare consulting services</li>
               </ul>
@@ -93,7 +93,7 @@ export default function TermsPage() {
                 </p>
               </div>
               <p className="font-body text-sm text-white/60 font-light leading-relaxed">
-                Kronos Health provides technology and services to healthcare organizations. We do
+                Kronos Group provides technology and services to healthcare organizations. We do
                 not provide direct patient care through this website. Healthcare providers using our
                 platforms remain responsible for clinical decisions and patient care.
               </p>
@@ -122,7 +122,7 @@ export default function TermsPage() {
               <h2 className="font-heading text-2xl text-white mb-4">Intellectual Property</h2>
               <p className="font-body text-sm text-white/60 font-light leading-relaxed">
                 All content on this website, including text, graphics, logos, images, software, and
-                the CognificaAI and Synaptix trademarks, is the property of Kronos Health or its
+                the Cognifica App and Synaptix trademarks, is the property of Kronos Group or its
                 licensors and is protected by United States and international intellectual property
                 laws. You may not reproduce, distribute, modify, or create derivative works without
                 our express written permission.
@@ -146,7 +146,7 @@ export default function TermsPage() {
             <div>
               <h2 className="font-heading text-2xl text-white mb-4">Limitation of Liability</h2>
               <p className="font-body text-sm text-white/60 font-light leading-relaxed">
-                To the fullest extent permitted by law, Kronos Health shall not be liable for any
+                To the fullest extent permitted by law, Kronos Group shall not be liable for any
                 indirect, incidental, special, consequential, or punitive damages arising out of or
                 related to your use of the website. Our total liability for any claims arising from
                 use of the website shall not exceed the amount you paid, if any, for accessing the
@@ -163,7 +163,7 @@ export default function TermsPage() {
             <div>
               <h2 className="font-heading text-2xl text-white mb-4">Indemnification</h2>
               <p className="font-body text-sm text-white/60 font-light leading-relaxed">
-                You agree to indemnify and hold harmless Kronos Health and its officers, directors,
+                You agree to indemnify and hold harmless Kronos Group and its officers, directors,
                 employees, and agents from any claims, damages, losses, or expenses arising out of
                 your use of the website or violation of these terms.
               </p>
@@ -212,7 +212,7 @@ export default function TermsPage() {
               </p>
               <div className="bg-kronos-bg p-6 border border-white/10">
                 <p className="font-body text-sm text-white/70">
-                  <strong className="text-white">Kronos Health</strong>
+                  <strong className="text-white">Kronos Group</strong>
                   <br />
                   244 Westchester Avenue, Suite 209
                   <br />

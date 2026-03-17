@@ -9,31 +9,31 @@ import {
 import { Phone, MapPin, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Kronos Health — Revenue Cycle, CognificaAI, Synaptix Inquiries",
+  title: "Contact Kronos Group — Revenue Cycle, Cognifica App, Synaptix Inquiries",
   description:
-    "Contact Kronos Health for revenue cycle management, CognificaAI demos, Synaptix demos, or general inquiries. Located in West Harrison, NY. Reach out today.",
+    "Contact Kronos Group for revenue cycle management, Cognifica App demos, Synaptix demos, or general inquiries. Located in West Harrison, NY. Reach out today.",
   alternates: {
     canonical: "https://kronoshealth.co/contact",
   },
   openGraph: {
-    title: "Contact Kronos Health — Revenue Cycle, CognificaAI, Synaptix Inquiries",
-    description: "Contact Kronos Health for revenue cycle management, CognificaAI demos, Synaptix demos, or general inquiries. Located in West Harrison, NY.",
+    title: "Contact Kronos Group — Revenue Cycle, Cognifica App, Synaptix Inquiries",
+    description: "Contact Kronos Group for revenue cycle management, Cognifica App demos, Synaptix demos, or general inquiries. Located in West Harrison, NY.",
     url: "https://kronoshealth.co/contact",
-    siteName: "Kronos Health",
+    siteName: "Kronos Group",
     type: "website",
     images: [
       {
         url: "https://kronoshealth.co/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Contact Kronos Health",
+        alt: "Contact Kronos Group",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Kronos Health — Revenue Cycle, CognificaAI, Synaptix Inquiries",
-    description: "Contact Kronos Health for revenue cycle management, CognificaAI demos, Synaptix demos, or general inquiries.",
+    title: "Contact Kronos Group — Revenue Cycle, Cognifica App, Synaptix Inquiries",
+    description: "Contact Kronos Group for revenue cycle management, Cognifica App demos, Synaptix demos, or general inquiries.",
     images: ["https://kronoshealth.co/opengraph-image"],
   },
 };
@@ -56,14 +56,14 @@ export default function ContactPage() {
 
       {/* Full-Width Hero with Envelope Animation */}
       <section 
-        className="relative min-h-[70vh] sm:min-h-[80vh] bg-kronos-bg overflow-hidden"
+        className="relative min-h-[70dvh] sm:min-h-[80dvh] bg-kronos-bg overflow-hidden pt-safe-top"
         aria-labelledby="contact-hero-heading"
       >
         {/* Full-width animated background */}
         <HeroBackground type="envelope" color="0, 255, 209" />
 
         {/* Glass effect content panel */}
-        <div className="relative z-10 min-h-[70vh] sm:min-h-[80vh] flex items-center">
+        <div className="relative z-10 min-h-[70dvh] sm:min-h-[80dvh] flex items-center">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-0">
             <div className="backdrop-blur-md bg-black/40 border border-white/10 p-8 sm:p-10 lg:p-14 max-w-xl">
               <p className="text-xs tracking-widest uppercase text-white/50 mb-4 sm:mb-6">

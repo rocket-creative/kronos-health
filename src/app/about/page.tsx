@@ -11,31 +11,31 @@ import {
 } from "@/components";
 
 export const metadata: Metadata = {
-  title: "About Kronos Health — Meet Our Healthcare Technology Team",
+  title: "About Kronos Group — Meet Our Healthcare Technology Team",
   description:
-    "Meet the Kronos Health team. Over 100 years of combined experience in healthcare, revenue cycle management, and digital health. Founded by Dr. John M. Abrahams.",
+    "Meet the Kronos Group team. Over 100 years of combined experience in healthcare, revenue cycle management, and digital health. Founded by Dr. John M. Abrahams.",
   alternates: {
     canonical: "https://kronos-health.vercel.app/about",
   },
   openGraph: {
-    title: "About Kronos Health — Meet Our Healthcare Technology Team",
+    title: "About Kronos Group — Meet Our Healthcare Technology Team",
     description:
       "Over 100 years of combined experience in healthcare, revenue cycle management, and digital health. Founded by Dr. John M. Abrahams.",
     url: "https://kronos-health.vercel.app/about",
-    siteName: "Kronos Health",
+    siteName: "Kronos Group",
     type: "website",
     images: [
       {
         url: "https://kronos-health.vercel.app/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Kronos Health Team",
+        alt: "Kronos Group Team",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Kronos Health — Meet Our Healthcare Technology Team",
+    title: "About Kronos Group — Meet Our Healthcare Technology Team",
     description:
       "Over 100 years of combined experience in healthcare, revenue cycle management, and digital health.",
     images: ["https://kronos-health.vercel.app/opengraph-image"],
@@ -122,18 +122,18 @@ export default function AboutPage() {
 
       {/* Hero — matches homepage structure */}
       <section
-        className="relative min-h-[70vh] sm:min-h-[80vh] bg-kronos-bg overflow-hidden"
+        className="relative min-h-[70dvh] sm:min-h-[80dvh] bg-kronos-bg overflow-hidden pt-safe-top"
         aria-labelledby="about-hero-heading"
       >
         <HeroBackground type="neural" color="0, 255, 209" />
 
-        <div className="relative z-10 min-h-[70vh] sm:min-h-[80vh] flex items-center">
+        <div className="relative z-10 min-h-[70dvh] sm:min-h-[80dvh] flex items-center">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-0">
             <div className="backdrop-blur-md bg-black/40 border border-white/10 p-8 sm:p-10 lg:p-14 max-w-xl">
               <div className="flex flex-col gap-6 sm:gap-8">
                 <Image
                   src="/kronos-logo.png"
-                  alt="Kronos Health"
+                  alt="Kronos Group"
                   width={400}
                   height={100}
                   className="w-[200px] sm:w-[260px] lg:w-[320px] h-auto"
@@ -151,7 +151,7 @@ export default function AboutPage() {
                   </p>
                   <p className="font-body text-sm sm:text-base text-white/70 font-light leading-relaxed">
                     Founded by Dr. John M. Abrahams — board-certified neurosurgeon,
-                    inventor, and entrepreneur — Kronos Health brings clinical
+                    inventor, and entrepreneur — Kronos Group brings clinical
                     expertise and technology together across revenue cycle
                     management, employer mental health, concussion recovery, and
                     direct patient care.
@@ -230,8 +230,8 @@ export default function AboutPage() {
                       href: "https://cognifica-health.vercel.app",
                     },
                     {
-                      label: "CognificaAI",
-                      href: "https://cognificaai.vercel.app",
+                      label: "Cognifica App",
+                      href: "https://cognificaapp.vercel.app",
                     },
                     {
                       label: "Synaptix",

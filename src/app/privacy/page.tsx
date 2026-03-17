@@ -5,15 +5,15 @@ import { BreadcrumbSchema } from "@/components";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Kronos Health privacy policy. How we collect, use, and protect your information when using our healthcare technology services.",
+    "Kronos Group privacy policy. How we collect, use, and protect your information when using our healthcare technology services.",
   alternates: {
     canonical: "https://kronoshealth.co/privacy",
   },
   openGraph: {
-    title: "Privacy Policy | Kronos Health",
+    title: "Privacy Policy | Kronos Group",
     description: "How we collect, use, and protect your information.",
     url: "https://kronoshealth.co/privacy",
-    siteName: "Kronos Health",
+    siteName: "Kronos Group",
     type: "website",
     images: [
       {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy | Kronos Health",
+    title: "Privacy Policy | Kronos Group",
     description: "How we collect, use, and protect your information.",
     images: ["https://kronoshealth.co/opengraph-image"],
   },
@@ -56,8 +56,8 @@ export default function PrivacyPage() {
             <div>
               <h2 className="font-heading text-2xl text-white mb-4">Overview</h2>
               <p className="font-body text-sm text-white/60 font-light leading-relaxed">
-                Kronos Health ("we," "us," or "our") provides B2B healthcare technology services
-                including revenue cycle management, CognificaAI workplace mental health platform,
+                Kronos Group ("we," "us," or "our") provides B2B healthcare technology services
+                including revenue cycle management, Cognifica App workplace mental health platform,
                 and Synaptix concussion management software. This Privacy Policy describes how we
                 collect, use, and protect information when you visit our website or use our
                 services.
@@ -112,13 +112,13 @@ export default function PrivacyPage() {
             <div>
               <h2 className="font-heading text-2xl text-white mb-4">HIPAA Compliance</h2>
               <p className="font-body text-sm text-white/60 font-light leading-relaxed">
-                Kronos Health operates HIPAA compliant infrastructure for our healthcare technology
+                Kronos Group operates HIPAA compliant infrastructure for our healthcare technology
                 products. When processing Protected Health Information (PHI) on behalf of covered
                 entities, we enter into Business Associate Agreements and maintain appropriate
                 administrative, technical, and physical safeguards.
               </p>
               <p className="font-body text-sm text-white/60 font-light leading-relaxed mt-4">
-                For CognificaAI, individual employee assessment data is never shared with employers.
+                For Cognifica App, individual employee assessment data is never shared with employers.
                 Employers only receive anonymized, aggregate workforce trend data.
               </p>
             </div>
@@ -185,7 +185,7 @@ export default function PrivacyPage() {
               </p>
               <div className="bg-kronos-bg p-6 border border-white/10">
                 <p className="font-body text-sm text-white/70">
-                  <strong className="text-white">Kronos Health</strong>
+                  <strong className="text-white">Kronos Group</strong>
                   <br />
                   Attn: Privacy
                   <br />

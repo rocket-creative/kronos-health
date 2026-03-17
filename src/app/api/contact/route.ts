@@ -41,7 +41,7 @@ Submitted at: ${new Date().toISOString()}
       const resend = new Resend(process.env.RESEND_API_KEY);
       
       await resend.emails.send({
-        from: "Kronos Health <noreply@kronoshealth.co>",
+        from: "Kronos Group <noreply@kronoshealth.co>",
         to: ["info@kronoshealth.co"],
         replyTo: email,
         subject,

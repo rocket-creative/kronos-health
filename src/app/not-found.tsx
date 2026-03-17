@@ -44,7 +44,7 @@ export default function NotFound() {
           <ul className="flex flex-wrap justify-center gap-4 text-sm">
             <li>
               <Link href="/about" className="text-kronos-cyan hover:underline">
-                About Kronos Health
+                About Kronos Group
               </Link>
             </li>
             <li>

@@ -24,22 +24,22 @@ import {
 export const metadata: Metadata = {
   title: "Revenue Cycle Management & Payment Dispute Resolution",
   description:
-    "Expert revenue cycle management and IDR dispute resolution for healthcare providers under the No Surprises Act. Kronos Health maximizes your reimbursements.",
+    "Expert revenue cycle management and IDR dispute resolution for healthcare providers under the No Surprises Act. Kronos Group maximizes your reimbursements.",
   alternates: {
     canonical: "https://kronoshealth.co/revenue-cycle",
   },
   openGraph: {
-    title: "Revenue Cycle Management & Payment Dispute Resolution | Kronos Health",
+    title: "Revenue Cycle Management & Payment Dispute Resolution | Kronos Group",
     description: "Expert revenue cycle management and IDR dispute resolution for healthcare providers.",
     url: "https://kronoshealth.co/revenue-cycle",
-    siteName: "Kronos Health",
+    siteName: "Kronos Group",
     type: "website",
     images: [
       {
         url: "https://kronoshealth.co/revenue-cycle/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Kronos Health Revenue Cycle Management",
+        alt: "Kronos Group Revenue Cycle Management",
       },
     ],
   },
@@ -109,7 +109,7 @@ const offerings = [
 const faqItems = [
   {
     question: "What is the No Surprises Act and how does it affect my practice?",
-    answer: "The No Surprises Act protects patients from surprise medical bills for out of network emergency and certain nonemergency services. For providers, it establishes a federal Independent Dispute Resolution (IDR) process when insurers and providers cannot agree on payment. Kronos Health handles the full process from negotiation through arbitration.",
+    answer: "The No Surprises Act protects patients from surprise medical bills for out of network emergency and certain nonemergency services. For providers, it establishes a federal Independent Dispute Resolution (IDR) process when insurers and providers cannot agree on payment. Kronos Group handles the full process from negotiation through arbitration.",
   },
   {
     question: "How long does the IDR process typically take?",
@@ -151,14 +151,14 @@ export default function RevenueCyclePage() {
 
       {/* Full-Width Hero with Radial Pulse Animation */}
       <section 
-        className="relative min-h-[80vh] sm:min-h-screen bg-kronos-bg overflow-hidden"
+        className="relative min-h-[80dvh] sm:min-h-dvh bg-kronos-bg overflow-hidden pt-safe-top"
         aria-labelledby="revenue-hero-heading"
       >
         {/* Full-width animated background */}
         <HeroBackground type="pulse" color="0, 255, 209" />
 
         {/* Glass effect content panel */}
-        <div className="relative z-10 min-h-[80vh] sm:min-h-screen flex items-center">
+        <div className="relative z-10 min-h-[80dvh] sm:min-h-dvh flex items-center">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-0">
             <div className="backdrop-blur-md bg-black/40 border border-white/10 p-8 sm:p-10 lg:p-14 max-w-xl">
               <p className="text-xs tracking-widest uppercase text-white/50 mb-4 sm:mb-6">
@@ -425,11 +425,11 @@ export default function RevenueCyclePage() {
                 className="group bg-kronos-card border border-white/5 hover:border-kronos-cyan/20 transition-colors"
               >
                 <summary className="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none">
-                  <h3 className="font-body text-xs sm:text-sm text-white font-normal pr-4"><span className="bg-yellow-100 dark:bg-yellow-900/40">{item.question}</span></h3>
+                  <h3 className="font-body text-xs sm:text-sm text-white font-normal pr-4">{item.question}</h3>
                   <span className="text-kronos-cyan flex-shrink-0" aria-hidden="true">+</span>
                 </summary>
                 <div className="px-4 sm:px-5 pb-4 sm:pb-5">
-                  <p className="font-body text-[10px] sm:text-xs text-white/60 font-light leading-relaxed"><span className="bg-yellow-100 dark:bg-yellow-900/40">{item.answer}</span></p>
+                  <p className="font-body text-[10px] sm:text-xs text-white/60 font-light leading-relaxed">{item.answer}</p>
                 </div>
               </details>
             ))}

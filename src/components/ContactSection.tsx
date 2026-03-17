@@ -20,7 +20,7 @@ export default function ContactSection({ source = "page" }: ContactSectionProps)
             Let&apos;s Discuss Your Objectives
           </h2>
           <p className="font-body text-xs sm:text-sm lg:text-base text-white/60 max-w-xl mx-auto">
-            Get in touch to learn how Kronos Health can help your practice thrive.
+            Get in touch to learn how Kronos Group can help your practice thrive.
           </p>
         </header>
 

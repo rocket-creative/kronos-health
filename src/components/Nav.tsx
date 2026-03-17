@@ -1,15 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { useMobileMenuAnimation } from "./animations";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "https://kronos-rev.vercel.app?utm_source=kronoshealth&utm_medium=nav", label: "Kronos Revenue", external: true },
-  { href: "https://cognificaai.vercel.app?utm_source=kronoshealth&utm_medium=nav", label: "Cognifica AI", external: true, wordmark: true },
+  { href: "https://cognificaapp.vercel.app?utm_source=kronoshealth&utm_medium=nav", label: "Cognifica App", external: true, wordmark: true },
   { href: "https://synaptix-rho.vercel.app?utm_source=kronoshealth&utm_medium=nav", label: "Synaptix", external: true },
   { href: "/about", label: "About" },
 ];
@@ -20,8 +19,22 @@ export default function Nav() {
   
   useMobileMenuAnimation(mobileMenuOpen, menuRef);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setMobileMenuOpen(false);
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileMenuOpen]);
+
   return (
-    <header className="fixed top-0 w-full z-50 bg-kronos-bg/90 backdrop-blur-md">
+    <header className="fixed top-0 w-full z-50 bg-kronos-bg/90 backdrop-blur-md pt-safe-top">
       <nav 
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         aria-label="Main navigation"
@@ -31,15 +44,14 @@ export default function Nav() {
           <Link 
             href="/" 
             className="flex items-center hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-kronos-cyan focus:ring-offset-2 focus:ring-offset-kronos-bg"
-            aria-label="Kronos Health - Home"
+            aria-label="Kronos Group - Home"
           >
-            <Image
-              src="/kronos-logo.png"
-              alt=""
+            <img
+              src="/kronos-group-logo.svg"
+              alt="Kronos Group"
               width={200}
               height={50}
               className="w-[120px] sm:w-[150px] lg:w-[180px] max-w-[200px] h-auto"
-              priority
             />
           </Link>
 
@@ -107,7 +119,7 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block font-body text-sm text-white/60 hover:text-white uppercase tracking-widest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-kronos-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-bg py-2"
+                className="flex items-center min-h-[44px] font-body text-sm text-white/60 hover:text-white uppercase tracking-widest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-kronos-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-bg"
                 onClick={() => setMobileMenuOpen(false)}
                 {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >

@@ -97,18 +97,21 @@ export default function ContactForm({ source = "contact" }: ContactFormProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate>
       <div>
-        <label htmlFor="name" className="sr-only">
+        <label htmlFor="name" className="block font-body text-xs text-white/60 mb-1">
           Name
         </label>
         <input
           type="text"
           id="name"
           name="name"
-          placeholder="Name"
+          placeholder="Your name"
           required
+          autoComplete="name"
+          inputMode="text"
           aria-invalid={fieldErrors.name ? "true" : undefined}
           aria-describedby={fieldErrors.name ? "name-error" : undefined}
-          className={`w-full bg-kronos-card border px-4 py-3 text-white placeholder:text-white/40 font-body hover:border-white/20 focus:outline-none focus:border-kronos-cyan focus:ring-2 focus:ring-kronos-cyan/50 transition-colors ${
+          style={{ fontSize: "16px" }}
+          className={`w-full h-12 bg-kronos-card border px-4 text-white placeholder:text-white/40 font-body hover:border-white/20 focus:outline-none focus:border-kronos-cyan focus:ring-2 focus:ring-kronos-cyan/50 transition-colors ${
             fieldErrors.name ? "border-red-500" : "border-white/10"
           }`}
         />
@@ -119,18 +122,21 @@ export default function ContactForm({ source = "contact" }: ContactFormProps) {
         )}
       </div>
       <div>
-        <label htmlFor="email" className="sr-only">
+        <label htmlFor="email" className="block font-body text-xs text-white/60 mb-1">
           Email Address
         </label>
         <input
           type="email"
           id="email"
           name="email"
-          placeholder="Email Address"
+          placeholder="your@email.com"
           required
+          autoComplete="email"
+          inputMode="email"
           aria-invalid={fieldErrors.email ? "true" : undefined}
           aria-describedby={fieldErrors.email ? "email-error" : undefined}
-          className={`w-full bg-kronos-card border px-4 py-3 text-white placeholder:text-white/40 font-body hover:border-white/20 focus:outline-none focus:border-kronos-cyan focus:ring-2 focus:ring-kronos-cyan/50 transition-colors ${
+          style={{ fontSize: "16px" }}
+          className={`w-full h-12 bg-kronos-card border px-4 text-white placeholder:text-white/40 font-body hover:border-white/20 focus:outline-none focus:border-kronos-cyan focus:ring-2 focus:ring-kronos-cyan/50 transition-colors ${
             fieldErrors.email ? "border-red-500" : "border-white/10"
           }`}
         />
@@ -141,17 +147,18 @@ export default function ContactForm({ source = "contact" }: ContactFormProps) {
         )}
       </div>
       <div>
-        <label htmlFor="message" className="sr-only">
+        <label htmlFor="message" className="block font-body text-xs text-white/60 mb-1">
           Message
         </label>
         <textarea
           id="message"
           name="message"
-          placeholder="Message"
+          placeholder="How can we help?"
           rows={4}
           required
           aria-invalid={fieldErrors.message ? "true" : undefined}
           aria-describedby={fieldErrors.message ? "message-error" : undefined}
+          style={{ fontSize: "16px" }}
           className={`w-full bg-kronos-card border px-4 py-3 text-white placeholder:text-white/40 font-body hover:border-white/20 focus:outline-none focus:border-kronos-cyan focus:ring-2 focus:ring-kronos-cyan/50 transition-colors resize-none ${
             fieldErrors.message ? "border-red-500" : "border-white/10"
           }`}
@@ -168,7 +175,7 @@ export default function ContactForm({ source = "contact" }: ContactFormProps) {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-kronos-cyan text-kronos-bg font-bold py-3 px-6 hover:bg-kronos-cyan/90 disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wider focus:outline-none focus:ring-2 focus:ring-kronos-cyan focus:ring-offset-2 focus:ring-offset-kronos-bg"
+        className="w-full min-h-[48px] bg-kronos-cyan text-kronos-bg font-bold py-3 px-6 hover:bg-kronos-cyan/90 disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wider focus:outline-none focus:ring-2 focus:ring-kronos-cyan focus:ring-offset-2 focus:ring-offset-kronos-bg"
       >
         {isSubmitting ? "Sending..." : "Submit"}
       </button>

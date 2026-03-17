@@ -6,7 +6,7 @@
   
   --kronos-bg: #0A0A0A;
   --kronos-card: #161616;
-  --kronos-cyan: #00FFFF;
+  --kronos-cyan: #5784ab;
   --kronos-gray-100: #F5F5F5;
   --kronos-gray-200: #E5E5E5;
   --kronos-gray-300: #D4D4D4;
@@ -17,10 +17,12 @@
   --kronos-gray-800: #262626;
   --kronos-gray-900: #171717;
   --kronos-text-dark: #171717;
-  --kronos-lavender: #D4B8E8;
+  --kronos-lavender: #a8c4d9;
   --synaptix-blue: #0C5E94;
   --synaptix-cyan: #0FBDD5;
-  --kronos-green: #00A896;
+  --kronos-green: #7aa3c4;
+  --kronos-blue-dark: #3d6289;
+  --kronos-blue-light: #dce9f2;
 }
 
 @theme inline {
@@ -49,17 +51,67 @@
   --font-body: var(--font-ibm-plex-sans);
   --font-nav: var(--font-open-sans);
   
+  --breakpoint-xs: 375px;
   --breakpoint-sm: 393px;
   --breakpoint-md: 810px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1440px;
   --breakpoint-2xl: 1920px;
+
+  --text-display: clamp(40px, 10vw, 160px);
+  --text-display--line-height: 1.0;
+  --text-h1: clamp(28px, 6vw, 96px);
+  --text-h1--line-height: 1.1;
+  --text-h2: clamp(22px, 4vw, 48px);
+  --text-h2--line-height: 1.2;
+  --text-h3: clamp(18px, 3vw, 32px);
+  --text-h3--line-height: 1.3;
+  --text-body-fluid: clamp(15px, 1.5vw, 17px);
+  --text-body-fluid--line-height: 1.7;
+  --text-caption: 11px;
+  --text-caption--line-height: 1.4;
+  --text-caption--letter-spacing: 0.08em;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body, 'IBM Plex Sans', system-ui, sans-serif);
+  overflow-x: hidden;
+}
+
+p, li, td, th {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+@media (hover: none) {
+  * { cursor: auto !important; }
+  .custom-cursor { display: none; }
+}
+
+@utility pt-safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+@utility pb-safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@utility pl-safe-left {
+  padding-left: env(safe-area-inset-left);
+}
+
+@utility pr-safe-right {
+  padding-right: env(safe-area-inset-right);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -112,6 +164,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   *,
   *::before,
   *::after {

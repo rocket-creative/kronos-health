@@ -30,17 +30,17 @@ const openSans = Open_Sans({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 5,
-  themeColor: "#0A0A0A",
+  viewportFit: "cover",
+  themeColor: "#5784ab",
 };
 
 export const metadata: Metadata = {
   title: {
-    default: "Kronos Health — Smarter Healthcare. Stronger Revenue.",
-    template: "%s | Kronos Health",
+    default: "Kronos Group — Smarter Healthcare. Stronger Revenue.",
+    template: "%s | Kronos Group",
   },
   description:
-    "Healthcare technology solutions: revenue cycle management, CognificaAI mental health platform, Synaptix concussion software. Founded by Dr. John M. Abrahams. Contact us today.",
+    "Healthcare technology solutions: revenue cycle management, Cognifica App mental health platform, Synaptix concussion software. Founded by Dr. John M. Abrahams. Contact us today.",
   metadataBase: new URL("https://kronoshealth.co"),
   alternates: {
     canonical: "https://kronoshealth.co",
@@ -48,19 +48,19 @@ export const metadata: Metadata = {
   authors: [
     { name: "Dr. John M. Abrahams", url: "https://kronoshealth.co/about" },
   ],
-  creator: "Kronos Health",
-  publisher: "Kronos Health",
+  creator: "Kronos Group",
+  publisher: "Kronos Group",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: "Kronos Health — Smarter Healthcare. Stronger Revenue.",
+    title: "Kronos Group — Smarter Healthcare. Stronger Revenue.",
     description:
-      "Healthcare technology solutions: Revenue cycle management, CognificaAI workplace mental health platform, and Synaptix concussion management software.",
+      "Healthcare technology solutions: Revenue cycle management, Cognifica App workplace mental health platform, and Synaptix concussion management software.",
     url: "https://kronoshealth.co",
-    siteName: "Kronos Health",
+    siteName: "Kronos Group",
     locale: "en_US",
     type: "website",
     images: [
@@ -68,15 +68,15 @@ export const metadata: Metadata = {
         url: "https://kronoshealth.co/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Kronos Health - Healthcare Technology Solutions",
+        alt: "Kronos Group - Healthcare Technology Solutions",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kronos Health — Smarter Healthcare. Stronger Revenue.",
+    title: "Kronos Group — Smarter Healthcare. Stronger Revenue.",
     description:
-      "Healthcare technology solutions: Revenue cycle management, CognificaAI, and Synaptix concussion software.",
+      "Healthcare technology solutions: Revenue cycle management, Cognifica App, and Synaptix concussion software.",
     images: ["https://kronoshealth.co/twitter-image"],
   },
   robots: {

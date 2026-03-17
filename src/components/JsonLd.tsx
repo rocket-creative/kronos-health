@@ -7,11 +7,11 @@ export function OrganizationSchema({ type = "Organization" }: OrganizationSchema
     "@context": "https://schema.org",
     "@type": type,
     "@id": "https://kronoshealth.co/#organization",
-    name: "Kronos Health",
+    name: "Kronos Group",
     url: "https://kronoshealth.co",
     logo: "https://kronoshealth.co/kronos-logo.png",
     description:
-      "B2B healthcare services including revenue cycle management, CognificaAI workplace mental health platform, and Synaptix concussion software.",
+      "B2B healthcare services including revenue cycle management, Cognifica App workplace mental health platform, and Synaptix concussion software.",
     telephone: "+19147056830",
     email: "info@kronoshealth.co",
     address: {
@@ -68,7 +68,7 @@ export function WebSiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": "https://kronoshealth.co/#website",
-    name: "Kronos Health",
+    name: "Kronos Group",
     url: "https://kronoshealth.co",
     description: "Healthcare technology and revenue cycle management solutions",
     publisher: {
@@ -146,7 +146,7 @@ export function SoftwareApplicationSchema({
     },
     provider: {
       "@type": "Organization",
-      name: "Kronos Health",
+      name: "Kronos Group",
     },
   };
 
@@ -183,7 +183,7 @@ export function MedicalBusinessSchema({
     })),
     provider: {
       "@type": "Organization",
-      name: "Kronos Health",
+      name: "Kronos Group",
       url: "https://kronoshealth.co",
     },
     areaServed: "United States",
@@ -207,7 +207,7 @@ export function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://kronoshealth.co/contact#localbusiness",
-    name: "Kronos Health",
+    name: "Kronos Group",
     url: "https://kronoshealth.co",
     telephone: "+19147056830",
     email: "info@kronoshealth.co",
@@ -308,7 +308,7 @@ export function ProductSchema({ name, description, url }: ProductSchemaProps) {
     url,
     brand: {
       "@type": "Organization",
-      name: "Kronos Health",
+      name: "Kronos Group",
     },
     offers: {
       "@type": "Offer",
@@ -316,7 +316,7 @@ export function ProductSchema({ name, description, url }: ProductSchemaProps) {
       priceCurrency: "USD",
       seller: {
         "@type": "Organization",
-        name: "Kronos Health",
+        name: "Kronos Group",
       },
     },
   };

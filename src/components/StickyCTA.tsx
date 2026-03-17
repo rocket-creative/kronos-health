@@ -6,7 +6,7 @@ import { ArrowRight, Phone } from "lucide-react";
 export default function StickyCTA() {
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-kronos-bg/95 backdrop-blur-md border-t border-white/10 px-4 py-3 safe-area-pb"
+      className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-kronos-bg/95 backdrop-blur-md border-t border-white/10 px-4 py-3 pb-safe-bottom"
       role="banner"
       aria-label="Contact options"
     >

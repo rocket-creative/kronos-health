@@ -65,7 +65,7 @@ export default function DemoRequestForm({ productLabel }: DemoRequestFormProps) 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label htmlFor="demo-name" className="sr-only">
+        <label htmlFor="demo-name" className="block font-body text-xs text-white/60 mb-1">
           Your Name
         </label>
         <input
@@ -74,11 +74,14 @@ export default function DemoRequestForm({ productLabel }: DemoRequestFormProps) 
           name="name"
           placeholder="Your Name"
           required
-          className="w-full bg-kronos-card border border-white/10 px-4 py-3 text-white placeholder:text-white/40 font-body hover:border-white/20 focus:outline-none focus:border-kronos-cyan transition-colors"
+          autoComplete="name"
+          inputMode="text"
+          style={{ fontSize: "16px" }}
+          className="w-full h-12 bg-kronos-card border border-white/10 px-4 text-white placeholder:text-white/40 font-body hover:border-white/20 focus:outline-none focus:border-kronos-cyan transition-colors"
         />
       </div>
       <div>
-        <label htmlFor="demo-phone" className="sr-only">
+        <label htmlFor="demo-phone" className="block font-body text-xs text-white/60 mb-1">
           Phone Number
         </label>
         <input
@@ -87,11 +90,14 @@ export default function DemoRequestForm({ productLabel }: DemoRequestFormProps) 
           name="phone"
           placeholder="Phone Number"
           required
-          className="w-full bg-kronos-card border border-white/10 px-4 py-3 text-white placeholder:text-white/40 font-body hover:border-white/20 focus:outline-none focus:border-kronos-cyan transition-colors"
+          autoComplete="tel"
+          inputMode="tel"
+          style={{ fontSize: "16px" }}
+          className="w-full h-12 bg-kronos-card border border-white/10 px-4 text-white placeholder:text-white/40 font-body hover:border-white/20 focus:outline-none focus:border-kronos-cyan transition-colors"
         />
       </div>
       <div>
-        <label htmlFor="demo-email" className="sr-only">
+        <label htmlFor="demo-email" className="block font-body text-xs text-white/60 mb-1">
           Email Address
         </label>
         <input
@@ -100,11 +106,14 @@ export default function DemoRequestForm({ productLabel }: DemoRequestFormProps) 
           name="email"
           placeholder="Email Address"
           required
-          className="w-full bg-kronos-card border border-white/10 px-4 py-3 text-white placeholder:text-white/40 font-body hover:border-white/20 focus:outline-none focus:border-kronos-cyan transition-colors"
+          autoComplete="email"
+          inputMode="email"
+          style={{ fontSize: "16px" }}
+          className="w-full h-12 bg-kronos-card border border-white/10 px-4 text-white placeholder:text-white/40 font-body hover:border-white/20 focus:outline-none focus:border-kronos-cyan transition-colors"
         />
       </div>
       <div>
-        <label htmlFor="demo-org" className="sr-only">
+        <label htmlFor="demo-org" className="block font-body text-xs text-white/60 mb-1">
           Organization / Practice Name
         </label>
         <input
@@ -113,11 +122,14 @@ export default function DemoRequestForm({ productLabel }: DemoRequestFormProps) 
           name="organization"
           placeholder="Organization / Practice Name"
           required
-          className="w-full bg-kronos-card border border-white/10 px-4 py-3 text-white placeholder:text-white/40 font-body hover:border-white/20 focus:outline-none focus:border-kronos-cyan transition-colors"
+          autoComplete="organization"
+          inputMode="text"
+          style={{ fontSize: "16px" }}
+          className="w-full h-12 bg-kronos-card border border-white/10 px-4 text-white placeholder:text-white/40 font-body hover:border-white/20 focus:outline-none focus:border-kronos-cyan transition-colors"
         />
       </div>
       <div>
-        <label htmlFor="demo-message" className="sr-only">
+        <label htmlFor="demo-message" className="block font-body text-xs text-white/60 mb-1">
           Message (optional)
         </label>
         <textarea
@@ -125,16 +137,17 @@ export default function DemoRequestForm({ productLabel }: DemoRequestFormProps) 
           name="message"
           placeholder="Message (optional)"
           rows={3}
+          style={{ fontSize: "16px" }}
           className="w-full bg-kronos-card border border-white/10 px-4 py-3 text-white placeholder:text-white/40 font-body hover:border-white/20 focus:outline-none focus:border-kronos-cyan transition-colors resize-none"
         />
       </div>
       {error && (
-        <p className="text-white/70 text-sm font-body">{error}</p>
+        <p className="text-white/70 text-sm font-body" role="alert">{error}</p>
       )}
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-kronos-cyan text-kronos-bg font-bold py-3 px-6 hover:bg-kronos-cyan/90 disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wider"
+        className="w-full min-h-[48px] bg-kronos-cyan text-kronos-bg font-bold py-3 px-6 hover:bg-kronos-cyan/90 disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wider focus:outline-none focus:ring-2 focus:ring-kronos-cyan focus:ring-offset-2 focus:ring-offset-kronos-bg"
       >
         {isSubmitting ? "Sending..." : "Request a Demo"}
       </button>

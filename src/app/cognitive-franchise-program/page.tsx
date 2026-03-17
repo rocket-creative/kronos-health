@@ -20,15 +20,15 @@ import {
 export const metadata: Metadata = {
   title: "Cognitive Franchise Program",
   description:
-    "A scalable cognitive health program for treating concussions, chronic pain, and cognitive decline. Join the Kronos Health franchise network. 16M+ undiagnosed Americans.",
+    "A scalable cognitive health program for treating concussions, chronic pain, and cognitive decline. Join the Kronos Group franchise network. 16M+ undiagnosed Americans.",
   alternates: {
     canonical: "https://kronoshealth.co/cognitive-franchise-program",
   },
   openGraph: {
-    title: "Cognitive Franchise Program | Kronos Health",
+    title: "Cognitive Franchise Program | Kronos Group",
     description: "A scalable cognitive health program for treating concussions, chronic pain, and cognitive decline.",
     url: "https://kronoshealth.co/cognitive-franchise-program",
-    siteName: "Kronos Health",
+    siteName: "Kronos Group",
     type: "website",
     images: [
       {
@@ -364,11 +364,11 @@ export default function FranchisePage() {
                 className="group bg-kronos-card border border-white/5 hover:border-kronos-cyan/20 transition-colors"
               >
                 <summary className="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none">
-                  <h3 className="font-body text-xs sm:text-sm text-white font-normal pr-4"><span className="bg-yellow-100 dark:bg-yellow-900/40">{item.question}</span></h3>
+                  <h3 className="font-body text-xs sm:text-sm text-white font-normal pr-4">{item.question}</h3>
                   <span className="text-kronos-cyan flex-shrink-0" aria-hidden="true">+</span>
                 </summary>
                 <div className="px-4 sm:px-5 pb-4 sm:pb-5">
-                  <p className="font-body text-[10px] sm:text-xs text-white/60 font-light leading-relaxed"><span className="bg-yellow-100 dark:bg-yellow-900/40">{item.answer}</span></p>
+                  <p className="font-body text-[10px] sm:text-xs text-white/60 font-light leading-relaxed">{item.answer}</p>
                 </div>
               </details>
             ))}

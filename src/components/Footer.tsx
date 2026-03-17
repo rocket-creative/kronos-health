@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 const quickLinks = [
@@ -8,7 +7,7 @@ const quickLinks = [
   { href: "/digital-health-tools", label: "Digital Health Tools" },
   { href: "/clinically-integrated-neuropsychology", label: "Neuropsychology" },
   { href: "/cognitive-franchise-program", label: "Franchise Program" },
-  { href: "https://cognificaai.vercel.app?utm_source=kronoshealth&utm_medium=footer", label: "CognificaAI", external: true, wordmark: true },
+  { href: "https://cognificaapp.vercel.app?utm_source=kronoshealth&utm_medium=footer", label: "Cognifica App", external: true, wordmark: true },
   { href: "https://synaptix-rho.vercel.app?utm_source=kronoshealth&utm_medium=footer", label: "Synaptix", external: true },
 ];
 
@@ -23,11 +22,11 @@ export default function Footer() {
             <Link 
               href="/" 
               className="inline-block mb-4 sm:mb-6 hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-kronos-cyan focus:ring-offset-2 focus:ring-offset-kronos-bg"
-              aria-label="Kronos Health - Home"
+              aria-label="Kronos Group - Home"
             >
-              <Image
-                src="/kronos-logo.png"
-                alt=""
+              <img
+                src="/kronos-group-logo.svg"
+                alt="Kronos Group"
                 width={140}
                 height={35}
                 className="h-7 sm:h-8 w-auto"
@@ -139,7 +138,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-white/5 pt-4 sm:pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-body text-white/50 text-[10px] sm:text-xs">
-            © 2026 Kronos Health. All rights reserved.
+            © 2026 Kronos Group. All rights reserved.
           </p>
           <nav className="flex items-center gap-4 sm:gap-6" aria-label="Legal links">
             <Link

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Kronos Health Revenue Cycle Management";
+export const alt = "Kronos Group Revenue Cycle Management";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -35,11 +35,11 @@ export default async function Image() {
         <div
           style={{
             fontSize: 24,
-            color: "rgba(0,255,255,0.8)",
+            color: "rgba(87,132,171,0.8)",
             marginTop: 12,
           }}
         >
-          Kronos Health
+          Kronos Group
         </div>
         <div
           style={{
@@ -55,7 +55,7 @@ export default async function Image() {
           style={{
             width: 120,
             height: 3,
-            backgroundColor: "#00FFFF",
+            backgroundColor: "#5784ab",
             marginTop: 24,
           }}
         />
