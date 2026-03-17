@@ -28,10 +28,10 @@ const b2bServices = [
       "Anonymous, HIPAA-compliant mental health screening for employers. Six validated clinical assessments, smart risk stratification, and care pathways — deployed in under one week.",
     href: "https://cognificaapp.vercel.app?utm_source=kronoshealth&utm_medium=homepage",
     external: true,
-    accentColor: "text-kronos-lavender",
-    focusColor: "focus:ring-kronos-lavender",
-    arrowColor: "group-hover:text-kronos-lavender",
-    animation: <Waveform color="212, 184, 232" />,
+    accentColor: "text-[#E6A91A]",
+    focusColor: "focus:ring-[#E6A91A]",
+    arrowColor: "group-hover:text-[#E6A91A]",
+    animation: <Waveform color="230, 169, 26" />,
   },
   {
     id: "synaptix",
@@ -305,7 +305,7 @@ export default function HomePage() {
                       <h3 className="font-heading text-lg sm:text-xl lg:text-2xl text-white mb-2">
                         {service.titleWordmark ? (
                           <>
-                            Cognifica<span className="text-kronos-lavender"> App</span>
+                            Cognifica<span className="text-[#E6A91A]"> App</span>
                           </>
                         ) : (
                           service.title
