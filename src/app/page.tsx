@@ -19,7 +19,7 @@ const b2bServices = [
     accentColor: "text-kronos-cyan",
     focusColor: "focus:ring-kronos-rev-green",
     arrowColor: "group-hover:text-kronos-rev-green",
-    animation: <RadialPulse color="0, 128, 127" />,
+    animation: <RadialPulse color="0, 165, 80" />,
   },
   {
     id: "cognifica-ai",
