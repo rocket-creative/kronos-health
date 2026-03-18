@@ -19,7 +19,7 @@ const b2bServices = [
     accentColor: "text-kronos-cyan",
     focusColor: "focus:ring-kronos-rev-green",
     arrowColor: "group-hover:text-kronos-rev-green",
-    animation: <RadialPulse color="0, 165, 80" />,
+    animation: <RadialPulse color="0, 132, 61" />,
   },
   {
     id: "cognifica-ai",
@@ -279,7 +279,7 @@ export default function HomePage() {
             </p>
             <h2
               id="services-heading"
-              className="font-heading text-3xl sm:text-4xl lg:text-5xl text-kronos-rev-green"
+              className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white"
             >
               Revenue &amp; Technology
             </h2>
