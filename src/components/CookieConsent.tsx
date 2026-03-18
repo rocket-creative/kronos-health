@@ -64,19 +64,19 @@ export function CookieConsent() {
             <div className="flex flex-wrap items-center gap-3">
               <button
                 onClick={() => setShowPreferences(true)}
-                className="text-sm text-white/50 hover:text-white underline focus:outline-none focus:ring-2 focus:ring-kronos-cyan"
+                className="text-sm text-white/50 hover:text-white underline focus:outline-none focus-visible:ring-2 focus-visible:ring-kronos-cyan"
               >
                 Manage Preferences
               </button>
               <button
                 onClick={acceptNecessary}
-                className="px-4 py-2 text-sm border border-white/20 text-white/70 hover:bg-white/5 transition-colors focus:outline-none focus:ring-2 focus:ring-kronos-cyan"
+                className="px-4 py-2 text-sm border border-white/20 text-white/70 hover:bg-white/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-kronos-cyan"
               >
                 Necessary Only
               </button>
               <button
                 onClick={acceptAll}
-                className="px-4 py-2 text-sm bg-kronos-cyan text-kronos-bg hover:bg-kronos-cyan/90 transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+                className="px-4 py-2 text-sm bg-kronos-cyan text-kronos-bg hover:bg-kronos-cyan/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 Accept All
               </button>

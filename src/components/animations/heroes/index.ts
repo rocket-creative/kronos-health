@@ -7,3 +7,4 @@ export { ConcentricRings } from "./ConcentricRings";
 export { BrainNetwork } from "./BrainNetwork";
 export { DNAHelix } from "./DNAHelix";
 export { EnvelopeOutline } from "./EnvelopeOutline";
+export { ShieldMatrix } from "./ShieldMatrix";

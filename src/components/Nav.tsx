@@ -10,6 +10,7 @@ const navLinks = [
   { href: "https://kronos-rev.vercel.app?utm_source=kronoshealth&utm_medium=nav", label: "Kronos Revenue", external: true },
   { href: "https://cognificaai.vercel.app?utm_source=kronoshealth&utm_medium=nav", label: "Cognifica App", external: true, wordmark: true },
   { href: "https://synaptix-rho.vercel.app?utm_source=kronoshealth&utm_medium=nav", label: "Synaptix", external: true },
+  { href: "/medical-it", label: "Medical IT" },
   { href: "/about", label: "About" },
 ];
 
@@ -43,7 +44,7 @@ export default function Nav() {
           {/* Logo */}
           <Link 
             href="/" 
-            className="flex items-center hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-kronos-cyan focus:ring-offset-2 focus:ring-offset-kronos-bg"
+            className="flex items-center hover:opacity-80 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-kronos-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-bg"
             aria-label="Kronos Group - Home"
           >
             <img

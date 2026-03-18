@@ -158,7 +158,7 @@ export default function AboutPage() {
                   </p>
                   <Link
                     href="#founder"
-                    className="inline-flex items-center gap-4 bg-kronos-cyan text-kronos-bg py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs sm:text-sm font-light hover:gap-6 transition-all w-fit focus:outline-none focus:ring-2 focus:ring-kronos-cyan focus:ring-offset-2 focus:ring-offset-black/40"
+                    className="inline-flex items-center gap-4 bg-kronos-cyan text-kronos-bg py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs sm:text-sm font-light hover:gap-6 transition-all w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-kronos-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-black/40"
                   >
                     Meet Our Team
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />

@@ -4,10 +4,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { ContactSection, TrustSignal, HeroBackground } from "@/components";
-import { RadialPulse, Waveform, ConcentricRings } from "@/components/animations/heroes";
+import { RadialPulse, Waveform, ConcentricRings, ShieldMatrix } from "@/components/animations/heroes";
 import { useHeroAnimation, useStaggeredCards, useSectionReveal } from "@/components/animations";
 
 const b2bServices = [
+  {
+    id: "medical-it",
+    title: "Medical IT",
+    description:
+      "HIPAA governance, security audits, device hardening, and GRC documentation. We serve as your technical Security Officer — protecting your practice from fines up to $2.1M.",
+    href: "/medical-it",
+    external: false,
+    accentColor: "text-[#7C3AED]",
+    focusColor: "focus-visible:ring-[#7C3AED]",
+    arrowColor: "group-hover:text-[#7C3AED]",
+    animation: <ShieldMatrix color="124, 58, 237" />,
+  },
   {
     id: "kronos-revenue",
     title: "Kronos Revenue",
@@ -17,7 +29,7 @@ const b2bServices = [
     href: "https://kronos-rev.vercel.app?utm_source=kronoshealth&utm_medium=homepage",
     external: true,
     accentColor: "text-kronos-cyan",
-    focusColor: "focus:ring-kronos-rev-green",
+    focusColor: "focus-visible:ring-kronos-rev-green",
     arrowColor: "group-hover:text-kronos-rev-green",
     animation: <RadialPulse color="0, 132, 61" />,
   },
@@ -30,7 +42,7 @@ const b2bServices = [
     href: "https://cognificaai.vercel.app?utm_source=kronoshealth&utm_medium=homepage",
     external: true,
     accentColor: "text-[#E6A91A]",
-    focusColor: "focus:ring-[#E6A91A]",
+    focusColor: "focus-visible:ring-[#E6A91A]",
     arrowColor: "group-hover:text-[#E6A91A]",
     animation: <Waveform color="230, 169, 26" />,
   },
@@ -42,7 +54,7 @@ const b2bServices = [
     href: "https://synaptix-rho.vercel.app?utm_source=kronoshealth&utm_medium=homepage",
     external: true,
     accentColor: "text-synaptix-cyan",
-    focusColor: "focus:ring-synaptix-cyan",
+    focusColor: "focus-visible:ring-synaptix-cyan",
     arrowColor: "group-hover:text-synaptix-cyan",
     animation: <ConcentricRings color="15, 189, 213" />,
   },
@@ -112,22 +124,22 @@ export default function HomePage() {
                 id="hero-heading"
                 className="font-heading text-xl sm:text-2xl lg:text-3xl text-white tracking-wider mb-2"
               >
-                Healthcare. Revenue. Innovation.
+                Healthcare IT. Revenue. Innovation.
               </h1>
               <p data-hero-subtitle className="font-body text-base sm:text-lg text-white/60 font-light mb-6 sm:mb-8">
-                The parent platform behind six healthcare brands.
+                The medical IT and technology platform protecting and growing healthcare practices.
               </p>
 
               <p data-hero-description className="font-body text-sm sm:text-base text-white/70 font-light leading-relaxed mb-8 sm:mb-10">
-                Founded by Dr. John M. Abrahams — board-certified neurosurgeon, inventor, and entrepreneur — Kronos Group brings clinical expertise and technology together across revenue cycle management, employer mental health, concussion recovery, and direct patient care.
+                Founded by Dr. John M. Abrahams — board-certified neurosurgeon, inventor, and entrepreneur — Kronos Group leads with Medical IT and HIPAA compliance services, backed by a portfolio of purpose-built healthcare technology across revenue cycle management, employer mental health, and concussion recovery.
               </p>
 
               <Link
                 data-hero-cta
                 href="#services"
-                className="inline-flex items-center gap-4 bg-kronos-cyan text-kronos-bg py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs sm:text-sm font-light hover:gap-6 transition-all w-fit focus:outline-none focus:ring-2 focus:ring-kronos-cyan focus:ring-offset-2 focus:ring-offset-black/40"
+                className="inline-flex items-center gap-4 bg-kronos-cyan text-kronos-bg py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs sm:text-sm font-light hover:gap-6 transition-all w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-kronos-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-black/40"
               >
-                Explore Our Brands
+                Explore Our Services
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
 
@@ -275,26 +287,20 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header data-section-header className="mb-12 sm:mb-16 lg:mb-24">
             <p className="text-xs tracking-widest uppercase text-white/50 mb-4">
-              B2B Solutions
+              Our Services
             </p>
             <h2
               id="services-heading"
               className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white"
             >
-              Revenue &amp; Technology
+              Medical IT &amp; Technology
             </h2>
           </header>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {b2bServices.map((service) => (
-              <article key={service.id} data-stagger-card className="group">
-                <a
-                  href={service.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`block focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-kronos-gray-800 ${service.focusColor}`}
-                  aria-label={`Visit ${service.title}`}
-                >
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
+            {b2bServices.map((service) => {
+              const cardContent = (
+                <>
                   <div
                     className="bg-kronos-bg aspect-[4/3] relative mb-4 sm:mb-6 overflow-hidden group-hover:bg-kronos-bg/80 transition-colors"
                     aria-hidden="true"
@@ -321,9 +327,32 @@ export default function HomePage() {
                       aria-hidden="true"
                     />
                   </div>
-                </a>
-              </article>
-            ))}
+                </>
+              );
+              return (
+                <article key={service.id} data-stagger-card className="group">
+                  {service.external ? (
+                    <a
+                      href={service.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`block focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-gray-800 ${service.focusColor}`}
+                      aria-label={`Visit ${service.title}`}
+                    >
+                      {cardContent}
+                    </a>
+                  ) : (
+                    <Link
+                      href={service.href}
+                      className={`block focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-gray-800 ${service.focusColor}`}
+                      aria-label={`Learn about ${service.title}`}
+                    >
+                      {cardContent}
+                    </Link>
+                  )}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -260,7 +260,7 @@ export default function SynaptixPage() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href="#demo"
-                  className="inline-flex items-center justify-center gap-4 bg-synaptix-cyan text-kronos-bg py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-6 transition-all w-full sm:w-fit focus:outline-none focus:ring-2 focus:ring-synaptix-cyan focus:ring-offset-2 focus:ring-offset-black/40"
+                  className="inline-flex items-center justify-center gap-4 bg-synaptix-cyan text-kronos-bg py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-6 transition-all w-full sm:w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-synaptix-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-black/40"
                 >
                   Request Demo
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -807,7 +807,7 @@ export default function SynaptixPage() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link
                   href="tel:+19147056830"
-                  className="inline-flex items-center justify-center gap-3 bg-kronos-bg text-white py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-5 transition-all focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-synaptix-cyan"
+                  className="inline-flex items-center justify-center gap-3 bg-kronos-bg text-white py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-synaptix-cyan"
                   aria-label="Call us at (914) 705 6830"
                 >
                   (914) 705 6830
