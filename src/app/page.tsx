@@ -11,7 +11,7 @@ const b2bServices = [
   {
     id: "kronos-revenue",
     title: "Kronos Revenue",
-    titleColor: "text-kronos-rev-green",
+    titleColor: "text-white",
     description:
       "Expert arbitration and out of network dispute resolution under the No Surprises Act. Complete case management from negotiation through final IDR arbitration — we recover what you are owed.",
     href: "https://kronos-rev.vercel.app?utm_source=kronoshealth&utm_medium=homepage",
