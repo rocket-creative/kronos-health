@@ -62,12 +62,6 @@ const teamMembers = [
     image: "/team/dr-john-abrahams.png",
   },
   {
-    name: "Susan Morgan",
-    title: "Chief Operating Officer",
-    bio: "Healthcare operations executive with extensive experience in practice management and strategic growth initiatives.",
-    image: "/team/susan-morgan.png",
-  },
-  {
     name: "Juliet Mott",
     title: "Director of Operations",
     bio: "With over 26 years of experience in neurosurgery, Juliet brings a unique blend of clinical insight and operational leadership to her role.",
@@ -86,28 +80,10 @@ const teamMembers = [
     image: "/team/camila-nicasio.png",
   },
   {
-    name: "Nicole Cedeno",
-    title: "Revenue Cycle Specialist",
-    bio: "Revenue Cycle Professional with over 5 years of experience spanning clinical, administrative, and surgical settings.",
-    image: "/team/nicole-cedeno.png",
-  },
-  {
-    name: "Jennifer Scanlon",
-    title: "Assistant, Operations",
-    bio: "A dedicated professional who thrives on direct interactions with patients, ensuring they feel welcomed and supported.",
-    image: "/team/jennifer-scanlon.png",
-  },
-  {
     name: "Soily Rivera",
     title: "Revenue Cycle Specialist",
     bio: "With over 22 years of experience in healthcare, driven by a passion for patient advocacy and clinical innovation.",
     image: "/team/soily-rivera.png",
-  },
-  {
-    name: "John Cvitkovic",
-    title: "Director, Digital Health",
-    bio: "Licensed Surgical PA, Physical Therapist, and Certified Pedorthist with over 28 years of experience treating patients.",
-    image: "/team/john-cvitkovic.png",
   },
 ];
 

@@ -128,7 +128,6 @@ const faqItems = [
 const teamMembers = [
   { name: "Heisha Rivera", title: "Director of Revenue Cycle", image: "/team/heisha-rivera.png" },
   { name: "Camila Nicasio", title: "Revenue Cycle Specialist", image: "/team/camila-nicasio.png" },
-  { name: "Nicole Cedeno", title: "Revenue Cycle Specialist", image: "/team/nicole-cedeno.png" },
   { name: "Soily Rivera", title: "Revenue Cycle Specialist", image: "/team/soily-rivera.png" },
 ];
 
