@@ -3,8 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ExternalLink } from "lucide-react";
-import { ContactSection, TrustSignal, HeroBackground } from "@/components";
-import { RadialPulse, Waveform, ConcentricRings, ShieldMatrix } from "@/components/animations/heroes";
+import { ContactSection, TrustSignal, HeroBackground, DemoRequestForm } from "@/components";
+import { RadialPulse, Waveform, ConcentricRings, ShieldMatrix, DataGrid } from "@/components/animations/heroes";
 import { useHeroAnimation, useStaggeredCards, useSectionReveal } from "@/components/animations";
 
 const b2bServices = [
@@ -32,6 +32,18 @@ const b2bServices = [
     focusColor: "focus-visible:ring-kronos-rev-green",
     arrowColor: "group-hover:text-kronos-rev-green",
     animation: <RadialPulse color="0, 132, 61" />,
+  },
+  {
+    id: "sydra",
+    title: "Sydra",
+    description:
+      "AI powered IDR submission platform for the No Surprises Act. Automate case intake, deadline tracking, and AI generated submissions — so your practice can fight more cases and recover more revenue.",
+    href: "https://kronos-rev.vercel.app/sydra?utm_source=kronoshealth&utm_medium=homepage",
+    external: true,
+    accentColor: "text-kronos-rev-green",
+    focusColor: "focus-visible:ring-kronos-rev-green",
+    arrowColor: "group-hover:text-kronos-rev-green",
+    animation: <DataGrid color="0, 132, 61" />,
   },
   {
     id: "cognifica-ai",
@@ -455,6 +467,42 @@ export default function HomePage() {
             credentials="Board-Certified Neurosurgeon, President NYBASS, Past President BSSNY"
             lastUpdated="2026-03-01"
           />
+        </div>
+      </section>
+
+      <section id="hipaa-review" className="py-16 sm:py-20 lg:py-24 bg-kronos-card" aria-labelledby="hipaa-review-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+            <div>
+              <p className="text-xs tracking-widest uppercase text-[#7C3AED]/70 mb-4 font-body">
+                Medical IT &amp; HIPAA Compliance
+              </p>
+              <h2
+                id="hipaa-review-heading"
+                className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white mb-4"
+              >
+                Schedule a Free HIPAA Compliance Review
+              </h2>
+              <p className="font-body text-sm text-white/60 font-light mb-8 leading-relaxed">
+                Most practices focus on clinical workflows and overlook administrative IT security entirely. A single vulnerability can trigger fines up to $2.1M. We audit your full environment and serve as your ongoing technical Security Officer.
+              </p>
+              <ul className="space-y-4" aria-label="HIPAA compliance review benefits">
+                {[
+                  { stat: "$2.1M", label: "Maximum annual fine for Willful Neglect" },
+                  { stat: "Audit Ready", label: "GRC documentation maintained on your behalf" },
+                  { stat: "Full Scope", label: "Devices, networks, workflows, and documentation" },
+                ].map(({ stat, label }) => (
+                  <li key={stat} className="flex items-start gap-4">
+                    <span className="font-heading text-lg text-[#7C3AED] flex-shrink-0 w-28">{stat}</span>
+                    <span className="font-body text-sm text-white/50 font-light">{label}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <DemoRequestForm productLabel="Medical IT" />
+            </div>
+          </div>
         </div>
       </section>
 

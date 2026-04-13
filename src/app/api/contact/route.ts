@@ -1,10 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
 import { contactFormSchema } from "@/lib/validation";
 
+const SOURCE_LABELS: Record<string, string> = {
+  homepage: "Homepage (kronoshealth.co)",
+  contact_page: "Contact Page (kronoshealth.co/contact)",
+  about: "About Page (kronoshealth.co/about)",
+  franchise: "Cognitive Franchise Program",
+  digital_health: "Digital Health Tools",
+  neuropsychology: "Clinically Integrated Neuropsychology",
+  demo_request: "Demo Request Form",
+};
+
+function formatSource(source?: string): string {
+  if (!source) return "kronoshealth.co";
+  return SOURCE_LABELS[source] ?? source;
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    
+
     const result = contactFormSchema.safeParse(body);
     if (!result.success) {
       return NextResponse.json(
@@ -15,33 +30,46 @@ export async function POST(request: NextRequest) {
 
     const { name, email, phone, organization, message, product, source } = result.data;
 
+    const formType = product ? "Demo Request" : "Contact Form";
+    const sourceLabel = formatSource(source);
+
     const subject = product
-      ? `Demo Request: ${product} from ${name}`
-      : `Contact Form: ${name}`;
+      ? `[Kronos Health] Demo Request: ${product} — ${name}`
+      : `[Kronos Health] Contact Form — ${sourceLabel} — ${name}`;
 
     const emailBody = `
-New ${product ? "Demo Request" : "Contact Form Submission"}
+================================================================================
+KRONOS HEALTH — ${formType.toUpperCase()}
+================================================================================
 
-Name: ${name}
-Email: ${email}
-${phone ? `Phone: ${phone}` : ""}
-${organization ? `Organization: ${organization}` : ""}
-${product ? `Product: ${product}` : ""}
-${source ? `Source: ${source}` : ""}
+SITE:       kronoshealth.co
+FORM:       ${formType}
+SOURCE:     ${sourceLabel}
+${product ? `SERVICE:    ${product}\n` : ""}
+SUBMITTED:  ${new Date().toLocaleString("en-US", { timeZone: "America/New_York", dateStyle: "full", timeStyle: "short" })} ET
 
-Message:
+--------------------------------------------------------------------------------
+CONTACT DETAILS
+--------------------------------------------------------------------------------
+
+Name:         ${name}
+Email:        ${email}
+${phone ? `Phone:        ${phone}\n` : ""}${organization ? `Organization: ${organization}\n` : ""}
+--------------------------------------------------------------------------------
+MESSAGE
+--------------------------------------------------------------------------------
+
 ${message}
 
----
-Submitted at: ${new Date().toISOString()}
+================================================================================
     `.trim();
 
     if (process.env.RESEND_API_KEY) {
       const { Resend } = await import("resend");
       const resend = new Resend(process.env.RESEND_API_KEY);
-      
+
       await resend.emails.send({
-        from: "Kronos Group <noreply@kronoshealth.co>",
+        from: "Kronos Health <noreply@kronoshealth.co>",
         to: ["info@kronoshealth.co"],
         replyTo: email,
         subject,
