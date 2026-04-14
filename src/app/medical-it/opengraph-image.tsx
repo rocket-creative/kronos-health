@@ -59,7 +59,7 @@ export default async function Image() {
           style={{
             width: 120,
             height: 3,
-            backgroundColor: "#7C3AED",
+            backgroundColor: "#009B8D",
             marginTop: 24,
             marginBottom: 20,
           }}
