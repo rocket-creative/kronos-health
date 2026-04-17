@@ -115,7 +115,7 @@ export default function HomePage() {
         className="relative min-h-dvh bg-kronos-bg overflow-hidden pt-safe-top"
         aria-labelledby="hero-heading"
       >
-        <HeroBackground type="neural" color="0, 200, 190" />
+        <HeroBackground type="neural" color="130, 115, 140" />
 
         <div className="relative z-10 min-h-dvh flex items-center">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-0">
