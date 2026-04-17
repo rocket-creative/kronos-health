@@ -207,7 +207,7 @@ export default function MedicalITPage() {
         className="relative min-h-[80dvh] sm:min-h-dvh bg-kronos-bg overflow-hidden pt-safe-top"
         aria-labelledby="medical-it-hero-heading"
       >
-        <HeroBackground type="grid" color="0, 155, 141" />
+        <HeroBackground type="grid" color="130, 115, 140" />
 
         <div className="relative z-10 min-h-[80dvh] sm:min-h-dvh flex items-center">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-0">
@@ -230,7 +230,7 @@ export default function MedicalITPage() {
 
               <Link
                 href="#audit"
-                className="inline-flex items-center gap-4 bg-[#009B8D] text-white py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-6 transition-all w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#009B8D] focus-visible:ring-offset-2 focus-visible:ring-offset-black/40"
+                className="inline-flex items-center gap-4 bg-[#82738C] text-white py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-6 transition-all w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#82738C] focus-visible:ring-offset-2 focus-visible:ring-offset-black/40"
               >
                 Request a Security Audit
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -267,10 +267,10 @@ export default function MedicalITPage() {
               const Icon = item.icon;
               return (
                 <article key={item.title}>
-                  <div className="bg-[#009B8D]/10 p-4 sm:p-6 lg:p-8 h-full border-l-2 border-[#009B8D]/30 hover:bg-[#009B8D]/15 hover:border-[#009B8D]/50 transition-colors">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#009B8D]/20 flex items-center justify-center mb-3 sm:mb-4 lg:mb-6">
+                  <div className="bg-[#82738C]/10 p-4 sm:p-6 lg:p-8 h-full border-l-2 border-[#82738C]/30 hover:bg-[#82738C]/15 hover:border-[#82738C]/50 transition-colors">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#82738C]/20 flex items-center justify-center mb-3 sm:mb-4 lg:mb-6">
                       <Icon
-                        className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-[#009B8D]/70"
+                        className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-[#82738C]/70"
                         strokeWidth={1.5}
                         aria-hidden="true"
                       />
@@ -407,7 +407,7 @@ export default function MedicalITPage() {
                         href={row.source}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-[#009B8D] text-[10px] sm:text-xs uppercase tracking-widest hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#009B8D]"
+                        className="inline-flex items-center gap-1.5 text-[#82738C] text-[10px] sm:text-xs uppercase tracking-widest hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#82738C]"
                         aria-label={`Official source for ${row.entity} penalty`}
                       >
                         Official
@@ -452,9 +452,9 @@ export default function MedicalITPage() {
                     {step.number}
                   </span>
                   <div className="flex items-start gap-3 sm:gap-4 -mt-6 sm:-mt-8 lg:-mt-10 relative z-10">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#009B8D]/10 flex items-center justify-center flex-shrink-0">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#82738C]/10 flex items-center justify-center flex-shrink-0">
                       <Icon
-                        className="w-4 h-4 text-[#009B8D]/70"
+                        className="w-4 h-4 text-[#82738C]/70"
                         strokeWidth={1.5}
                         aria-hidden="true"
                       />
@@ -485,17 +485,17 @@ export default function MedicalITPage() {
 
             {/* Left: Large stat block */}
             <div className="lg:col-span-5">
-              <div className="bg-[#009B8D]/10 aspect-square flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+              <div className="bg-[#82738C]/10 aspect-square flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
                 <Shield
-                  className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-[#009B8D]/40 mb-3 sm:mb-4 lg:mb-6"
+                  className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-[#82738C]/40 mb-3 sm:mb-4 lg:mb-6"
                   strokeWidth={1}
                   aria-hidden="true"
                 />
-                <span className="text-[40px] sm:text-[52px] lg:text-[70px] xl:text-[84px] font-heading text-[#009B8D] leading-none text-center">
+                <span className="text-[40px] sm:text-[52px] lg:text-[70px] xl:text-[84px] font-heading text-[#82738C] leading-none text-center">
                   Zero
                 </span>
                 <div
-                  className="w-10 h-px sm:w-12 bg-[#009B8D]/30 my-3 sm:my-4 lg:my-6"
+                  className="w-10 h-px sm:w-12 bg-[#82738C]/30 my-3 sm:my-4 lg:my-6"
                   aria-hidden="true"
                 />
                 <p className="text-xs sm:text-sm text-white/60 font-light text-center leading-relaxed">
@@ -518,9 +518,9 @@ export default function MedicalITPage() {
 
               <div className="space-y-4 sm:space-y-6 lg:space-y-8">
                 <div className="flex items-start gap-3 sm:gap-4 lg:gap-6">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#009B8D]/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#82738C]/10 flex items-center justify-center flex-shrink-0">
                     <Search
-                      className="w-4 h-4 sm:w-5 sm:h-5 text-[#009B8D]/70"
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-[#82738C]/70"
                       strokeWidth={1.5}
                       aria-hidden="true"
                     />
@@ -536,9 +536,9 @@ export default function MedicalITPage() {
                 </div>
 
                 <div className="flex items-start gap-3 sm:gap-4 lg:gap-6">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#009B8D]/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#82738C]/10 flex items-center justify-center flex-shrink-0">
                     <FileText
-                      className="w-4 h-4 sm:w-5 sm:h-5 text-[#009B8D]/70"
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-[#82738C]/70"
                       strokeWidth={1.5}
                       aria-hidden="true"
                     />
@@ -554,9 +554,9 @@ export default function MedicalITPage() {
                 </div>
 
                 <div className="flex items-start gap-3 sm:gap-4 lg:gap-6">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#009B8D]/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#82738C]/10 flex items-center justify-center flex-shrink-0">
                     <CheckCircle
-                      className="w-4 h-4 sm:w-5 sm:h-5 text-[#009B8D]/70"
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-[#82738C]/70"
                       strokeWidth={1.5}
                       aria-hidden="true"
                     />
@@ -594,13 +594,13 @@ export default function MedicalITPage() {
             {faqItems.map((item, idx) => (
               <details
                 key={idx}
-                className="group bg-kronos-card border border-white/5 hover:border-[#009B8D]/20 transition-colors"
+                className="group bg-kronos-card border border-white/5 hover:border-[#82738C]/20 transition-colors"
               >
                 <summary className="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none">
                   <h3 className="font-body text-xs sm:text-sm text-white font-normal pr-4">
                     {item.question}
                   </h3>
-                  <span className="text-[#009B8D] flex-shrink-0" aria-hidden="true">+</span>
+                  <span className="text-[#82738C] flex-shrink-0" aria-hidden="true">+</span>
                 </summary>
                 <div className="px-4 sm:px-5 pb-4 sm:pb-5">
                   <p className="font-body text-[10px] sm:text-xs text-white/60 font-light leading-relaxed">
@@ -636,8 +636,8 @@ export default function MedicalITPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             <article>
-              <div className="bg-kronos-card border-l-2 border-[#009B8D]/30 hover:border-[#009B8D]/60 hover:bg-kronos-gray-800 transition-colors p-6 sm:p-8 lg:p-10 h-full flex flex-col">
-                <p className="text-[10px] sm:text-xs uppercase tracking-widest text-[#009B8D]/60 mb-3">
+              <div className="bg-kronos-card border-l-2 border-[#82738C]/30 hover:border-[#82738C]/60 hover:bg-kronos-gray-800 transition-colors p-6 sm:p-8 lg:p-10 h-full flex flex-col">
+                <p className="text-[10px] sm:text-xs uppercase tracking-widest text-[#82738C]/60 mb-3">
                   Revenue Cycle
                 </p>
                 <h3 className="font-heading text-xl sm:text-2xl text-white mb-4">
@@ -650,7 +650,7 @@ export default function MedicalITPage() {
                   href="https://kronos-rev.vercel.app?utm_source=medicalit&utm_medium=techstack"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-[#009B8D] text-xs uppercase tracking-widest hover:gap-5 transition-all w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#009B8D]"
+                  className="inline-flex items-center gap-3 text-[#82738C] text-xs uppercase tracking-widest hover:gap-5 transition-all w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#82738C]"
                 >
                   Visit Kronos Revenue
                   <ArrowRight className="w-3 h-3" aria-hidden="true" />
@@ -659,8 +659,8 @@ export default function MedicalITPage() {
             </article>
 
             <article>
-              <div className="bg-kronos-card border-l-2 border-[#009B8D]/30 hover:border-[#009B8D]/60 hover:bg-kronos-gray-800 transition-colors p-6 sm:p-8 lg:p-10 h-full flex flex-col">
-                <p className="text-[10px] sm:text-xs uppercase tracking-widest text-[#009B8D]/60 mb-3">
+              <div className="bg-kronos-card border-l-2 border-[#82738C]/30 hover:border-[#82738C]/60 hover:bg-kronos-gray-800 transition-colors p-6 sm:p-8 lg:p-10 h-full flex flex-col">
+                <p className="text-[10px] sm:text-xs uppercase tracking-widest text-[#82738C]/60 mb-3">
                   Employer Mental Health
                 </p>
                 <h3 className="font-heading text-xl sm:text-2xl text-white mb-4">
@@ -673,7 +673,7 @@ export default function MedicalITPage() {
                   href="https://cognificaai.vercel.app?utm_source=medicalit&utm_medium=techstack"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-[#009B8D] text-xs uppercase tracking-widest hover:gap-5 transition-all w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#009B8D]"
+                  className="inline-flex items-center gap-3 text-[#82738C] text-xs uppercase tracking-widest hover:gap-5 transition-all w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#82738C]"
                 >
                   Visit Cognifica App
                   <ArrowRight className="w-3 h-3" aria-hidden="true" />
@@ -682,8 +682,8 @@ export default function MedicalITPage() {
             </article>
 
             <article>
-              <div className="bg-kronos-card border-l-2 border-[#009B8D]/30 hover:border-[#009B8D]/60 hover:bg-kronos-gray-800 transition-colors p-6 sm:p-8 lg:p-10 h-full flex flex-col">
-                <p className="text-[10px] sm:text-xs uppercase tracking-widest text-[#009B8D]/60 mb-3">
+              <div className="bg-kronos-card border-l-2 border-[#82738C]/30 hover:border-[#82738C]/60 hover:bg-kronos-gray-800 transition-colors p-6 sm:p-8 lg:p-10 h-full flex flex-col">
+                <p className="text-[10px] sm:text-xs uppercase tracking-widest text-[#82738C]/60 mb-3">
                   Concussion Management
                 </p>
                 <h3 className="font-heading text-xl sm:text-2xl text-white mb-4">
@@ -696,7 +696,7 @@ export default function MedicalITPage() {
                   href="https://synaptix-rho.vercel.app?utm_source=medicalit&utm_medium=techstack"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-[#009B8D] text-xs uppercase tracking-widest hover:gap-5 transition-all w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#009B8D]"
+                  className="inline-flex items-center gap-3 text-[#82738C] text-xs uppercase tracking-widest hover:gap-5 transition-all w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#82738C]"
                 >
                   Visit Synaptix
                   <ArrowRight className="w-3 h-3" aria-hidden="true" />
@@ -728,21 +728,21 @@ export default function MedicalITPage() {
           <div className="flex flex-wrap gap-3">
             <Link
               href="/revenue-cycle"
-              className="text-[#009B8D] hover:underline text-sm font-light"
+              className="text-[#82738C] hover:underline text-sm font-light"
             >
               Revenue Cycle Management
             </Link>
             <span className="text-white/20">|</span>
             <Link
               href="/digital-health-tools"
-              className="text-[#009B8D] hover:underline text-sm font-light"
+              className="text-[#82738C] hover:underline text-sm font-light"
             >
               Digital Health Tools
             </Link>
             <span className="text-white/20">|</span>
             <Link
               href="/clinically-integrated-neuropsychology"
-              className="text-[#009B8D] hover:underline text-sm font-light"
+              className="text-[#82738C] hover:underline text-sm font-light"
             >
               Neuropsychology
             </Link>
@@ -752,7 +752,7 @@ export default function MedicalITPage() {
 
       {/* CTA */}
       <section
-        className="py-12 sm:py-16 lg:py-24 bg-kronos-green"
+        className="py-12 sm:py-16 lg:py-24 bg-kronos-purple"
         id="audit"
         aria-labelledby="cta-heading"
       >
@@ -771,7 +771,7 @@ export default function MedicalITPage() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link
                   href="tel:+19147056830"
-                  className="inline-flex items-center justify-center gap-3 bg-kronos-bg text-white py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-green"
+                  className="inline-flex items-center justify-center gap-3 bg-kronos-bg text-white py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-purple"
                   aria-label="Call us at (914) 705 6830"
                 >
                   (914) 705 6830
@@ -779,7 +779,7 @@ export default function MedicalITPage() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-3 border border-white text-white py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:bg-white/10 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-green"
+                  className="inline-flex items-center justify-center gap-3 border border-white text-white py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:bg-white/10 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-purple"
                 >
                   Request a Consultation
                 </Link>

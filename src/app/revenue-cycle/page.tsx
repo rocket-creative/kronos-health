@@ -470,7 +470,7 @@ export default function RevenueCyclePage() {
 
       {/* CTA - Editorial */}
       <section 
-        className="py-12 sm:py-16 lg:py-24 bg-kronos-green" 
+        className="py-12 sm:py-16 lg:py-24 bg-kronos-purple" 
         id="demo"
         aria-labelledby="cta-heading"
       >
@@ -489,7 +489,7 @@ export default function RevenueCyclePage() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link
                   href="tel:+19147056830"
-                  className="inline-flex items-center justify-center gap-3 bg-kronos-bg text-white py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-green"
+                  className="inline-flex items-center justify-center gap-3 bg-kronos-bg text-white py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-purple"
                   aria-label="Call us at (914) 705 6830"
                 >
                   (914) 705 6830
@@ -497,7 +497,7 @@ export default function RevenueCyclePage() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-3 border border-white text-white py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:bg-white/10 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-green"
+                  className="inline-flex items-center justify-center gap-3 border border-white text-white py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:bg-white/10 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-purple"
                 >
                   Request Consultation
                 </Link>

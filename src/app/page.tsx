@@ -15,10 +15,10 @@ const b2bServices = [
       "HIPAA governance, security audits, device hardening, and GRC documentation. We serve as your technical Security Officer — protecting your practice from fines up to $2.1M.",
     href: "/medical-it",
     external: false,
-    accentColor: "text-[#009B8D]",
-    focusColor: "focus-visible:ring-[#009B8D]",
-    arrowColor: "group-hover:text-[#009B8D]",
-    animation: <ShieldMatrix color="0, 155, 141" />,
+    accentColor: "text-[#82738C]",
+    focusColor: "focus-visible:ring-[#82738C]",
+    arrowColor: "group-hover:text-[#82738C]",
+    animation: <ShieldMatrix color="130, 115, 140" />,
   },
   {
     id: "kronos-revenue",
@@ -474,7 +474,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             <div>
-              <p className="text-xs tracking-widest uppercase text-[#009B8D]/70 mb-4 font-body">
+              <p className="text-xs tracking-widest uppercase text-[#82738C]/70 mb-4 font-body">
                 Medical IT &amp; HIPAA Compliance
               </p>
               <h2
@@ -493,7 +493,7 @@ export default function HomePage() {
                   { stat: "Full Scope", label: "Devices, networks, workflows, and documentation" },
                 ].map(({ stat, label }) => (
                   <li key={stat} className="flex items-start gap-4">
-                    <span className="font-heading text-lg text-[#009B8D] flex-shrink-0 w-28">{stat}</span>
+                    <span className="font-heading text-lg text-[#82738C] flex-shrink-0 w-28">{stat}</span>
                     <span className="font-body text-sm text-white/50 font-light">{label}</span>
                   </li>
                 ))}
