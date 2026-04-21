@@ -62,22 +62,22 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/cognificaai",
-        destination: "https://cognificaai.vercel.app?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
+        destination: "https://www.cognifica.app?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
         permanent: true,
       },
       {
         source: "/cognificaai/",
-        destination: "https://cognificaai.vercel.app?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
+        destination: "https://www.cognifica.app?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
         permanent: true,
       },
       {
         source: "/synaptix",
-        destination: "https://synaptix-rho.vercel.app?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
+        destination: "https://www.synaptix.health?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
         permanent: true,
       },
       {
         source: "/synaptix/",
-        destination: "https://synaptix-rho.vercel.app?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
+        destination: "https://www.synaptix.health?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
         permanent: true,
       },
     ];
@@ -87,7 +87,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "kronoshealth.co",
+        hostname: "www.kronosgroup.health",
       },
     ],
   },

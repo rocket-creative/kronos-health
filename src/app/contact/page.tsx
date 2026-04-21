@@ -13,17 +13,17 @@ export const metadata: Metadata = {
   description:
     "Contact Kronos Group for revenue cycle management, Cognifica App demos, Synaptix demos, or general inquiries. Located in West Harrison, NY. Reach out today.",
   alternates: {
-    canonical: "https://kronoshealth.co/contact",
+    canonical: "https://www.kronosgroup.health/contact",
   },
   openGraph: {
     title: "Contact Kronos Group — Revenue Cycle, Cognifica App, Synaptix Inquiries",
     description: "Contact Kronos Group for revenue cycle management, Cognifica App demos, Synaptix demos, or general inquiries. Located in West Harrison, NY.",
-    url: "https://kronoshealth.co/contact",
+    url: "https://www.kronosgroup.health/contact",
     siteName: "Kronos Group",
     type: "website",
     images: [
       {
-        url: "https://kronoshealth.co/opengraph-image",
+        url: "https://www.kronosgroup.health/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Contact Kronos Group",
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact Kronos Group — Revenue Cycle, Cognifica App, Synaptix Inquiries",
     description: "Contact Kronos Group for revenue cycle management, Cognifica App demos, Synaptix demos, or general inquiries.",
-    images: ["https://kronoshealth.co/opengraph-image"],
+    images: ["https://www.kronosgroup.health/opengraph-image"],
   },
 };
 
 const breadcrumbItems = [
-  { name: "Home", url: "https://kronoshealth.co" },
-  { name: "Contact", url: "https://kronoshealth.co/contact" },
+  { name: "Home", url: "https://www.kronosgroup.health" },
+  { name: "Contact", url: "https://www.kronosgroup.health/contact" },
 ];
 
 export default function ContactPage() {

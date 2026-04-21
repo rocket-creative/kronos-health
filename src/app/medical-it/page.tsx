@@ -28,18 +28,18 @@ export const metadata: Metadata = {
   description:
     "HIPAA compliance, security audits, device hardening, and GRC governance for medical practices. Kronos Group serves as your technical Security Officer — protecting your practice from fines up to $2.1M.",
   alternates: {
-    canonical: "https://kronoshealth.co/medical-it",
+    canonical: "https://www.kronosgroup.health/medical-it",
   },
   openGraph: {
     title: "Medical IT & HIPAA Compliance Services | Kronos Group",
     description:
       "HIPAA compliance, security audits, device hardening, and GRC governance for medical practices.",
-    url: "https://kronoshealth.co/medical-it",
+    url: "https://www.kronosgroup.health/medical-it",
     siteName: "Kronos Group",
     type: "website",
     images: [
       {
-        url: "https://kronoshealth.co/medical-it/opengraph-image",
+        url: "https://www.kronosgroup.health/medical-it/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Kronos Group Medical IT & Compliance",
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
     title: "Medical IT & HIPAA Compliance Services | Kronos Group",
     description:
       "HIPAA compliance, security audits, device hardening, and GRC governance for medical practices.",
-    images: ["https://kronoshealth.co/medical-it/opengraph-image"],
+    images: ["https://www.kronosgroup.health/medical-it/opengraph-image"],
   },
 };
 
 const breadcrumbItems = [
-  { name: "Home", url: "https://kronoshealth.co" },
-  { name: "Medical IT", url: "https://kronoshealth.co/medical-it" },
+  { name: "Home", url: "https://www.kronosgroup.health" },
+  { name: "Medical IT", url: "https://www.kronosgroup.health/medical-it" },
 ];
 
 const deliverables = [
@@ -192,7 +192,7 @@ export default function MedicalITPage() {
       <ServiceSchema
         name="Medical IT & HIPAA Compliance Services"
         description="HIPAA compliance, security auditing, device hardening, and GRC governance for medical practices. Kronos Group serves as your technical Security Officer."
-        url="https://kronoshealth.co/medical-it"
+        url="https://www.kronosgroup.health/medical-it"
         serviceType="Healthcare IT Consulting"
       />
       <BreadcrumbSchema items={breadcrumbItems} />
@@ -647,7 +647,7 @@ export default function MedicalITPage() {
                   Expert IDR arbitration and out of network dispute resolution under the No Surprises Act. We recover what your practice is owed — from negotiation through final arbitration.
                 </p>
                 <a
-                  href="https://kronos-rev.vercel.app?utm_source=medicalit&utm_medium=techstack"
+                  href="https://www.kronosrevenue.health?utm_source=medicalit&utm_medium=techstack"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 text-[#82738C] text-xs uppercase tracking-widest hover:gap-5 transition-all w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#82738C]"
@@ -670,7 +670,7 @@ export default function MedicalITPage() {
                   Anonymous, HIPAA-compliant mental health screening for employers. Six validated clinical assessments, risk stratification, and care pathways — deployed in under one week.
                 </p>
                 <a
-                  href="https://cognificaai.vercel.app?utm_source=medicalit&utm_medium=techstack"
+                  href="https://www.cognifica.app?utm_source=medicalit&utm_medium=techstack"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 text-[#82738C] text-xs uppercase tracking-widest hover:gap-5 transition-all w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#82738C]"
@@ -693,7 +693,7 @@ export default function MedicalITPage() {
                   A structured 12-week concussion management program built for orthopedic, neurosurgery, and sports medicine practices. Standardized, billable, and recurring.
                 </p>
                 <a
-                  href="https://synaptix-rho.vercel.app?utm_source=medicalit&utm_medium=techstack"
+                  href="https://www.synaptix.health?utm_source=medicalit&utm_medium=techstack"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 text-[#82738C] text-xs uppercase tracking-widest hover:gap-5 transition-all w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#82738C]"

@@ -15,18 +15,18 @@ export const metadata: Metadata = {
   description:
     "Meet the Kronos Group team. Over 100 years of combined experience in healthcare, revenue cycle management, and digital health. Founded by Dr. John M. Abrahams.",
   alternates: {
-    canonical: "https://kronos-health.vercel.app/about",
+    canonical: "https://www.kronosgroup.health/about",
   },
   openGraph: {
     title: "About Kronos Group — Meet Our Healthcare Technology Team",
     description:
       "Over 100 years of combined experience in healthcare, revenue cycle management, and digital health. Founded by Dr. John M. Abrahams.",
-    url: "https://kronos-health.vercel.app/about",
+    url: "https://www.kronosgroup.health/about",
     siteName: "Kronos Group",
     type: "website",
     images: [
       {
-        url: "https://kronos-health.vercel.app/opengraph-image",
+        url: "https://www.kronosgroup.health/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Kronos Group Team",
@@ -38,13 +38,13 @@ export const metadata: Metadata = {
     title: "About Kronos Group — Meet Our Healthcare Technology Team",
     description:
       "Over 100 years of combined experience in healthcare, revenue cycle management, and digital health.",
-    images: ["https://kronos-health.vercel.app/opengraph-image"],
+    images: ["https://www.kronosgroup.health/opengraph-image"],
   },
 };
 
 const breadcrumbItems = [
-  { name: "Home", url: "https://kronos-health.vercel.app" },
-  { name: "About", url: "https://kronos-health.vercel.app/about" },
+  { name: "Home", url: "https://www.kronosgroup.health" },
+  { name: "About", url: "https://www.kronosgroup.health/about" },
 ];
 
 const founderCredentials = [
@@ -203,19 +203,19 @@ export default function AboutPage() {
                     { label: "ISS Health", href: "https://iss.health" },
                     {
                       label: "Cognifica Health",
-                      href: "https://cognifica-health.vercel.app",
+                      href: "https://www.cognifica.health",
                     },
                     {
                       label: "Cognifica App",
-                      href: "https://cognificaai.vercel.app",
+                      href: "https://www.cognifica.app",
                     },
                     {
                       label: "Synaptix",
-                      href: "https://synaptix-rho.vercel.app",
+                      href: "https://www.synaptix.health",
                     },
                     {
                       label: "Kronos Revenue",
-                      href: "https://kronos-rev.vercel.app",
+                      href: "https://www.kronosrevenue.health",
                     },
                   ].map((co) => (
                     <a

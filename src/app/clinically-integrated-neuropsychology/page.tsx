@@ -21,17 +21,17 @@ export const metadata: Metadata = {
   description:
     "Streamlined referral path for mental health evaluation and care. Connect with licensed neuropsychologists through the Kronos Group Network. Contact us today.",
   alternates: {
-    canonical: "https://kronoshealth.co/clinically-integrated-neuropsychology",
+    canonical: "https://www.kronosgroup.health/clinically-integrated-neuropsychology",
   },
   openGraph: {
     title: "Clinically Integrated Neuropsychology — Kronos Group Network",
     description: "Streamlined referral path for mental health evaluation and care with licensed neuropsychologists.",
-    url: "https://kronoshealth.co/clinically-integrated-neuropsychology",
+    url: "https://www.kronosgroup.health/clinically-integrated-neuropsychology",
     siteName: "Kronos Group",
     type: "website",
     images: [
       {
-        url: "https://kronoshealth.co/opengraph-image",
+        url: "https://www.kronosgroup.health/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Clinically Integrated Neuropsychology",
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Clinically Integrated Neuropsychology — Kronos Group Network",
     description: "Streamlined referral path for mental health evaluation and care.",
-    images: ["https://kronoshealth.co/opengraph-image"],
+    images: ["https://www.kronosgroup.health/opengraph-image"],
   },
 };
 
 const breadcrumbItems = [
-  { name: "Home", url: "https://kronoshealth.co" },
-  { name: "Clinically Integrated Neuropsychology", url: "https://kronoshealth.co/clinically-integrated-neuropsychology" },
+  { name: "Home", url: "https://www.kronosgroup.health" },
+  { name: "Clinically Integrated Neuropsychology", url: "https://www.kronosgroup.health/clinically-integrated-neuropsychology" },
 ];
 
 const faqItems = [
@@ -91,7 +91,7 @@ export default function NeuropsychologyPage() {
       <ServiceSchema
         name="Clinically Integrated Neuropsychology"
         description="Streamlined referral path for mental health evaluation and care with licensed neuropsychologists. Includes in-office screening and referral management."
-        url="https://kronoshealth.co/clinically-integrated-neuropsychology"
+        url="https://www.kronosgroup.health/clinically-integrated-neuropsychology"
         serviceType="Neuropsychological Services"
       />
       <BreadcrumbSchema items={breadcrumbItems} />

@@ -26,7 +26,7 @@ const b2bServices = [
     titleColor: "text-white",
     description:
       "Expert arbitration and out of network dispute resolution under the No Surprises Act. Complete case management from negotiation through final IDR arbitration — we recover what you are owed.",
-    href: "https://kronos-rev.vercel.app?utm_source=kronoshealth&utm_medium=homepage",
+    href: "https://www.kronosrevenue.health?utm_source=kronoshealth&utm_medium=homepage",
     external: true,
     accentColor: "text-kronos-cyan",
     focusColor: "focus-visible:ring-kronos-rev-green",
@@ -38,7 +38,7 @@ const b2bServices = [
     title: "Sydra",
     description:
       "AI powered IDR submission platform for the No Surprises Act. Automate case intake, deadline tracking, and AI generated submissions — so your practice can fight more cases and recover more revenue.",
-    href: "https://kronos-rev.vercel.app/sydra?utm_source=kronoshealth&utm_medium=homepage",
+    href: "https://www.kronosrevenue.health/sydra?utm_source=kronoshealth&utm_medium=homepage",
     external: true,
     accentColor: "text-kronos-rev-green",
     focusColor: "focus-visible:ring-kronos-rev-green",
@@ -51,7 +51,7 @@ const b2bServices = [
     titleWordmark: true,
     description:
       "Anonymous, HIPAA-compliant mental health screening for employers. Six validated clinical assessments, smart risk stratification, and care pathways — deployed in under one week.",
-    href: "https://cognificaai.vercel.app?utm_source=kronoshealth&utm_medium=homepage",
+    href: "https://www.cognifica.app?utm_source=kronoshealth&utm_medium=homepage",
     external: true,
     accentColor: "text-[#E6A91A]",
     focusColor: "focus-visible:ring-[#E6A91A]",
@@ -63,7 +63,7 @@ const b2bServices = [
     title: "Synaptix",
     description:
       "A structured 12-week concussion management program built for orthopedic, neurosurgery, and sports medicine practices. Standardized, billable, and recurring — up to $260K annual revenue potential per practice.",
-    href: "https://synaptix-rho.vercel.app?utm_source=kronoshealth&utm_medium=homepage",
+    href: "https://www.synaptix.health?utm_source=kronoshealth&utm_medium=homepage",
     external: true,
     accentColor: "text-synaptix-cyan",
     focusColor: "focus-visible:ring-synaptix-cyan",
@@ -90,7 +90,7 @@ const clinicalBrands = [
     subtitle: "Brain Health & Cognitive Wellness",
     description:
       "The only regional practice combining neurosurgeons, neuropsychologists, physical therapists, and researchers under one roof. Services include FDA-cleared TMS therapy, full neuropsychological evaluations, EEG, cognitive training, and structured concussion programs. Three locations: West Harrison NY, Stamford CT, and Aquebogue NY.",
-    href: "https://cognifica-health.vercel.app?utm_source=kronoshealth&utm_medium=homepage",
+    href: "https://www.cognifica.health?utm_source=kronoshealth&utm_medium=homepage",
     cta: "Visit Cognifica Health",
   },
 ];
@@ -233,10 +233,10 @@ export default function HomePage() {
                 <div className="flex flex-wrap gap-2 sm:gap-3">
                   {[
                     { label: "ISS Health", href: "https://iss.health" },
-                    { label: "Cognifica Health", href: "https://cognifica-health.vercel.app" },
-                    { label: "Cognifica App", href: "https://cognificaai.vercel.app" },
-                    { label: "Synaptix", href: "https://synaptix-rho.vercel.app" },
-                    { label: "Kronos Revenue", href: "https://kronos-rev.vercel.app" },
+                    { label: "Cognifica Health", href: "https://www.cognifica.health" },
+                    { label: "Cognifica App", href: "https://www.cognifica.app" },
+                    { label: "Synaptix", href: "https://www.synaptix.health" },
+                    { label: "Kronos Revenue", href: "https://www.kronosrevenue.health" },
                   ].map((co) => (
                     <a
                       key={co.label}

@@ -35,17 +35,17 @@ export const metadata: Metadata = {
   description:
     "Structured concussion management software for orthopedic, neurosurgery, and sports medicine practices. 12-week program with NPE-CX battery, cognitive remediation, and digital monitoring.",
   alternates: {
-    canonical: "https://kronoshealth.co/synaptix",
+    canonical: "https://www.kronosgroup.health/synaptix",
   },
   openGraph: {
     title: "Synaptix — Concussion Assessment & Recovery Platform | Kronos Group",
     description: "Structured concussion management software. 12-week program with NPE-CX battery, cognitive remediation, and digital monitoring.",
-    url: "https://kronoshealth.co/synaptix",
+    url: "https://www.kronosgroup.health/synaptix",
     siteName: "Kronos Group",
     type: "website",
     images: [
       {
-        url: "https://kronoshealth.co/synaptix-og.jpg",
+        url: "https://www.kronosgroup.health/synaptix-og.jpg",
         width: 1200,
         height: 630,
         alt: "Synaptix Concussion Management Platform",
@@ -60,8 +60,8 @@ export const metadata: Metadata = {
 };
 
 const breadcrumbItems = [
-  { name: "Home", url: "https://kronoshealth.co" },
-  { name: "Synaptix", url: "https://kronoshealth.co/synaptix" },
+  { name: "Home", url: "https://www.kronosgroup.health" },
+  { name: "Synaptix", url: "https://www.kronosgroup.health/synaptix" },
 ];
 
 const programStats = [
@@ -198,13 +198,13 @@ export default function SynaptixPage() {
       <ServiceSchema
         name="Synaptix Concussion Management Platform"
         description="Comprehensive concussion assessment and recovery software with neuropsychological testing, cognitive remediation therapy, and digital monitoring for medical practices."
-        url="https://kronoshealth.co/synaptix"
+        url="https://www.kronosgroup.health/synaptix"
         serviceType="Healthcare Software"
       />
       <SoftwareApplicationSchema
         name="Synaptix"
         description="Concussion management software with NPE-CX battery, cognitive remediation, and digital symptom tracking."
-        url="https://kronoshealth.co/synaptix"
+        url="https://www.kronosgroup.health/synaptix"
         applicationCategory="HealthApplication"
       />
       <BreadcrumbSchema items={breadcrumbItems} />

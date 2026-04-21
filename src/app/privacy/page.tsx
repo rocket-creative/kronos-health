@@ -7,17 +7,17 @@ export const metadata: Metadata = {
   description:
     "Kronos Group privacy policy. How we collect, use, and protect your information when using our healthcare technology services.",
   alternates: {
-    canonical: "https://kronoshealth.co/privacy",
+    canonical: "https://www.kronosgroup.health/privacy",
   },
   openGraph: {
     title: "Privacy Policy | Kronos Group",
     description: "How we collect, use, and protect your information.",
-    url: "https://kronoshealth.co/privacy",
+    url: "https://www.kronosgroup.health/privacy",
     siteName: "Kronos Group",
     type: "website",
     images: [
       {
-        url: "https://kronoshealth.co/opengraph-image",
+        url: "https://www.kronosgroup.health/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Privacy Policy",
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Privacy Policy | Kronos Group",
     description: "How we collect, use, and protect your information.",
-    images: ["https://kronoshealth.co/opengraph-image"],
+    images: ["https://www.kronosgroup.health/opengraph-image"],
   },
 };
 
 const breadcrumbItems = [
-  { name: "Home", url: "https://kronoshealth.co" },
-  { name: "Privacy Policy", url: "https://kronoshealth.co/privacy" },
+  { name: "Home", url: "https://www.kronosgroup.health" },
+  { name: "Privacy Policy", url: "https://www.kronosgroup.health/privacy" },
 ];
 
 export default function PrivacyPage() {

@@ -7,17 +7,17 @@ export const metadata: Metadata = {
   description:
     "Terms of Service for Kronos Group website and B2B healthcare technology services. Read our terms and conditions.",
   alternates: {
-    canonical: "https://kronoshealth.co/terms",
+    canonical: "https://www.kronosgroup.health/terms",
   },
   openGraph: {
     title: "Terms of Service | Kronos Group",
     description: "Terms and conditions for using Kronos Group website and services.",
-    url: "https://kronoshealth.co/terms",
+    url: "https://www.kronosgroup.health/terms",
     siteName: "Kronos Group",
     type: "website",
     images: [
       {
-        url: "https://kronoshealth.co/opengraph-image",
+        url: "https://www.kronosgroup.health/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Terms of Service",
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Terms of Service | Kronos Group",
     description: "Terms and conditions for using Kronos Group website and services.",
-    images: ["https://kronoshealth.co/opengraph-image"],
+    images: ["https://www.kronosgroup.health/opengraph-image"],
   },
 };
 
 const breadcrumbItems = [
-  { name: "Home", url: "https://kronoshealth.co" },
-  { name: "Terms of Service", url: "https://kronoshealth.co/terms" },
+  { name: "Home", url: "https://www.kronosgroup.health" },
+  { name: "Terms of Service", url: "https://www.kronosgroup.health/terms" },
 ];
 
 export default function TermsPage() {

@@ -41,12 +41,12 @@ export const metadata: Metadata = {
   },
   description:
     "Healthcare technology solutions: revenue cycle management, Cognifica App mental health platform, Synaptix concussion software. Founded by Dr. John M. Abrahams. Contact us today.",
-  metadataBase: new URL("https://kronoshealth.co"),
+  metadataBase: new URL("https://www.kronosgroup.health"),
   alternates: {
-    canonical: "https://kronoshealth.co",
+    canonical: "https://www.kronosgroup.health",
   },
   authors: [
-    { name: "Dr. John M. Abrahams", url: "https://kronoshealth.co/about" },
+    { name: "Dr. John M. Abrahams", url: "https://www.kronosgroup.health/about" },
   ],
   creator: "Kronos Group",
   publisher: "Kronos Group",
@@ -59,13 +59,13 @@ export const metadata: Metadata = {
     title: "Kronos Group — Smarter Healthcare. Stronger Revenue.",
     description:
       "Healthcare technology solutions: Revenue cycle management, Cognifica App workplace mental health platform, and Synaptix concussion management software.",
-    url: "https://kronoshealth.co",
+    url: "https://www.kronosgroup.health",
     siteName: "Kronos Group",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://kronoshealth.co/opengraph-image",
+        url: "https://www.kronosgroup.health/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Kronos Group - Healthcare Technology Solutions",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     title: "Kronos Group — Smarter Healthcare. Stronger Revenue.",
     description:
       "Healthcare technology solutions: Revenue cycle management, Cognifica App, and Synaptix concussion software.",
-    images: ["https://kronoshealth.co/twitter-image"],
+    images: ["https://www.kronosgroup.health/twitter-image"],
   },
   robots: {
     index: true,
