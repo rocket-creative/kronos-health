@@ -31,44 +31,44 @@ import {
 import { FAQSchema } from "@/components";
 
 export const metadata: Metadata = {
-  title: "Synaptix — Concussion Assessment & Recovery Platform",
+  title: "Kavera — Concussion & Mental Health Platform",
   description:
-    "Structured concussion management software for orthopedic, neurosurgery, and sports medicine practices. 12-week program with NPE-CX battery, cognitive remediation, and digital monitoring.",
+    "Concussion and mental health platform powered by AI to streamline workflows and improve revenue. 12-week program with NPE-CX battery, validated mental health screeners, AI therapy sessions, and digital monitoring.",
   alternates: {
-    canonical: "https://www.kronosgroup.health/synaptix",
+    canonical: "https://kronos.health/kavera",
   },
   openGraph: {
-    title: "Synaptix — Concussion Assessment & Recovery Platform | Kronos Group",
-    description: "Structured concussion management software. 12-week program with NPE-CX battery, cognitive remediation, and digital monitoring.",
-    url: "https://www.kronosgroup.health/synaptix",
+    title: "Kavera — Concussion & Mental Health Platform | Kronos Group",
+    description: "Concussion and mental health platform powered by AI. 12-week program with NPE-CX battery, validated screeners, AI therapy sessions, and digital monitoring.",
+    url: "https://kronos.health/kavera",
     siteName: "Kronos Group",
     type: "website",
     images: [
       {
-        url: "https://www.kronosgroup.health/synaptix-og.jpg",
+        url: "https://kronos.health/kavera-og.jpg",
         width: 1200,
         height: 630,
-        alt: "Synaptix Concussion Management Platform",
+        alt: "Kavera Concussion and Mental Health Platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Synaptix — Concussion Assessment & Recovery Platform",
-    description: "Structured concussion management software with NPE-CX battery, cognitive remediation, and digital monitoring.",
+    title: "Kavera — Concussion & Mental Health Platform",
+    description: "Concussion and mental health platform powered by AI with NPE-CX battery, validated screeners, and digital monitoring.",
   },
 };
 
 const breadcrumbItems = [
-  { name: "Home", url: "https://www.kronosgroup.health" },
-  { name: "Synaptix", url: "https://www.kronosgroup.health/synaptix" },
+  { name: "Home", url: "https://kronos.health" },
+  { name: "Kavera", url: "https://kronos.health/kavera" },
 ];
 
 const programStats = [
   { value: "12 Week", label: "Treatment Cycle" },
   { value: "3", label: "Visit Types" },
   { value: "6", label: "NPE Instruments" },
-  { value: "2×/week", label: "CRT Sessions" },
+  { value: "4", label: "Billable Engines" },
 ];
 
 
@@ -120,23 +120,25 @@ const ongoingServices = [
   { service: "Weekly Digital Check-ins", description: "Symptom tracking via SMS/email" },
   { service: "Cognitive Remediation Therapy", description: "Brain training exercises 2×/week" },
   { service: "Monthly NPE Testing", description: "Full battery re-administration" },
-  { service: "Progress Monitoring", description: "Dashboard with trends and alerts" },
+  { service: "AI Therapy Sessions", description: "Validated mental health support with provider oversight" },
 ];
 
 const practiceTypes = [
   { name: "Orthopedic Surgery", icon: Activity },
   { name: "Neurosurgery", icon: Brain },
   { name: "Sports Medicine", icon: Users },
+  { name: "Mental Health Programs", icon: Heart },
 ];
 
 const practiceValues = [
+  "Covers both concussion and mental health workflows",
   "Capture post injury revenue already entering your practice",
   "Zero added staff required",
   "No referrals lost",
   "Stronger compliance and documentation",
   "Recurring engagement every 12 weeks",
   "Built by clinicians for clinicians",
-  "30 day trial from existing patients",
+  "Deploys in 30 days",
   "Monthly license by volume",
 ];
 
@@ -158,83 +160,81 @@ const platformBenefits = [
 
 const faqItems = [
   {
-    question: "What practices is Synaptix designed for?",
-    answer: "Synaptix is built for orthopedic surgery, neurosurgery, sports medicine, and dedicated concussion programs. Any practice managing post-concussion patients can benefit from the standardized protocol and longitudinal tracking.",
+    question: "What practices is Kavera designed for?",
+    answer: "Kavera is built for orthopedic surgery, neurosurgery, sports medicine, dedicated concussion programs, and mental health practices. Any practice managing post-concussion or behavioral health patients can benefit from the standardized protocol and longitudinal tracking.",
   },
   {
-    question: "How quickly can we deploy Synaptix?",
-    answer: "Most practices are operational within days, not months. Synaptix requires no EHR integration, no complex IT setup, and minimal training. Your team can start with existing patients immediately.",
+    question: "How quickly can we deploy Kavera?",
+    answer: "Most practices are operational within 30 days. Kavera requires no EHR integration, no complex IT setup, and minimal training. Your team can start with existing patients immediately.",
   },
   {
-    question: "Does Synaptix require EHR integration?",
-    answer: "No. Synaptix operates as a standalone platform, eliminating the delays and costs associated with EHR integration. Reports can be exported and added to your existing medical records.",
+    question: "Does Kavera require EHR integration?",
+    answer: "No. Kavera operates as a standalone platform, eliminating the delays and costs associated with EHR integration. Reports can be exported and added to your existing medical records.",
   },
   {
     question: "What clinical instruments are included?",
-    answer: "The NPE-CX battery includes six validated, peer-reviewed instruments: PCSS, HIT-6, PHQ-9, GAD-7, PCL-5, and PSQI. All are administered digitally and scored automatically.",
+    answer: "The NPE-CX battery includes six validated, peer-reviewed instruments: PCSS, HIT-6, PHQ-9, GAD-7, PCL-5, and PSQI. All are administered digitally and scored automatically. Mental health screeners (PHQ-9, GAD-7, PCL-5, PSQI) serve dual duty for both concussion and behavioral health workflows.",
+  },
+  {
+    question: "How does Kavera handle mental health workflows?",
+    answer: "Kavera includes validated screening via PHQ-9, GAD-7, PCL-5, and PSQI, plus AI therapy sessions with suicide-risk alerts that are cleared by a provider before any action is taken. The platform is designed to extend concussion care into mental health management without adding administrative burden.",
   },
   {
     question: "Is training required for staff?",
     answer: "Minimal training is needed. The platform guides users through each visit type with structured forms and intelligent defaults. Most clinical teams are comfortable within a single session.",
   },
   {
-    question: "Is Synaptix HIPAA compliant?",
-    answer: "Yes. Synaptix is built on HIPAA-compliant infrastructure with encrypted data storage, secure access controls, and audit logging. Patient data is never shared without authorization.",
+    question: "Is Kavera HIPAA compliant?",
+    answer: "Yes. Kavera is built on HIPAA-compliant infrastructure with encrypted data storage, secure access controls, and audit logging. Patient data is never shared without authorization.",
   },
   {
     question: "What support is available?",
-    answer: "All Synaptix licenses include dedicated onboarding, clinical support, and ongoing technical assistance. Our team includes clinicians who understand concussion management workflows.",
-  },
-  {
-    question: "Can we customize the protocol for our practice?",
-    answer: "Yes. While Synaptix provides evidence-based defaults, practices can customize assessment frequencies, report formats, and workflow preferences to match their clinical approach.",
+    answer: "All Kavera licenses include dedicated onboarding, clinical support, and ongoing technical assistance. Our team includes clinicians who understand concussion and mental health management workflows.",
   },
 ];
 
-export default function SynaptixPage() {
+export default function KaveraPage() {
   return (
     <>
       {/* Schema Markup */}
       <ServiceSchema
-        name="Synaptix Concussion Management Platform"
-        description="Comprehensive concussion assessment and recovery software with neuropsychological testing, cognitive remediation therapy, and digital monitoring for medical practices."
-        url="https://www.kronosgroup.health/synaptix"
+        name="Kavera Concussion and Mental Health Platform"
+        description="Comprehensive concussion and mental health platform powered by AI with neuropsychological testing, validated mental health screeners, AI therapy sessions, and digital monitoring for medical practices."
+        url="https://kronos.health/kavera"
         serviceType="Healthcare Software"
       />
       <SoftwareApplicationSchema
-        name="Synaptix"
-        description="Concussion management software with NPE-CX battery, cognitive remediation, and digital symptom tracking."
-        url="https://www.kronosgroup.health/synaptix"
+        name="Kavera"
+        description="Concussion and mental health platform powered by AI with NPE-CX battery, validated screeners, and digital symptom tracking."
+        url="https://kronos.health/kavera"
         applicationCategory="HealthApplication"
       />
       <BreadcrumbSchema items={breadcrumbItems} />
 
       {/* Breadcrumb Navigation */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Breadcrumbs items={[{ name: "Synaptix" }]} />
+        <Breadcrumbs items={[{ name: "Kavera" }]} />
       </div>
 
-      {/* Full-Width Hero with Neural Network Animation */}
+      {/* Full-Width Hero */}
       <section 
         className="relative min-h-[80dvh] sm:min-h-dvh bg-kronos-bg overflow-hidden pt-safe-top"
-        aria-labelledby="synaptix-hero-heading"
+        aria-labelledby="kavera-hero-heading"
       >
-        {/* Full-width animated background - Concentric rings from Synaptix logo */}
         <HeroBackground type="rings" color="15, 189, 213" />
 
-        {/* Glass effect content panel */}
         <div className="relative z-10 min-h-[80dvh] sm:min-h-dvh flex items-center">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-0">
             <div className="backdrop-blur-md bg-black/40 border border-white/10 p-8 sm:p-10 lg:p-14 max-w-xl">
               <p className="text-xs tracking-widest uppercase text-white/50 mb-4 sm:mb-6">
-                Concussion Management Software
+                Concussion & Mental Health Platform
               </p>
               
-              {/* Synaptix Logo */}
+              {/* Kavera Logo */}
               <div className="mb-6 sm:mb-8">
                 <Image
-                  src="/synaptix-logo-white.svg"
-                  alt="Synaptix Cognitive Software"
+                  src="/kavera-logo-white.svg"
+                  alt="Kavera"
                   width={320}
                   height={90}
                   className="w-[180px] sm:w-[240px] lg:w-[280px] h-auto"
@@ -243,24 +243,24 @@ export default function SynaptixPage() {
               </div>
               
               <h1 
-                id="synaptix-hero-heading"
+                id="kavera-hero-heading"
                 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-white leading-tight mb-4"
               >
-                Concussion Assessment & Recovery Platform
+                Concussion & Mental Health Platform
               </h1>
 
               <p className="font-body text-sm sm:text-base text-white/70 font-light leading-relaxed mb-4">
-                Streamlining concussion care with precision and intelligence. A comprehensive management system combining clinical history, neurological examination protocols, and advanced neuropsychological testing.
+                Powered by AI to streamline workflows and improve revenue. A comprehensive management system combining clinical history, neurological examination protocols, advanced neuropsychological testing, and validated mental health screening.
               </p>
 
-              <p className="font-body text-xs text-synaptix-cyan font-light leading-relaxed mb-6 sm:mb-8">
-                Built for sports medicine, orthopedics, neurology, and concussion programs. Structured, standardized, recurring.
+              <p className="font-body text-xs text-kavera-cyan font-light leading-relaxed mb-6 sm:mb-8">
+                Built for sports medicine, orthopedics, neurology, concussion programs, and mental health practices. Structured, standardized, recurring.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href="#demo"
-                  className="inline-flex items-center justify-center gap-4 bg-synaptix-cyan text-kronos-bg py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-6 transition-all w-full sm:w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-synaptix-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-black/40"
+                  className="inline-flex items-center justify-center gap-4 bg-kavera-cyan text-kronos-bg py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-6 transition-all w-full sm:w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-kavera-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-black/40"
                 >
                   Request Demo
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -279,7 +279,7 @@ export default function SynaptixPage() {
 
       {/* Program Stats */}
       <section 
-        className="py-10 sm:py-12 lg:py-16 bg-synaptix-blue/20 border-y border-synaptix-cyan/20" 
+        className="py-10 sm:py-12 lg:py-16 bg-kavera-blue/20 border-y border-kavera-cyan/20" 
         id="program"
         aria-labelledby="program-heading"
       >
@@ -288,7 +288,7 @@ export default function SynaptixPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {programStats.map((stat) => (
               <div key={stat.value} className="text-center hover:bg-white/5 p-4 -m-4 transition-colors">
-                <div className="font-heading text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-synaptix-cyan mb-1">
+                <div className="font-heading text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-kavera-cyan mb-1">
                   {stat.value}
                 </div>
                 <p className="font-body text-[10px] sm:text-xs text-white/60">{stat.label}</p>
@@ -296,7 +296,7 @@ export default function SynaptixPage() {
             ))}
           </div>
           <p className="text-center text-[10px] sm:text-xs text-white/40 mt-4 sm:mt-6">
-            Comprehensive concussion management protocol
+            Comprehensive concussion and mental health management protocol
           </p>
         </div>
       </section>
@@ -319,7 +319,7 @@ export default function SynaptixPage() {
               Three Visit Types. One Standardized System.
             </h2>
             <p className="font-body text-xs sm:text-sm text-white/60 font-light max-w-2xl">
-              Synaptix structures concussion management into three defined visit types — each with its own form requirements, testing components, and automatically assembled clinical report.
+              Kavera structures concussion and mental health management into three defined visit types — each with its own form requirements, testing components, and automatically assembled clinical report.
             </p>
           </header>
 
@@ -327,7 +327,7 @@ export default function SynaptixPage() {
             {visitTypes.map((visit, idx) => (
               <article 
                 key={visit.id} 
-                className="bg-kronos-gray-700 p-6 sm:p-8 lg:p-10 border-l-4 border-synaptix-cyan hover:bg-kronos-gray-600 transition-colors"
+                className="bg-kronos-gray-700 p-6 sm:p-8 lg:p-10 border-l-4 border-kavera-cyan hover:bg-kronos-gray-600 transition-colors"
                 aria-labelledby={`visit-${visit.id}-title`}
               >
                 <div className="flex items-start justify-between mb-6 sm:mb-8">
@@ -344,7 +344,7 @@ export default function SynaptixPage() {
                     >
                       {visit.title}
                     </h3>
-                    <p className="font-mono text-xs sm:text-sm text-synaptix-cyan mt-2 sm:mt-3">{visit.subtitle}</p>
+                    <p className="font-mono text-xs sm:text-sm text-kavera-cyan mt-2 sm:mt-3">{visit.subtitle}</p>
                   </div>
                 </div>
 
@@ -377,14 +377,14 @@ export default function SynaptixPage() {
                 Ongoing Recovery Services
               </h2>
               <p className="font-body text-xs sm:text-sm text-white/60 font-light mb-6 sm:mb-8">
-                Three integrated recovery programs keep patients engaged and recovering between clinic visits.
+                Four integrated recovery programs keep patients engaged and recovering between clinic visits.
               </p>
 
               <ul className="space-y-2 sm:space-y-3" role="list">
                 {ongoingServices.map((item) => (
                   <li key={item.service} className="flex items-center justify-between bg-kronos-gray-700 p-2 sm:p-3 hover:bg-kronos-gray-600 transition-colors">
                     <span className="text-xs sm:text-sm text-white">{item.service}</span>
-                    <span className="text-[10px] sm:text-xs text-synaptix-cyan/70">{item.description}</span>
+                    <span className="text-[10px] sm:text-xs text-kavera-cyan/70">{item.description}</span>
                   </li>
                 ))}
               </ul>
@@ -392,8 +392,8 @@ export default function SynaptixPage() {
 
             <div className="space-y-3 sm:space-y-4">
               {/* CRT Card */}
-              <article className="bg-synaptix-blue/20 p-4 sm:p-6 border-l-2 border-synaptix-cyan hover:bg-synaptix-blue/30 transition-colors">
-                <Brain className="w-6 h-6 sm:w-8 sm:h-8 text-synaptix-cyan/60 mb-4" strokeWidth={1} aria-hidden="true" />
+              <article className="bg-kavera-blue/20 p-4 sm:p-6 border-l-2 border-kavera-cyan hover:bg-kavera-blue/30 transition-colors">
+                <Brain className="w-6 h-6 sm:w-8 sm:h-8 text-kavera-cyan/60 mb-4" strokeWidth={1} aria-hidden="true" />
                 <h3 className="font-heading text-sm sm:text-base lg:text-lg text-white mb-2">
                   Computerized Cognitive Remediation Therapy
                 </h3>
@@ -413,8 +413,8 @@ export default function SynaptixPage() {
               </article>
 
               {/* Digital Check-ins Card */}
-              <article className="bg-kronos-gray-700 p-4 sm:p-6 border-l-2 border-synaptix-cyan">
-                <Smartphone className="w-6 h-6 sm:w-8 sm:h-8 text-synaptix-cyan/60 mb-4" strokeWidth={1} aria-hidden="true" />
+              <article className="bg-kronos-gray-700 p-4 sm:p-6 border-l-2 border-kavera-cyan">
+                <Smartphone className="w-6 h-6 sm:w-8 sm:h-8 text-kavera-cyan/60 mb-4" strokeWidth={1} aria-hidden="true" />
                 <h3 className="font-heading text-sm sm:text-base lg:text-lg text-white mb-2">
                   Weekly Digital Check-Ins
                 </h3>
@@ -425,6 +425,23 @@ export default function SynaptixPage() {
                   <div className="flex justify-between">
                     <dt className="text-white/50">Instruments</dt>
                     <dd className="text-white font-bold">PCSS, PHQ-9, GAD-7</dd>
+                  </div>
+                </dl>
+              </article>
+
+              {/* AI Therapy Card */}
+              <article className="bg-kavera-blue/20 p-4 sm:p-6 border-l-2 border-kavera-cyan hover:bg-kavera-blue/30 transition-colors">
+                <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-kavera-cyan/60 mb-4" strokeWidth={1} aria-hidden="true" />
+                <h3 className="font-heading text-sm sm:text-base lg:text-lg text-white mb-2">
+                  AI Therapy Sessions
+                </h3>
+                <p className="font-body text-[10px] sm:text-xs text-white/60 font-light mb-4">
+                  Validated mental health support with suicide-risk alerts cleared by a provider before any action is taken. Extends concussion care into behavioral health management.
+                </p>
+                <dl className="grid grid-cols-2 gap-2 text-[10px] sm:text-xs">
+                  <div className="flex justify-between">
+                    <dt className="text-white/50">Oversight</dt>
+                    <dd className="text-white font-bold">Provider-cleared</dd>
                   </div>
                 </dl>
               </article>
@@ -474,8 +491,8 @@ export default function SynaptixPage() {
                   const Icon = practice.icon;
                   return (
                     <li key={practice.name} className="flex items-center gap-4 bg-kronos-card p-3 sm:p-4 hover:bg-kronos-card/80 transition-colors">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-synaptix-blue/30 flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-synaptix-cyan/60" strokeWidth={1.5} aria-hidden="true" />
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-kavera-blue/30 flex items-center justify-center flex-shrink-0">
+                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-kavera-cyan/60" strokeWidth={1.5} aria-hidden="true" />
                       </div>
                       <span className="font-heading text-xs sm:text-sm lg:text-base text-white">{practice.name}</span>
                     </li>
@@ -484,23 +501,23 @@ export default function SynaptixPage() {
               </ul>
 
               <p className="font-body text-[10px] sm:text-xs text-white/40 font-light mt-4 sm:mt-6">
-                Streamlines workflow, reduces documentation burden, and standardizes concussion protocols.
+                Streamlines workflow, reduces documentation burden, and standardizes concussion and mental health protocols.
               </p>
             </div>
 
-            {/* Why Synaptix */}
+            {/* Why Kavera */}
             <div>
               <p className="text-xs tracking-widest uppercase text-white/40 mb-4">
                 Practice Impact
               </p>
               <h3 className="font-heading text-xl sm:text-2xl lg:text-3xl text-white mb-6 sm:mb-8">
-                Why Synaptix
+                Why Kavera
               </h3>
 
               <ul className="space-y-2 sm:space-y-3 lg:space-y-4" role="list">
                 {practiceValues.map((value) => (
                   <li key={value} className="flex items-start gap-3 sm:gap-4">
-                    <CheckCircle className="w-4 h-4 text-synaptix-cyan flex-shrink-0 mt-0.5" strokeWidth={1.5} aria-hidden="true" />
+                    <CheckCircle className="w-4 h-4 text-kavera-cyan flex-shrink-0 mt-0.5" strokeWidth={1.5} aria-hidden="true" />
                     <span className="font-body text-[10px] sm:text-xs lg:text-sm text-white/70">{value}</span>
                   </li>
                 ))}
@@ -532,10 +549,10 @@ export default function SynaptixPage() {
           </header>
 
           <div className="grid sm:grid-cols-3 gap-3 sm:gap-4">
-            <article className="bg-kronos-bg p-4 sm:p-6 border-t-2 border-synaptix-cyan hover:bg-kronos-bg/80 transition-colors">
+            <article className="bg-kronos-bg p-4 sm:p-6 border-t-2 border-kavera-cyan hover:bg-kronos-bg/80 transition-colors">
               <div className="flex items-center gap-2 mb-4">
-                <Clock className="w-4 h-4 text-synaptix-cyan" aria-hidden="true" />
-                <span className="font-mono text-[10px] sm:text-xs text-synaptix-cyan">Initial Visit</span>
+                <Clock className="w-4 h-4 text-kavera-cyan" aria-hidden="true" />
+                <span className="font-mono text-[10px] sm:text-xs text-kavera-cyan">Initial Visit</span>
               </div>
               <dl className="space-y-2 text-[10px] sm:text-xs">
                 <div className="flex justify-between">
@@ -564,14 +581,14 @@ export default function SynaptixPage() {
                 </div>
               </dl>
               <p className="text-[10px] sm:text-xs text-white/40 mt-4">
-                Scores past thresholds. Diagnosis confirmed. Enrolled in Digital Evaluations, CRT 2×/week, Monthly NPE.
+                Scores past thresholds. Diagnosis confirmed. Enrolled in Digital Evaluations, CRT 2×/week, Monthly NPE, AI Therapy.
               </p>
             </article>
 
-            <article className="bg-kronos-bg p-4 sm:p-6 border-t-2 border-synaptix-cyan hover:bg-kronos-bg/80 transition-colors">
+            <article className="bg-kronos-bg p-4 sm:p-6 border-t-2 border-kavera-cyan hover:bg-kronos-bg/80 transition-colors">
               <div className="flex items-center gap-2 mb-4">
-                <Activity className="w-4 h-4 text-synaptix-cyan" aria-hidden="true" />
-                <span className="font-mono text-[10px] sm:text-xs text-synaptix-cyan">Re-Evaluation (12 wks)</span>
+                <Activity className="w-4 h-4 text-kavera-cyan" aria-hidden="true" />
+                <span className="font-mono text-[10px] sm:text-xs text-kavera-cyan">Re-Evaluation (12 wks)</span>
               </div>
               <dl className="space-y-2 text-[10px] sm:text-xs">
                 <div className="flex justify-between">
@@ -607,10 +624,10 @@ export default function SynaptixPage() {
               className="font-heading text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white mb-4"
             >
               <em className="not-italic">Six Validated Instruments.</em>{" "}
-              <em className="text-synaptix-cyan">Complete Cognitive Picture.</em>
+              <em className="text-kavera-cyan">Complete Cognitive Picture.</em>
             </h2>
             <p className="font-body text-xs sm:text-sm text-white/60 font-light max-w-2xl italic">
-              The NPE-CX battery combines gold-standard instruments for concussion-related cognitive and psychological assessment — administered digitally, scored automatically, and compared against validated clinical benchmarks.
+              The NPE-CX battery combines gold-standard instruments for concussion-related cognitive and psychological assessment — administered digitally, scored automatically, and compared against validated clinical benchmarks. PHQ-9, GAD-7, PCL-5, and PSQI also serve the mental health workflow.
             </p>
           </header>
 
@@ -620,14 +637,14 @@ export default function SynaptixPage() {
               return (
                 <article 
                   key={item.abbr} 
-                  className="bg-kronos-bg p-4 sm:p-6 border border-white/5 hover:border-synaptix-cyan/30 transition-colors group"
+                  className="bg-kronos-bg p-4 sm:p-6 border border-white/5 hover:border-kavera-cyan/30 transition-colors group"
                 >
                   <div className="flex items-start gap-3 mb-3">
-                    <div className="w-8 h-8 bg-synaptix-blue/20 flex items-center justify-center flex-shrink-0 group-hover:bg-synaptix-blue/30 transition-colors">
-                      <Icon className="w-4 h-4 text-synaptix-cyan/60" strokeWidth={1.5} aria-hidden="true" />
+                    <div className="w-8 h-8 bg-kavera-blue/20 flex items-center justify-center flex-shrink-0 group-hover:bg-kavera-blue/30 transition-colors">
+                      <Icon className="w-4 h-4 text-kavera-cyan/60" strokeWidth={1.5} aria-hidden="true" />
                     </div>
                     <div>
-                      <span className="font-heading text-lg sm:text-xl text-synaptix-cyan">{item.abbr}</span>
+                      <span className="font-heading text-lg sm:text-xl text-kavera-cyan">{item.abbr}</span>
                     </div>
                   </div>
                   <h3 className="font-body text-xs sm:text-sm text-white font-normal mb-2 italic">{item.name}</h3>
@@ -658,10 +675,10 @@ export default function SynaptixPage() {
               className="font-heading text-2xl sm:text-3xl lg:text-4xl text-white mb-4"
             >
               <em className="not-italic">Designed for</em>{" "}
-              <em className="text-synaptix-cyan">Clinical Efficiency</em>
+              <em className="text-kavera-cyan">Clinical Efficiency</em>
             </h2>
             <p className="font-body text-xs sm:text-sm text-white/60 font-light max-w-2xl mx-auto italic">
-              Synaptix streamlines every aspect of concussion management, from initial assessment through longitudinal outcomes tracking.
+              Kavera streamlines every aspect of concussion and mental health management, from initial assessment through longitudinal outcomes tracking.
             </p>
           </header>
 
@@ -671,11 +688,11 @@ export default function SynaptixPage() {
               return (
                 <article 
                   key={benefit.title} 
-                  className="bg-kronos-card p-5 sm:p-6 lg:p-8 border-l-2 border-synaptix-cyan/50 hover:border-synaptix-cyan transition-colors"
+                  className="bg-kronos-card p-5 sm:p-6 lg:p-8 border-l-2 border-kavera-cyan/50 hover:border-kavera-cyan transition-colors"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-synaptix-blue/20 flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-5 h-5 text-synaptix-cyan/70" strokeWidth={1.5} aria-hidden="true" />
+                    <div className="w-10 h-10 bg-kavera-blue/20 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-5 h-5 text-kavera-cyan/70" strokeWidth={1.5} aria-hidden="true" />
                     </div>
                     <div>
                       <h3 className="font-heading text-sm sm:text-base lg:text-lg text-white mb-2 italic">{benefit.title}</h3>
@@ -691,29 +708,29 @@ export default function SynaptixPage() {
 
       {/* Trust Signals Section */}
       <section 
-        className="py-10 sm:py-12 lg:py-16 bg-synaptix-blue/10 border-y border-synaptix-cyan/10"
+        className="py-10 sm:py-12 lg:py-16 bg-kavera-blue/10 border-y border-kavera-cyan/10"
         aria-labelledby="trust-heading"
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 id="trust-heading" className="sr-only">Trust and Compliance</h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             <div className="text-center">
-              <Shield className="w-8 h-8 text-synaptix-cyan/60 mx-auto mb-3" strokeWidth={1} aria-hidden="true" />
+              <Shield className="w-8 h-8 text-kavera-cyan/60 mx-auto mb-3" strokeWidth={1} aria-hidden="true" />
               <p className="font-heading text-xs sm:text-sm text-white italic">HIPAA Compliant</p>
               <p className="font-body text-[9px] sm:text-[10px] text-white/40 mt-1 italic">Secure infrastructure</p>
             </div>
             <div className="text-center">
-              <FileText className="w-8 h-8 text-synaptix-cyan/60 mx-auto mb-3" strokeWidth={1} aria-hidden="true" />
+              <FileText className="w-8 h-8 text-kavera-cyan/60 mx-auto mb-3" strokeWidth={1} aria-hidden="true" />
               <p className="font-heading text-xs sm:text-sm text-white italic">Peer-Reviewed</p>
               <p className="font-body text-[9px] sm:text-[10px] text-white/40 mt-1 italic">Validated instruments</p>
             </div>
             <div className="text-center">
-              <Brain className="w-8 h-8 text-synaptix-cyan/60 mx-auto mb-3" strokeWidth={1} aria-hidden="true" />
+              <Brain className="w-8 h-8 text-kavera-cyan/60 mx-auto mb-3" strokeWidth={1} aria-hidden="true" />
               <p className="font-heading text-xs sm:text-sm text-white italic">Clinician-Built</p>
               <p className="font-body text-[9px] sm:text-[10px] text-white/40 mt-1 italic">By neurosurgeons</p>
             </div>
             <div className="text-center">
-              <TrendingUp className="w-8 h-8 text-synaptix-cyan/60 mx-auto mb-3" strokeWidth={1} aria-hidden="true" />
+              <TrendingUp className="w-8 h-8 text-kavera-cyan/60 mx-auto mb-3" strokeWidth={1} aria-hidden="true" />
               <p className="font-heading text-xs sm:text-sm text-white italic">Evidence-Based</p>
               <p className="font-body text-[9px] sm:text-[10px] text-white/40 mt-1 italic">Clinical protocols</p>
             </div>
@@ -745,11 +762,11 @@ export default function SynaptixPage() {
             {faqItems.map((item, idx) => (
               <details 
                 key={idx} 
-                className="group bg-kronos-card border border-white/5 hover:border-synaptix-cyan/20 transition-colors"
+                className="group bg-kronos-card border border-white/5 hover:border-kavera-cyan/20 transition-colors"
               >
                 <summary className="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none">
                   <h3 className="font-body text-xs sm:text-sm text-white font-normal pr-4 italic">{item.question}</h3>
-                  <ChevronDown className="w-4 h-4 text-synaptix-cyan/60 flex-shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
+                  <ChevronDown className="w-4 h-4 text-kavera-cyan/60 flex-shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
                 </summary>
                 <div className="px-4 sm:px-5 pb-4 sm:pb-5">
                   <p className="font-body text-[10px] sm:text-xs text-white/60 font-light leading-relaxed italic">{item.answer}</p>
@@ -774,7 +791,7 @@ export default function SynaptixPage() {
 
       {/* CTA */}
       <section 
-        className="py-12 sm:py-16 lg:py-24 bg-synaptix-cyan" 
+        className="py-12 sm:py-16 lg:py-24 bg-kavera-cyan" 
         id="demo"
         aria-labelledby="cta-heading"
       >
@@ -785,19 +802,19 @@ export default function SynaptixPage() {
                 id="cta-heading"
                 className="font-heading text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-kronos-bg mb-4"
               >
-                Standardize Your Concussion Program
+                Streamline Concussion & Mental Health Care
               </h2>
               <p className="font-body text-xs sm:text-sm lg:text-base text-kronos-bg/70 font-light mb-4">
-                Synaptix deploys into existing practices without EHR integration or extensive IT setup. Start in days, not months.
+                Kavera deploys into existing practices without EHR integration or extensive IT setup. Start in 30 days, not months.
               </p>
               <ul className="space-y-2 mb-6 sm:mb-8" role="list">
                 <li className="flex items-center gap-2 text-xs sm:text-sm text-kronos-bg/80">
                   <CheckCircle className="w-4 h-4" aria-hidden="true" />
-                  Low startup costs
+                  Covers both concussion and mental health workflows
                 </li>
                 <li className="flex items-center gap-2 text-xs sm:text-sm text-kronos-bg/80">
                   <CheckCircle className="w-4 h-4" aria-hidden="true" />
-                  30 day trial from existing patients
+                  Visit caverahealth.com for the full product experience
                 </li>
                 <li className="flex items-center gap-2 text-xs sm:text-sm text-kronos-bg/80">
                   <CheckCircle className="w-4 h-4" aria-hidden="true" />
@@ -807,16 +824,25 @@ export default function SynaptixPage() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link
                   href="tel:+19147056830"
-                  className="inline-flex items-center justify-center gap-3 bg-kronos-bg text-white py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-synaptix-cyan"
+                  className="inline-flex items-center justify-center gap-3 bg-kronos-bg text-white py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-kavera-cyan"
                   aria-label="Call us at (914) 705 6830"
                 >
                   (914) 705 6830
                   <ArrowRight className="w-3 h-3" aria-hidden="true" />
                 </Link>
+                <a
+                  href="https://caverahealth.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-3 border border-kronos-bg/30 text-kronos-bg py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-5 hover:border-kronos-bg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-kavera-cyan"
+                >
+                  Visit caverahealth.com
+                  <ArrowRight className="w-3 h-3" aria-hidden="true" />
+                </a>
               </div>
             </div>
             <div className="bg-kronos-bg/10 p-4 sm:p-6">
-              <DemoRequestForm productLabel="Synaptix" />
+              <DemoRequestForm productLabel="Kavera" />
             </div>
           </div>
         </div>

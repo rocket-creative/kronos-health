@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { contactFormSchema } from "@/lib/validation";
 
 const SOURCE_LABELS: Record<string, string> = {
-  homepage: "Homepage (www.kronosgroup.health)",
-  contact_page: "Contact Page (www.kronosgroup.health/contact)",
-  about: "About Page (www.kronosgroup.health/about)",
+  homepage: "Homepage (kronos.health)",
+  contact_page: "Contact Page (kronos.health/contact)",
+  about: "About Page (kronos.health/about)",
   franchise: "Cognitive Franchise Program",
   digital_health: "Digital Health Tools",
   neuropsychology: "Clinically Integrated Neuropsychology",
@@ -12,7 +12,7 @@ const SOURCE_LABELS: Record<string, string> = {
 };
 
 function formatSource(source?: string): string {
-  if (!source) return "www.kronosgroup.health";
+  if (!source) return "kronos.health";
   return SOURCE_LABELS[source] ?? source;
 }
 
@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
 KRONOS HEALTH — ${formType.toUpperCase()}
 ================================================================================
 
-SITE:       www.kronosgroup.health
+SITE:       kronos.health
 FORM:       ${formType}
 SOURCE:     ${sourceLabel}
 ${product ? `SERVICE:    ${product}\n` : ""}

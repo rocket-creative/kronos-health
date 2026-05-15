@@ -8,8 +8,8 @@ import { useMobileMenuAnimation } from "./animations";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "https://www.kronosrevenue.health?utm_source=kronoshealth&utm_medium=nav", label: "Kronos Revenue", external: true },
-  { href: "https://www.cognifica.app?utm_source=kronoshealth&utm_medium=nav", label: "Cognifica App", external: true, wordmark: true },
-  { href: "https://www.synaptix.health?utm_source=kronoshealth&utm_medium=nav", label: "Synaptix", external: true },
+  { href: "https://cogai.health?utm_source=kronoshealth&utm_medium=nav", label: "CogAI", external: true },
+  { href: "https://caverahealth.com?utm_source=kronoshealth&utm_medium=nav", label: "Kavera", external: true },
   { href: "/medical-it", label: "Medical IT" },
   { href: "/about", label: "About" },
 ];
@@ -65,14 +65,7 @@ export default function Nav() {
                 className="font-body text-xs text-white/50 hover:text-white uppercase tracking-widest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-kronos-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-bg"
                 {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
-                {link.wordmark ? (
-                  <>
-                    <span>Cognifica</span>
-                    <span className="text-[#E6A91A]"> App</span>
-                  </>
-                ) : (
-                  link.label
-                )}
+                {link.label}
               </Link>
             ))}
           </div>
@@ -124,14 +117,7 @@ export default function Nav() {
                 onClick={() => setMobileMenuOpen(false)}
                 {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
-                {link.wordmark ? (
-                  <>
-                    <span>Cognifica</span>
-                    <span className="text-[#E6A91A]"> App</span>
-                  </>
-                ) : (
-                  link.label
-                )}
+                {link.label}
               </Link>
             ))}
             <div className="pt-4 sm:pt-6 border-t border-white/10">

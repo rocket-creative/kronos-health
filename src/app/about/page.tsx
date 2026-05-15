@@ -15,18 +15,18 @@ export const metadata: Metadata = {
   description:
     "Meet the Kronos Group team. Over 100 years of combined experience in healthcare, revenue cycle management, and digital health. Founded by Dr. John M. Abrahams.",
   alternates: {
-    canonical: "https://www.kronosgroup.health/about",
+    canonical: "https://kronos.health/about",
   },
   openGraph: {
     title: "About Kronos Group — Meet Our Healthcare Technology Team",
     description:
       "Over 100 years of combined experience in healthcare, revenue cycle management, and digital health. Founded by Dr. John M. Abrahams.",
-    url: "https://www.kronosgroup.health/about",
+    url: "https://kronos.health/about",
     siteName: "Kronos Group",
     type: "website",
     images: [
       {
-        url: "https://www.kronosgroup.health/opengraph-image",
+        url: "https://kronos.health/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Kronos Group Team",
@@ -38,13 +38,13 @@ export const metadata: Metadata = {
     title: "About Kronos Group — Meet Our Healthcare Technology Team",
     description:
       "Over 100 years of combined experience in healthcare, revenue cycle management, and digital health.",
-    images: ["https://www.kronosgroup.health/opengraph-image"],
+    images: ["https://kronos.health/opengraph-image"],
   },
 };
 
 const breadcrumbItems = [
-  { name: "Home", url: "https://www.kronosgroup.health" },
-  { name: "About", url: "https://www.kronosgroup.health/about" },
+  { name: "Home", url: "https://kronos.health" },
+  { name: "About", url: "https://kronos.health/about" },
 ];
 
 const founderCredentials = [
@@ -176,7 +176,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   He serves as President of New York Brain and Spine Surgery
-                  (NYBASS) and held the role of President of Brain and Spine
+                  and held the role of President of Brain and Spine
                   Surgeons of New York from 2015 to 2023. He is Co-Director of
                   the Spine Section at Northern Westchester Hospital and Founder
                   of the Brain and Spine Research Institute.
@@ -201,22 +201,11 @@ export default function AboutPage() {
                 <div className="flex flex-wrap gap-2 sm:gap-3">
                   {[
                     { label: "ISS Health", href: "https://iss.health" },
-                    {
-                      label: "Cognifica Health",
-                      href: "https://www.cognifica.health",
-                    },
-                    {
-                      label: "Cognifica App",
-                      href: "https://www.cognifica.app",
-                    },
-                    {
-                      label: "Synaptix",
-                      href: "https://www.synaptix.health",
-                    },
-                    {
-                      label: "Kronos Revenue",
-                      href: "https://www.kronosrevenue.health",
-                    },
+                    { label: "Cognifica Health", href: "https://www.cognifica.health" },
+                    { label: "CogAI", href: "https://cogai.health" },
+                    { label: "Kavera", href: "https://caverahealth.com" },
+                    { label: "Kronos Revenue", href: "https://www.kronosrevenue.health" },
+                    { label: "Sydra", href: "https://sydra.health" },
                   ].map((co) => (
                     <a
                       key={co.label}
@@ -351,7 +340,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <TrustSignal
             author="Dr. John M. Abrahams, M.D."
-            credentials="Board-Certified Neurosurgeon, President NYBASS, Past President BSSNY"
+            credentials="Board-Certified Neurosurgeon, President New York Brain and Spine Surgery, Past President BSSNY"
             lastUpdated="2026-03-01"
           />
         </div>

@@ -62,22 +62,22 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/cognificaai",
-        destination: "https://www.cognifica.app?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
+        destination: "https://cogai.health?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
         permanent: true,
       },
       {
         source: "/cognificaai/",
-        destination: "https://www.cognifica.app?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
+        destination: "https://cogai.health?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
         permanent: true,
       },
       {
         source: "/synaptix",
-        destination: "https://www.synaptix.health?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
+        destination: "/kavera",
         permanent: true,
       },
       {
         source: "/synaptix/",
-        destination: "https://www.synaptix.health?utm_source=kronoshealth&utm_medium=referral&utm_campaign=product_redirect",
+        destination: "/kavera",
         permanent: true,
       },
     ];
@@ -87,7 +87,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "www.kronosgroup.health",
+        hostname: "kronos.health",
       },
     ],
   },

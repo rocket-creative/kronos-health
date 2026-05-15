@@ -6,12 +6,12 @@ export function OrganizationSchema({ type = "Organization" }: OrganizationSchema
   const schema = {
     "@context": "https://schema.org",
     "@type": type,
-    "@id": "https://www.kronosgroup.health/#organization",
+    "@id": "https://kronos.health/#organization",
     name: "Kronos Group",
-    url: "https://www.kronosgroup.health",
-    logo: "https://www.kronosgroup.health/kronos-logo.png",
+    url: "https://kronos.health",
+    logo: "https://kronos.health/kronos-logo.png",
     description:
-      "B2B healthcare services including revenue cycle management, Cognifica App workplace mental health platform, and Synaptix concussion software.",
+      "B2B healthcare services including revenue cycle management, CogAI mental health platform, and Kavera concussion platform.",
     telephone: "+19147056830",
     email: "info@kronoshealth.co",
     address: {
@@ -67,13 +67,13 @@ export function WebSiteSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://www.kronosgroup.health/#website",
+    "@id": "https://kronos.health/#website",
     name: "Kronos Group",
-    url: "https://www.kronosgroup.health",
+    url: "https://kronos.health",
     description: "Healthcare technology and revenue cycle management solutions",
     publisher: {
       "@type": "Organization",
-      "@id": "https://www.kronosgroup.health/#organization",
+      "@id": "https://kronos.health/#organization",
     },
   };
 
@@ -104,7 +104,7 @@ export function ServiceSchema({ name, description, url, serviceType, areaServed 
     serviceType,
     areaServed,
     provider: {
-      "@id": "https://www.kronosgroup.health/#organization",
+      "@id": "https://kronos.health/#organization",
     },
   };
 
@@ -184,7 +184,7 @@ export function MedicalBusinessSchema({
     provider: {
       "@type": "Organization",
       name: "Kronos Group",
-      url: "https://www.kronosgroup.health",
+      url: "https://kronos.health",
     },
     areaServed: "United States",
     availableService: {
@@ -206,9 +206,9 @@ export function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://www.kronosgroup.health/contact#localbusiness",
+    "@id": "https://kronos.health/contact#localbusiness",
     name: "Kronos Group",
-    url: "https://www.kronosgroup.health",
+    url: "https://kronos.health",
     telephone: "+19147056830",
     email: "info@kronoshealth.co",
     address: {
@@ -231,7 +231,7 @@ export function LocalBusinessSchema() {
       closes: "17:00",
     },
     parentOrganization: {
-      "@id": "https://www.kronosgroup.health/#organization",
+      "@id": "https://kronos.health/#organization",
     },
   };
 

@@ -7,17 +7,17 @@ export const metadata: Metadata = {
   description:
     "Kronos Group privacy policy. How we collect, use, and protect your information when using our healthcare technology services.",
   alternates: {
-    canonical: "https://www.kronosgroup.health/privacy",
+    canonical: "https://kronos.health/privacy",
   },
   openGraph: {
     title: "Privacy Policy | Kronos Group",
     description: "How we collect, use, and protect your information.",
-    url: "https://www.kronosgroup.health/privacy",
+    url: "https://kronos.health/privacy",
     siteName: "Kronos Group",
     type: "website",
     images: [
       {
-        url: "https://www.kronosgroup.health/opengraph-image",
+        url: "https://kronos.health/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Privacy Policy",
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Privacy Policy | Kronos Group",
     description: "How we collect, use, and protect your information.",
-    images: ["https://www.kronosgroup.health/opengraph-image"],
+    images: ["https://kronos.health/opengraph-image"],
   },
 };
 
 const breadcrumbItems = [
-  { name: "Home", url: "https://www.kronosgroup.health" },
-  { name: "Privacy Policy", url: "https://www.kronosgroup.health/privacy" },
+  { name: "Home", url: "https://kronos.health" },
+  { name: "Privacy Policy", url: "https://kronos.health/privacy" },
 ];
 
 export default function PrivacyPage() {
@@ -57,8 +57,8 @@ export default function PrivacyPage() {
               <h2 className="font-heading text-2xl text-white mb-4">Overview</h2>
               <p className="font-body text-sm text-white/60 font-light leading-relaxed">
                 Kronos Group ("we," "us," or "our") provides B2B healthcare technology services
-                including revenue cycle management, Cognifica App workplace mental health platform,
-                and Synaptix concussion management software. This Privacy Policy describes how we
+                including revenue cycle management, CogAI mental health platform,
+                and Kavera concussion platform. This Privacy Policy describes how we
                 collect, use, and protect information when you visit our website or use our
                 services.
               </p>
@@ -118,7 +118,7 @@ export default function PrivacyPage() {
                 administrative, technical, and physical safeguards.
               </p>
               <p className="font-body text-sm text-white/60 font-light leading-relaxed mt-4">
-                For Cognifica App, individual employee assessment data is never shared with employers.
+                For CogAI, individual employee assessment data is never shared with employers.
                 Employers only receive anonymized, aggregate workforce trend data.
               </p>
             </div>

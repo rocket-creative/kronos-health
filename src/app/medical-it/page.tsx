@@ -28,18 +28,18 @@ export const metadata: Metadata = {
   description:
     "HIPAA compliance, security audits, device hardening, and GRC governance for medical practices. Kronos Group serves as your technical Security Officer — protecting your practice from fines up to $2.1M.",
   alternates: {
-    canonical: "https://www.kronosgroup.health/medical-it",
+    canonical: "https://kronos.health/medical-it",
   },
   openGraph: {
     title: "Medical IT & HIPAA Compliance Services | Kronos Group",
     description:
       "HIPAA compliance, security audits, device hardening, and GRC governance for medical practices.",
-    url: "https://www.kronosgroup.health/medical-it",
+    url: "https://kronos.health/medical-it",
     siteName: "Kronos Group",
     type: "website",
     images: [
       {
-        url: "https://www.kronosgroup.health/medical-it/opengraph-image",
+        url: "https://kronos.health/medical-it/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Kronos Group Medical IT & Compliance",
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
     title: "Medical IT & HIPAA Compliance Services | Kronos Group",
     description:
       "HIPAA compliance, security audits, device hardening, and GRC governance for medical practices.",
-    images: ["https://www.kronosgroup.health/medical-it/opengraph-image"],
+    images: ["https://kronos.health/medical-it/opengraph-image"],
   },
 };
 
 const breadcrumbItems = [
-  { name: "Home", url: "https://www.kronosgroup.health" },
-  { name: "Medical IT", url: "https://www.kronosgroup.health/medical-it" },
+  { name: "Home", url: "https://kronos.health" },
+  { name: "Medical IT", url: "https://kronos.health/medical-it" },
 ];
 
 const deliverables = [
@@ -192,7 +192,7 @@ export default function MedicalITPage() {
       <ServiceSchema
         name="Medical IT & HIPAA Compliance Services"
         description="HIPAA compliance, security auditing, device hardening, and GRC governance for medical practices. Kronos Group serves as your technical Security Officer."
-        url="https://www.kronosgroup.health/medical-it"
+        url="https://kronos.health/medical-it"
         serviceType="Healthcare IT Consulting"
       />
       <BreadcrumbSchema items={breadcrumbItems} />
@@ -664,18 +664,18 @@ export default function MedicalITPage() {
                   Employer Mental Health
                 </p>
                 <h3 className="font-heading text-xl sm:text-2xl text-white mb-4">
-                  Cognifica App
+                  CogAI
                 </h3>
                 <p className="font-body text-xs sm:text-sm text-white/60 font-light leading-relaxed flex-1 mb-6 sm:mb-8">
                   Anonymous, HIPAA-compliant mental health screening for employers. Six validated clinical assessments, risk stratification, and care pathways — deployed in under one week.
                 </p>
                 <a
-                  href="https://www.cognifica.app?utm_source=medicalit&utm_medium=techstack"
+                  href="https://cogai.health?utm_source=medicalit&utm_medium=techstack"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 text-[#82738C] text-xs uppercase tracking-widest hover:gap-5 transition-all w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#82738C]"
                 >
-                  Visit Cognifica App
+                  Visit CogAI
                   <ArrowRight className="w-3 h-3" aria-hidden="true" />
                 </a>
               </div>
@@ -687,18 +687,18 @@ export default function MedicalITPage() {
                   Concussion Management
                 </p>
                 <h3 className="font-heading text-xl sm:text-2xl text-white mb-4">
-                  Synaptix
+                  Kavera
                 </h3>
                 <p className="font-body text-xs sm:text-sm text-white/60 font-light leading-relaxed flex-1 mb-6 sm:mb-8">
                   A structured 12-week concussion management program built for orthopedic, neurosurgery, and sports medicine practices. Standardized, billable, and recurring.
                 </p>
                 <a
-                  href="https://www.synaptix.health?utm_source=medicalit&utm_medium=techstack"
+                  href="https://caverahealth.com?utm_source=medicalit&utm_medium=techstack"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 text-[#82738C] text-xs uppercase tracking-widest hover:gap-5 transition-all w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#82738C]"
                 >
-                  Visit Synaptix
+                  Visit Kavera
                   <ArrowRight className="w-3 h-3" aria-hidden="true" />
                 </a>
               </div>

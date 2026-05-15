@@ -37,8 +37,8 @@ const b2bServices = [
     id: "sydra",
     title: "Sydra",
     description:
-      "AI powered IDR submission platform for the No Surprises Act. Automate case intake, deadline tracking, and AI generated submissions — so your practice can fight more cases and recover more revenue.",
-    href: "https://www.kronosrevenue.health/sydra?utm_source=kronoshealth&utm_medium=homepage",
+      "True AI powered IDR submissions that save time and money. CPT Assessor to evaluate all Op Notes and validate submitted codes. Prior Authorization Engine using Claude AI to compare Insurance Company guidelines to your Note for deficiencies.",
+    href: "https://sydra.health?utm_source=kronoshealth&utm_medium=homepage",
     external: true,
     accentColor: "text-kronos-rev-green",
     focusColor: "focus-visible:ring-kronos-rev-green",
@@ -46,28 +46,27 @@ const b2bServices = [
     animation: <DataGrid color="0, 132, 61" />,
   },
   {
-    id: "cognifica-ai",
-    title: "Cognifica App",
-    titleWordmark: true,
+    id: "cogai",
+    title: "CogAI",
     description:
-      "Anonymous, HIPAA-compliant mental health screening for employers. Six validated clinical assessments, smart risk stratification, and care pathways — deployed in under one week.",
-    href: "https://www.cognifica.app?utm_source=kronoshealth&utm_medium=homepage",
+      "Proactive mental health care for business, medical practices and higher education.",
+    href: "https://cogai.health?utm_source=kronoshealth&utm_medium=homepage",
     external: true,
-    accentColor: "text-[#E6A91A]",
-    focusColor: "focus-visible:ring-[#E6A91A]",
-    arrowColor: "group-hover:text-[#E6A91A]",
-    animation: <Waveform color="230, 169, 26" />,
+    accentColor: "text-cogai-orange",
+    focusColor: "focus-visible:ring-cogai-orange",
+    arrowColor: "group-hover:text-cogai-orange",
+    animation: <Waveform color="255, 79, 0" />,
   },
   {
-    id: "synaptix",
-    title: "Synaptix",
+    id: "kavera",
+    title: "Kavera",
     description:
-      "A structured 12-week concussion management program built for orthopedic, neurosurgery, and sports medicine practices. Standardized, billable, and recurring — up to $260K annual revenue potential per practice.",
-    href: "https://www.synaptix.health?utm_source=kronoshealth&utm_medium=homepage",
+      "Concussion and mental health platform powered by AI to streamline workflows and improve revenue.",
+    href: "https://caverahealth.com?utm_source=kronoshealth&utm_medium=homepage",
     external: true,
-    accentColor: "text-synaptix-cyan",
-    focusColor: "focus-visible:ring-synaptix-cyan",
-    arrowColor: "group-hover:text-synaptix-cyan",
+    accentColor: "text-kavera-cyan",
+    focusColor: "focus-visible:ring-kavera-cyan",
+    arrowColor: "group-hover:text-kavera-cyan",
     animation: <ConcentricRings color="15, 189, 213" />,
   },
 ];
@@ -85,11 +84,11 @@ const clinicalBrands = [
   },
   {
     id: "cognifica-health",
-    eyebrow: "Clinical Neuropsychology",
+    eyebrow: "Brain Health Specialists",
     title: "Cognifica Health",
     subtitle: "Brain Health & Cognitive Wellness",
     description:
-      "The only regional practice combining neurosurgeons, neuropsychologists, physical therapists, and researchers under one roof. Services include FDA-cleared TMS therapy, full neuropsychological evaluations, EEG, cognitive training, and structured concussion programs. Three locations: West Harrison NY, Stamford CT, and Aquebogue NY.",
+      "TMS Therapy. Concussion Care. Spravato.",
     href: "https://www.cognifica.health?utm_source=kronoshealth&utm_medium=homepage",
     cta: "Visit Cognifica Health",
   },
@@ -219,7 +218,7 @@ export default function HomePage() {
                   Dr. John M. Abrahams is a board-certified neurosurgeon who has been in clinical practice since 2002, performing over 150 procedures per year with a focus on anterior cervical and posterior lumbar fusions, and minimally invasive spine surgery.
                 </p>
                 <p>
-                  He serves as President of New York Brain and Spine Surgery (NYBASS) and held the role of President of Brain and Spine Surgeons of New York from 2015 to 2023. He is Co-Director of the Spine Section at Northern Westchester Hospital and Founder of the Brain and Spine Research Institute.
+                  He serves as President of New York Brain and Spine Surgery and held the role of President of Brain and Spine Surgeons of New York from 2015 to 2023. He is Co-Director of the Spine Section at Northern Westchester Hospital and Founder of the Brain and Spine Research Institute.
                 </p>
                 <p>
                   Named one of the <span className="text-white/80">"Top 10 Spine and Orthopedic Surgeon Tech Entrepreneurs to Know"</span> by Becker&apos;s Spine Review, Dr. Abrahams has channeled his clinical career into building a network of companies that improve outcomes, reduce administrative burden, and advance brain health technology.
@@ -234,9 +233,10 @@ export default function HomePage() {
                   {[
                     { label: "ISS Health", href: "https://iss.health" },
                     { label: "Cognifica Health", href: "https://www.cognifica.health" },
-                    { label: "Cognifica App", href: "https://www.cognifica.app" },
-                    { label: "Synaptix", href: "https://www.synaptix.health" },
+                    { label: "CogAI", href: "https://cogai.health" },
+                    { label: "Kavera", href: "https://caverahealth.com" },
                     { label: "Kronos Revenue", href: "https://www.kronosrevenue.health" },
+                    { label: "Sydra", href: "https://sydra.health" },
                   ].map((co) => (
                     <a
                       key={co.label}
@@ -322,13 +322,7 @@ export default function HomePage() {
                   <div className="flex items-start justify-between">
                     <div>
                       <h3 className={`font-heading text-lg sm:text-xl lg:text-2xl mb-2 ${'titleColor' in service && service.titleColor ? service.titleColor : 'text-white'}`}>
-                        {service.titleWordmark ? (
-                          <>
-                            Cognifica<span className="text-[#E6A91A]"> App</span>
-                          </>
-                        ) : (
-                          service.title
-                        )}
+                        {service.title}
                       </h3>
                       <p className="font-body text-xs sm:text-sm text-white/60 font-light leading-relaxed">
                         {service.description}
@@ -464,7 +458,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <TrustSignal
             author="Dr. John M. Abrahams, M.D."
-            credentials="Board-Certified Neurosurgeon, President NYBASS, Past President BSSNY"
+            credentials="Board-Certified Neurosurgeon, President New York Brain and Spine Surgery, Past President BSSNY"
             lastUpdated="2026-03-01"
           />
         </div>

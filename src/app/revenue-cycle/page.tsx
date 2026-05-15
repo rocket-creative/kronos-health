@@ -26,17 +26,17 @@ export const metadata: Metadata = {
   description:
     "Expert revenue cycle management and IDR dispute resolution for healthcare providers under the No Surprises Act. Kronos Group maximizes your reimbursements.",
   alternates: {
-    canonical: "https://www.kronosgroup.health/revenue-cycle",
+    canonical: "https://kronos.health/revenue-cycle",
   },
   openGraph: {
     title: "Revenue Cycle Management & Payment Dispute Resolution | Kronos Group",
     description: "Expert revenue cycle management and IDR dispute resolution for healthcare providers.",
-    url: "https://www.kronosgroup.health/revenue-cycle",
+    url: "https://kronos.health/revenue-cycle",
     siteName: "Kronos Group",
     type: "website",
     images: [
       {
-        url: "https://www.kronosgroup.health/revenue-cycle/opengraph-image",
+        url: "https://kronos.health/revenue-cycle/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Kronos Group Revenue Cycle Management",
@@ -47,13 +47,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Revenue Cycle Management & Payment Dispute Resolution",
     description: "Expert revenue cycle management and IDR dispute resolution for healthcare providers.",
-    images: ["https://www.kronosgroup.health/revenue-cycle/opengraph-image"],
+    images: ["https://kronos.health/revenue-cycle/opengraph-image"],
   },
 };
 
 const breadcrumbItems = [
-  { name: "Home", url: "https://www.kronosgroup.health" },
-  { name: "Revenue Cycle", url: "https://www.kronosgroup.health/revenue-cycle" },
+  { name: "Home", url: "https://kronos.health" },
+  { name: "Revenue Cycle", url: "https://kronos.health/revenue-cycle" },
 ];
 
 const processSteps = [
@@ -138,7 +138,7 @@ export default function RevenueCyclePage() {
       <ServiceSchema
         name="Revenue Cycle Management & IDR Dispute Resolution"
         description="Expert arbitration and out of network dispute resolution support under the No Surprises Act. Complete case management from negotiation through final arbitration."
-        url="https://www.kronosgroup.health/revenue-cycle"
+        url="https://kronos.health/revenue-cycle"
         serviceType="Healthcare Revenue Services"
       />
       <BreadcrumbSchema items={breadcrumbItems} />

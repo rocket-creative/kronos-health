@@ -23,17 +23,17 @@ export const metadata: Metadata = {
   description:
     "Turnkey digital health tools for providers. Tappy SMS cognitive health assistant, AISA spine recovery guide, and Digital Evaluation Module for patient monitoring.",
   alternates: {
-    canonical: "https://www.kronosgroup.health/digital-health-tools",
+    canonical: "https://kronos.health/digital-health-tools",
   },
   openGraph: {
     title: "Digital Health Tools — Tappy, AISA, DEM | Kronos Group",
     description: "Turnkey digital health tools for providers. Tappy, AISA, and DEM for automated patient monitoring.",
-    url: "https://www.kronosgroup.health/digital-health-tools",
+    url: "https://kronos.health/digital-health-tools",
     siteName: "Kronos Group",
     type: "website",
     images: [
       {
-        url: "https://www.kronosgroup.health/opengraph-image",
+        url: "https://kronos.health/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Digital Health Tools",
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Digital Health Tools — Tappy, AISA, DEM",
     description: "Turnkey digital health tools for providers with automated patient monitoring.",
-    images: ["https://www.kronosgroup.health/opengraph-image"],
+    images: ["https://kronos.health/opengraph-image"],
   },
 };
 
 const breadcrumbItems = [
-  { name: "Home", url: "https://www.kronosgroup.health" },
-  { name: "Digital Health Tools", url: "https://www.kronosgroup.health/digital-health-tools" },
+  { name: "Home", url: "https://kronos.health" },
+  { name: "Digital Health Tools", url: "https://kronos.health/digital-health-tools" },
 ];
 
 const specialties = [
@@ -119,7 +119,7 @@ export default function DigitalHealthPage() {
       <ServiceSchema
         name="Digital Health Tools"
         description="Turnkey digital health tools including Tappy SMS cognitive health assistant, AISA spine recovery guide, and Digital Evaluation Module for patient monitoring."
-        url="https://www.kronosgroup.health/digital-health-tools"
+        url="https://kronos.health/digital-health-tools"
         serviceType="Healthcare Software"
       />
       <BreadcrumbSchema items={breadcrumbItems} />

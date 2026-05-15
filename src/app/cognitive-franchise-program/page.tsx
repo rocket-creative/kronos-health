@@ -22,17 +22,17 @@ export const metadata: Metadata = {
   description:
     "A scalable cognitive health program for treating concussions, chronic pain, and cognitive decline. Join the Kronos Group franchise network. 16M+ undiagnosed Americans.",
   alternates: {
-    canonical: "https://www.kronosgroup.health/cognitive-franchise-program",
+    canonical: "https://kronos.health/cognitive-franchise-program",
   },
   openGraph: {
     title: "Cognitive Franchise Program | Kronos Group",
     description: "A scalable cognitive health program for treating concussions, chronic pain, and cognitive decline.",
-    url: "https://www.kronosgroup.health/cognitive-franchise-program",
+    url: "https://kronos.health/cognitive-franchise-program",
     siteName: "Kronos Group",
     type: "website",
     images: [
       {
-        url: "https://www.kronosgroup.health/opengraph-image",
+        url: "https://kronos.health/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Cognitive Franchise Program",
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cognitive Franchise Program",
     description: "A scalable cognitive health program for treating concussions, chronic pain, and cognitive decline.",
-    images: ["https://www.kronosgroup.health/opengraph-image"],
+    images: ["https://kronos.health/opengraph-image"],
   },
 };
 
 const breadcrumbItems = [
-  { name: "Home", url: "https://www.kronosgroup.health" },
-  { name: "Cognitive Franchise Program", url: "https://www.kronosgroup.health/cognitive-franchise-program" },
+  { name: "Home", url: "https://kronos.health" },
+  { name: "Cognitive Franchise Program", url: "https://kronos.health/cognitive-franchise-program" },
 ];
 
 const faqItems = [
@@ -115,7 +115,7 @@ export default function FranchisePage() {
       <ServiceSchema
         name="Cognitive Franchise Program"
         description="A scalable, low-cost cognitive health program for treating concussions, chronic pain, and cognitive decline. Includes medical history, cognitive assessment, and therapy protocols."
-        url="https://www.kronosgroup.health/cognitive-franchise-program"
+        url="https://kronos.health/cognitive-franchise-program"
         serviceType="Healthcare Franchise"
       />
       <BreadcrumbSchema items={breadcrumbItems} />

@@ -7,17 +7,17 @@ export const metadata: Metadata = {
   description:
     "Terms of Service for Kronos Group website and B2B healthcare technology services. Read our terms and conditions.",
   alternates: {
-    canonical: "https://www.kronosgroup.health/terms",
+    canonical: "https://kronos.health/terms",
   },
   openGraph: {
     title: "Terms of Service | Kronos Group",
     description: "Terms and conditions for using Kronos Group website and services.",
-    url: "https://www.kronosgroup.health/terms",
+    url: "https://kronos.health/terms",
     siteName: "Kronos Group",
     type: "website",
     images: [
       {
-        url: "https://www.kronosgroup.health/opengraph-image",
+        url: "https://kronos.health/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Terms of Service",
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Terms of Service | Kronos Group",
     description: "Terms and conditions for using Kronos Group website and services.",
-    images: ["https://www.kronosgroup.health/opengraph-image"],
+    images: ["https://kronos.health/opengraph-image"],
   },
 };
 
 const breadcrumbItems = [
-  { name: "Home", url: "https://www.kronosgroup.health" },
-  { name: "Terms of Service", url: "https://www.kronosgroup.health/terms" },
+  { name: "Home", url: "https://kronos.health" },
+  { name: "Terms of Service", url: "https://kronos.health/terms" },
 ];
 
 export default function TermsPage() {
@@ -71,8 +71,8 @@ export default function TermsPage() {
               </p>
               <ul className="list-disc pl-6 text-white/60 text-sm space-y-2 font-light mt-4">
                 <li>Revenue cycle management and payment dispute resolution</li>
-                <li>Cognifica App workplace mental health screening platform</li>
-                <li>Synaptix concussion management software</li>
+                <li>CogAI mental health platform</li>
+                <li>Kavera concussion platform</li>
                 <li>Healthcare consulting services</li>
               </ul>
               <p className="font-body text-sm text-white/60 font-light leading-relaxed mt-4">
@@ -122,7 +122,7 @@ export default function TermsPage() {
               <h2 className="font-heading text-2xl text-white mb-4">Intellectual Property</h2>
               <p className="font-body text-sm text-white/60 font-light leading-relaxed">
                 All content on this website, including text, graphics, logos, images, software, and
-                the Cognifica App and Synaptix trademarks, is the property of Kronos Group or its
+                the CogAI and Kavera trademarks, is the property of Kronos Group or its
                 licensors and is protected by United States and international intellectual property
                 laws. You may not reproduce, distribute, modify, or create derivative works without
                 our express written permission.

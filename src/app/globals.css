@@ -21,8 +21,9 @@
   --kronos-gray-900: #171717;
   --kronos-text-dark: #171717;
   --kronos-lavender: #C4B5CF;
-  --synaptix-blue: #0C5E94;
-  --synaptix-cyan: #0FBDD5;
+  --kavera-blue: #0C5E94;
+  --kavera-cyan: #0FBDD5;
+  --cogai-orange: #FF4F00;
   --kronos-green: #00843D;
   --kronos-rev-green: #00843D;
 }
@@ -47,8 +48,9 @@
   --color-kronos-gray-900: var(--kronos-gray-900);
   --color-kronos-text-dark: var(--kronos-text-dark);
   --color-kronos-lavender: var(--kronos-lavender);
-  --color-synaptix-blue: var(--synaptix-blue);
-  --color-synaptix-cyan: var(--synaptix-cyan);
+  --color-kavera-blue: var(--kavera-blue);
+  --color-kavera-cyan: var(--kavera-cyan);
+  --color-cogai-orange: var(--cogai-orange);
   --color-kronos-green: var(--kronos-green);
   --color-kronos-rev-green: var(--kronos-rev-green);
   

@@ -9,21 +9,21 @@ import {
 import { Phone, MapPin, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Kronos Group — Revenue Cycle, Cognifica App, Synaptix Inquiries",
+  title: "Contact Kronos Group — Revenue Cycle, CogAI, Kavera Inquiries",
   description:
-    "Contact Kronos Group for revenue cycle management, Cognifica App demos, Synaptix demos, or general inquiries. Located in West Harrison, NY. Reach out today.",
+    "Contact Kronos Group for revenue cycle management, CogAI demos, Kavera demos, or general inquiries. Located in West Harrison, NY. Reach out today.",
   alternates: {
-    canonical: "https://www.kronosgroup.health/contact",
+    canonical: "https://kronos.health/contact",
   },
   openGraph: {
-    title: "Contact Kronos Group — Revenue Cycle, Cognifica App, Synaptix Inquiries",
-    description: "Contact Kronos Group for revenue cycle management, Cognifica App demos, Synaptix demos, or general inquiries. Located in West Harrison, NY.",
-    url: "https://www.kronosgroup.health/contact",
+    title: "Contact Kronos Group — Revenue Cycle, CogAI, Kavera Inquiries",
+    description: "Contact Kronos Group for revenue cycle management, CogAI demos, Kavera demos, or general inquiries. Located in West Harrison, NY.",
+    url: "https://kronos.health/contact",
     siteName: "Kronos Group",
     type: "website",
     images: [
       {
-        url: "https://www.kronosgroup.health/opengraph-image",
+        url: "https://kronos.health/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Contact Kronos Group",
@@ -32,15 +32,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Kronos Group — Revenue Cycle, Cognifica App, Synaptix Inquiries",
-    description: "Contact Kronos Group for revenue cycle management, Cognifica App demos, Synaptix demos, or general inquiries.",
-    images: ["https://www.kronosgroup.health/opengraph-image"],
+    title: "Contact Kronos Group — Revenue Cycle, CogAI, Kavera Inquiries",
+    description: "Contact Kronos Group for revenue cycle management, CogAI demos, Kavera demos, or general inquiries.",
+    images: ["https://kronos.health/opengraph-image"],
   },
 };
 
 const breadcrumbItems = [
-  { name: "Home", url: "https://www.kronosgroup.health" },
-  { name: "Contact", url: "https://www.kronosgroup.health/contact" },
+  { name: "Home", url: "https://kronos.health" },
+  { name: "Contact", url: "https://kronos.health/contact" },
 ];
 
 export default function ContactPage() {

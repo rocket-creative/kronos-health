@@ -40,13 +40,13 @@ export const metadata: Metadata = {
     template: "%s | Kronos Group",
   },
   description:
-    "Healthcare technology solutions: revenue cycle management, Cognifica App mental health platform, Synaptix concussion software. Founded by Dr. John M. Abrahams. Contact us today.",
-  metadataBase: new URL("https://www.kronosgroup.health"),
+    "Healthcare technology solutions: revenue cycle management, CogAI mental health platform, Kavera concussion platform. Founded by Dr. John M. Abrahams. Contact us today.",
+  metadataBase: new URL("https://kronos.health"),
   alternates: {
-    canonical: "https://www.kronosgroup.health",
+    canonical: "https://kronos.health",
   },
   authors: [
-    { name: "Dr. John M. Abrahams", url: "https://www.kronosgroup.health/about" },
+    { name: "Dr. John M. Abrahams", url: "https://kronos.health/about" },
   ],
   creator: "Kronos Group",
   publisher: "Kronos Group",
@@ -58,14 +58,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Kronos Group — Smarter Healthcare. Stronger Revenue.",
     description:
-      "Healthcare technology solutions: Revenue cycle management, Cognifica App workplace mental health platform, and Synaptix concussion management software.",
-    url: "https://www.kronosgroup.health",
+      "Healthcare technology solutions: Revenue cycle management, CogAI mental health platform, and Kavera concussion platform.",
+    url: "https://kronos.health",
     siteName: "Kronos Group",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://www.kronosgroup.health/opengraph-image",
+        url: "https://kronos.health/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Kronos Group - Healthcare Technology Solutions",
@@ -76,8 +76,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kronos Group — Smarter Healthcare. Stronger Revenue.",
     description:
-      "Healthcare technology solutions: Revenue cycle management, Cognifica App, and Synaptix concussion software.",
-    images: ["https://www.kronosgroup.health/twitter-image"],
+      "Healthcare technology solutions: Revenue cycle management, CogAI, and Kavera concussion platform.",
+    images: ["https://kronos.health/twitter-image"],
   },
   robots: {
     index: true,

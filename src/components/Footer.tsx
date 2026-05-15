@@ -7,8 +7,8 @@ const quickLinks = [
   { href: "/digital-health-tools", label: "Digital Health Tools" },
   { href: "/clinically-integrated-neuropsychology", label: "Neuropsychology" },
   { href: "/cognitive-franchise-program", label: "Franchise Program" },
-  { href: "https://www.cognifica.app?utm_source=kronoshealth&utm_medium=footer", label: "Cognifica App", external: true, wordmark: true },
-  { href: "https://www.synaptix.health?utm_source=kronoshealth&utm_medium=footer", label: "Synaptix", external: true },
+  { href: "https://cogai.health?utm_source=kronoshealth&utm_medium=footer", label: "CogAI", external: true },
+  { href: "https://caverahealth.com?utm_source=kronoshealth&utm_medium=footer", label: "Kavera", external: true },
 ];
 
 export default function Footer() {
@@ -50,14 +50,7 @@ export default function Footer() {
                     className="font-body text-[10px] sm:text-xs text-white/50 hover:text-white uppercase tracking-widest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-kronos-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-kronos-bg"
                     {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   >
-                    {link.wordmark ? (
-                      <>
-                        <span>Cognifica</span>
-                        <span className="text-[#E6A91A]"> App</span>
-                      </>
-                    ) : (
-                      link.label
-                    )}
+                    {link.label}
                   </Link>
                 </li>
               ))}
