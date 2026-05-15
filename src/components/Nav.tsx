@@ -9,7 +9,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "https://www.kronosrevenue.health?utm_source=kronoshealth&utm_medium=nav", label: "Kronos Revenue", external: true },
   { href: "https://cogai.health?utm_source=kronoshealth&utm_medium=nav", label: "CogAI", external: true },
-  { href: "https://caverahealth.com?utm_source=kronoshealth&utm_medium=nav", label: "Kavera", external: true },
+  { href: "https://kaverahealth.com?utm_source=kronoshealth&utm_medium=nav", label: "Kavera", external: true },
   { href: "/medical-it", label: "Medical IT" },
   { href: "/about", label: "About" },
 ];

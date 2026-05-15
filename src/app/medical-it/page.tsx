@@ -693,7 +693,7 @@ export default function MedicalITPage() {
                   A structured 12-week concussion management program built for orthopedic, neurosurgery, and sports medicine practices. Standardized, billable, and recurring.
                 </p>
                 <a
-                  href="https://caverahealth.com?utm_source=medicalit&utm_medium=techstack"
+                  href="https://kaverahealth.com?utm_source=medicalit&utm_medium=techstack"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 text-[#82738C] text-xs uppercase tracking-widest hover:gap-5 transition-all w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#82738C]"

@@ -814,7 +814,7 @@ export default function KaveraPage() {
                 </li>
                 <li className="flex items-center gap-2 text-xs sm:text-sm text-kronos-bg/80">
                   <CheckCircle className="w-4 h-4" aria-hidden="true" />
-                  Visit caverahealth.com for the full product experience
+                  Visit kaverahealth.com for the full product experience
                 </li>
                 <li className="flex items-center gap-2 text-xs sm:text-sm text-kronos-bg/80">
                   <CheckCircle className="w-4 h-4" aria-hidden="true" />
@@ -831,12 +831,12 @@ export default function KaveraPage() {
                   <ArrowRight className="w-3 h-3" aria-hidden="true" />
                 </Link>
                 <a
-                  href="https://caverahealth.com"
+                  href="https://kaverahealth.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 border border-kronos-bg/30 text-kronos-bg py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-5 hover:border-kronos-bg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-kavera-cyan"
                 >
-                  Visit caverahealth.com
+                  Visit kaverahealth.com
                   <ArrowRight className="w-3 h-3" aria-hidden="true" />
                 </a>
               </div>

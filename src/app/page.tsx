@@ -62,7 +62,7 @@ const b2bServices = [
     title: "Kavera",
     description:
       "Concussion and mental health platform powered by AI to streamline workflows and improve revenue.",
-    href: "https://caverahealth.com?utm_source=kronoshealth&utm_medium=homepage",
+    href: "https://kaverahealth.com?utm_source=kronoshealth&utm_medium=homepage",
     external: true,
     accentColor: "text-kavera-cyan",
     focusColor: "focus-visible:ring-kavera-cyan",
@@ -234,7 +234,7 @@ export default function HomePage() {
                     { label: "ISS Health", href: "https://iss.health" },
                     { label: "Cognifica Health", href: "https://www.cognifica.health" },
                     { label: "CogAI", href: "https://cogai.health" },
-                    { label: "Kavera", href: "https://caverahealth.com" },
+                    { label: "Kavera", href: "https://kaverahealth.com" },
                     { label: "Kronos Revenue", href: "https://www.kronosrevenue.health" },
                     { label: "Sydra", href: "https://sydra.health" },
                   ].map((co) => (

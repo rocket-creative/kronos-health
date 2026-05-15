@@ -203,7 +203,7 @@ export default function AboutPage() {
                     { label: "ISS Health", href: "https://iss.health" },
                     { label: "Cognifica Health", href: "https://www.cognifica.health" },
                     { label: "CogAI", href: "https://cogai.health" },
-                    { label: "Kavera", href: "https://caverahealth.com" },
+                    { label: "Kavera", href: "https://kaverahealth.com" },
                     { label: "Kronos Revenue", href: "https://www.kronosrevenue.health" },
                     { label: "Sydra", href: "https://sydra.health" },
                   ].map((co) => (
