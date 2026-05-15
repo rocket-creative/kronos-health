@@ -38,7 +38,7 @@ const b2bServices = [
     title: "Sydra",
     description:
       "True AI powered IDR submissions that save time and money. CPT Assessor to evaluate all Op Notes and validate submitted codes. Prior Authorization Engine using Claude AI to compare Insurance Company guidelines to your Note for deficiencies.",
-    href: "https://sydra.health?utm_source=kronoshealth&utm_medium=homepage",
+    href: "https://sydrahealth.com?utm_source=kronoshealth&utm_medium=homepage",
     external: true,
     accentColor: "text-kronos-rev-green",
     focusColor: "focus-visible:ring-kronos-rev-green",
@@ -236,7 +236,7 @@ export default function HomePage() {
                     { label: "CogAI", href: "https://cogai.health" },
                     { label: "Kavera", href: "https://kaverasoft.com" },
                     { label: "Kronos Revenue", href: "https://www.kronosrevenue.health" },
-                    { label: "Sydra", href: "https://sydra.health" },
+                    { label: "Sydra", href: "https://sydrahealth.com" },
                   ].map((co) => (
                     <a
                       key={co.label}

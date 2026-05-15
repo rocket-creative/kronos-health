@@ -205,7 +205,7 @@ export default function AboutPage() {
                     { label: "CogAI", href: "https://cogai.health" },
                     { label: "Kavera", href: "https://kaverasoft.com" },
                     { label: "Kronos Revenue", href: "https://www.kronosrevenue.health" },
-                    { label: "Sydra", href: "https://sydra.health" },
+                    { label: "Sydra", href: "https://sydrahealth.com" },
                   ].map((co) => (
                     <a
                       key={co.label}
