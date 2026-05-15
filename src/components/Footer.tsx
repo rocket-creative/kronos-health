@@ -8,7 +8,7 @@ const quickLinks = [
   { href: "/clinically-integrated-neuropsychology", label: "Neuropsychology" },
   { href: "/cognitive-franchise-program", label: "Franchise Program" },
   { href: "https://cogai.health?utm_source=kronoshealth&utm_medium=footer", label: "CogAI", external: true },
-  { href: "https://kaverahealth.com?utm_source=kronoshealth&utm_medium=footer", label: "Kavera", external: true },
+  { href: "https://kaverasoft.com?utm_source=kronoshealth&utm_medium=footer", label: "Kavera", external: true },
 ];
 
 export default function Footer() {
